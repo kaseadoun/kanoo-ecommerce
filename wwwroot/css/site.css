@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@600&family=Oleo+Script:wght@700&family=Quicksand&display=swap');
+
+:root {
+  --main-bg-colour: #4d6679;
+  --secondary-bg-colour: #2F4858;
+  --third-bg-colour: #86BBD8;
+  --main-complimentary-colour: #F6AE2D;
+  --secondary-complimentary-colour: #F26419;
+}
+
 html {
   font-size: 14px;
 }
@@ -17,6 +27,105 @@ html {
   min-height: 100%;
 }
 
+h1, 
+h2 {
+  font-family: 'Oleo Script', cursive;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Dosis', sans-serif;
+}
+
+a, 
+i, 
+.nav-link {
+  color: var(--main-complimentary-colour);
+}
+
 body {
   margin-bottom: 60px;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: var(--main-bg-colour);
+  color: #f4f4f4;
+  font-family: 'Quicksand', sans-serif;
+}
+
+header {
+  background-color: #f4f4f4;
+  box-shadow: 0 0 10px 0 #505050;
+}
+
+header .nav-link {
+  color: var(--secondary-complimentary-colour);
+}
+
+header .nav-link:hover {
+  color: var(--main-complimentary-colour);
+}
+
+
+#company-logo {
+  max-height: 50px;
+  width: auto;
+}
+
+#main-body {
+  display: flex;
+  width: 100%;
+  height: auto;
+  /* overflow: hidden; */
+}
+
+#sidebar {
+  max-width: 15%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  border-right: 1px solid #cfcfcf;
+  background-color: var(--secondary-bg-colour);
+  overflow: hidden;
+}
+
+#sidebar i {
+  padding-right: 0.5em;
+}
+
+#main-container {
+  flex-grow: 1;
+  padding-top: 8em;
+}
+
+.nav-link:focus, .nav-link:hover, .nav-link:active, a:hover {
+  color: var(--secondary-complimentary-colour);
+}
+
+#flight-search {
+  margin: 3em 0;
+  padding: 2em;
+  border-radius: 1em;
+}
+
+#travel-carousel {
+  padding-bottom: 8em;
+}
+
+.carousel-caption {
+  background-color: rgba(0,0,0, 0.4);
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  color: var(--main-complimentary-colour);
+}
+
+.carousel-control-next:focus, .carousel-control-next:hover, .carousel-control-prev:focus, .carousel-control-prev:hover {
+  color: var(--secondary-complimentary-colour);
+}
+
+footer {
+  background-color: #f4f4f4;
 }
