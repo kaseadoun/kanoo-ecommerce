@@ -2,7 +2,47 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-left">
+    <h1 class="display-4">Find your flight</h1>
+</div>
+
+<form class="d-flex bg-light align-items-cener" id="flight-search">
+    <input class="form-control me-2" type="text" placeholder="From" aria-label="From">
+    <input class="form-control me-2" type="text" placeholder="To" aria-label="To">
+    <input class="form-control me-2" type="date" aria-label="Arrive">
+    <input class="form-control me-2" type="date" aria-label="Depart">
+    <button class="btn btn-outline-black" type="submit"><i class="bi bi-search"></i></button>
+</form>
+
+<div id="travel-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="../assets/plane.webp" alt="Photo of a plane by Felix Mittermeier: https://www.pexels.com/photo/white-and-black-lufthansa-airplane-2832089/">
+             <div class="carousel-caption d-none d-md-block">
+                <h3>Thousands of flights!</h3>
+                <p>We offer countless trips that can get you to your destination.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="../assets/airport.webp" alt="Photo of an airport by Ketut Subiyanto: https://www.pexels.com/photo/woman-with-a-face-mask-holding-her-luggage-4436363/">
+             <div class="carousel-caption d-none d-md-block">
+                <h3>Go anywhere in the world!</h3>
+                <p>Our services make it easier than ever to plan your trips anywhere.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="../assets/landscape.webp" alt="Photo of a landscape by Jaime Reimer: https://www.pexels.com/photo/beautiful-view-of-moraine-lake-2662116/">
+             <div class="carousel-caption d-none d-md-block">
+                <h3>Visit hotspots!</h3>
+                <p>See anything you want to see with our help.</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="carousel-control-prev fs-1" type="button" data-bs-target="#travel-carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#travel-carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
 </div>
