@@ -3,49 +3,37 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<section>
-    <h2>Company Info</h2>
-    <table class="table table-striped">
-        <tr>
-            <th scope="row">Company / Business Name</th>
-        </tr>
-        <tr>
-            <td>Kanoo</td>
-        </tr>
-        <tr>
-            <th scope="row">Company Description</th>
-        </tr>
-        <tr>
-            <td>Kanoo has a focus of providing a relaxing way of setting up vacations by providing packages and planning
-                services.</td>
-        </tr>
-        <tr>
-            <th scope="row">Group Members and Roles</th>
-        </tr>
-        <tr>
-            <td>Karsten Leung - Full Stack Developer<br />
-                Emily Rose - Full Stack Developer<br />
-                John Gu - Full Stack Developer</td>
-        </tr>
-    </table>
-</section>
 
-<section>
-    <h2>Proposal</h2>
-    <div>
-        <h3>Description of the Site</h3>
-        <p>Kanoo is an eCommerce business that provides vacation packages and planning services.</p>
-    </div>
-    <div>
-        <h3>The Products or Services</h3>
-        <p>Vacation packages and planning services.</p>
-    </div>
-    <div>
-        <h3>Industry Needs to be Fulfilled</h3>
-        <p></p>
-    </div>
-    <div>
-        <h3>Roles User Need to Fill</h3>
-        <p> No Idea </p>
-    </div>
-</section>
+@for (var i = 0; i < Model.Count; i++)
+{
+    @if (i == 0)
+    {
+        <section>
+            <table class="table table-striped">
+                <h2>Company Info</h2>
+                @foreach (var info in Model[i])
+                {
+                    <thead>
+                        <th>@info.Key</th>
+                    </thead>
+                    <tbody>
+                        <td>@Html.Raw(info.Value)</td>
+                    </tbody>
+                }
+            </table>
+        </section>
+    }
+    else
+    {
+        <section>
+            <h2>Proposal</h2>
+            @foreach (var info in Model[i])
+                {
+                    <div>
+                        <h3>@info.Key</h3>
+                        <p>@info.Value</p>
+                    </div>
+                }
+        </section>
+    }
+}
