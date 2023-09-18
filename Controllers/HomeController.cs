@@ -30,13 +30,13 @@ public class HomeController : Controller
             // Dictionary for company info
             new Dictionary<string, string> {
                 {"Company Name", "Kanoo"},
-                {"Company Description", "Kanoo has a focus of providing a relaxing way of setting up vacations by providing packages and planning services."},
+                {"Company Description", "Kanoo has a focus of providing a relaxing way of setting up vacations by providing packages and planning services.<br/>Kanoo makes creating your next dream trip easy, quick, and hassle free! We aim to help you design your itinerary with the combination of beautiful destinations, amazing attractions and of course, cozy stays!<br/>Either you are an experienced trip planner for your social group, or the \"click and go\" person, you will find everything you need here!"},
                 {"Group Members and Roles", "Karsten Leung - Full Stack Developer<br/>Emily Rose - Full Stack Developer<br/>John Gu - Full Stack Developer"}
             },
             // Dictionary for proposal
             new Dictionary<string, string> {
-                {"Description of the Site", "Kanoo is an eCommerce business that provides vacation packages and planning services."},
-                {"The Products or Services", "Vacation packages and planning services."},
+                {"Description of the Site", "Kanoo is an eCommerce website that provides vacation design and planning packages."},
+                {"The Products or Services", "Kanoo provides different combinations of destinations, attractions and stay with modification ability for customers."},
                 {"Industry Needs to be Fulfilled", "Travel and planning needs."},
                 {"Roles User Need to Fill", "Customer role."}
             }
