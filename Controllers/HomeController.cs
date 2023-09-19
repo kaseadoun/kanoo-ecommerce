@@ -30,7 +30,7 @@ public class HomeController : Controller
             // Dictionary for company info
             new Dictionary<string, string> {
                 {"Company Name", "Kanoo"},
-                {"Company Description", "Kanoo has a focus of providing a relaxing way of setting up vacations by providing packages and planning services.<br/>Kanoo makes creating your next dream trip easy, quick, and hassle free! We aim to help you design your itinerary with the combination of beautiful destinations, amazing attractions and of course, cozy stays!<br/>Either you are an experienced trip planner for your social group, or the \"click and go\" person, you will find everything you need here!"},
+                {"Company Description", "Kanoo has a focus of providing a relaxing way of setting up vacations by providing packages and planning services.<br/>Kanoo makes creating your next dream trip easy, quick, and hassle free! We aim to help you design your itinerary with the combination of beautiful destinations, amazing attractions and of course, cozy stays!<br/>Whether you are an experienced trip planner, or the \"click and go\" person, you will find everything with ease here!"},
                 {"Group Members and Roles", "Karsten Leung - Full Stack Developer<br/>Emily Rose - Full Stack Developer<br/>John Gu - Full Stack Developer"}
             },
             // Dictionary for proposal
