@@ -67,6 +67,10 @@ header .nav-link:hover {
   color: var(--main-complimentary-colour);
 }
 
+td, th {
+  color: #f4f4f4;
+}
+
 
 #company-logo {
   max-height: 50px;
