@@ -1,0 +1,33 @@
+h2 {
+    line-height: 2;
+}
+
+h3 {
+    padding-top: 1em;
+    border-bottom: 1px solid #ccc;
+}
+
+table {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#company-info th {
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: none;
+}
+
+#company-info td {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#company-info td:last-of-type {
+    border: none;
+}
+
+#proposal > div {
+    width: 80%;
+    margin: 0 auto;
+}
