@@ -48,6 +48,7 @@ namespace Kanoo.Controllers
         public IActionResult Create()
         {
             ViewData["TravelServiceId"] = new SelectList(_context.Set<TravelService>(), "Id", "Description");
+            ViewData["Destination"] = new SelectList(Enum.GetValues(typeof(Airport)));
             return View();
         }
 
@@ -65,6 +66,7 @@ namespace Kanoo.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["TravelServiceId"] = new SelectList(_context.Set<TravelService>(), "Id", "Description", car.TravelServiceId);
+            ViewData["Destination"] = new SelectList(Enum.GetValues(typeof(Airport)));
             return View(car);
         }
 
@@ -82,6 +84,7 @@ namespace Kanoo.Controllers
                 return NotFound();
             }
             ViewData["TravelServiceId"] = new SelectList(_context.Set<TravelService>(), "Id", "Description", car.TravelServiceId);
+            ViewData["Destination"] = new SelectList(Enum.GetValues(typeof(Airport)));
             return View(car);
         }
 
@@ -118,6 +121,7 @@ namespace Kanoo.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["TravelServiceId"] = new SelectList(_context.Set<TravelService>(), "Id", "Description", car.TravelServiceId);
+            ViewData["Destination"] = new SelectList(Enum.GetValues(typeof(Airport)));
             return View(car);
         }
 
