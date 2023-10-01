@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,17 +12,25 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Kanoo.styles.css" asp-append-version="true" />
     <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </head>
+
 <body>
     <header class="fixed-top">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="../assets/logo.svg" id="company-logo"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img
+                        src="../assets/logo.svg" id="company-logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
@@ -45,48 +54,43 @@
         </nav>
     </header>
     <div id="main-body">
-    <div class="container-fluid sticky-top" id="sidebar">
-        <div class="col-sm-auto" style="padding-top: 5em;">
-            <div class="d-flex flex-sm-column flex-row flex-nowrap align-items-center sticky-top">
-                <div class="modal-dialog modal-dialog-centered">
-                    <i class="bi-person-circle h2"></i>
+        <div class="container-fluid sticky-top" id="sidebar">
+            <div class="col-sm-auto" style="padding-top: 5em;">
+                <div class="d-flex flex-sm-column flex-row flex-nowrap align-items-center sticky-top">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <i class="bi-person-circle h2"></i>
+                    </div>
+                    <ul
+                        class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-left align-items-left">
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Flights" asp-action=""><i class="bi-airplane fs-1"></i> Flights</a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Cars" asp-action=""><i class="bi-car-front-fill fs-1"></i> Cars</a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Stays" asp-action=""><i class="bi-house fs-1"></i> Stays</a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-light" asp-area="" asp-controller="FlightAndHotels" asp-action=""><i class="bi-luggage-fill fs-1"></i> Flights and Hotels</a>
+
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-light" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-original-title="Flight Tracker">
+                                <i class="bi-radar fs-1"></i> Flight Radar
+                            </a>
+                            @* <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Flight"> <i class="bi-radar fs-1"></i> Flight Radar</a> *@
+                        </li>
+                    </ul>
                 </div>
-                <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-left align-items-left">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-light" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-original-title="Flights">
-                            <i class="bi-airplane fs-1"></i>    Flights
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link text-light" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-original-title="Cars">
-                            <i class="bi-car-front-fill fs-1"></i>  Cars
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link text-light" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-original-title="Stays">
-                            <i class="bi-house fs-1"></i>    Stays
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link text-light" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-original-title="Travel Packages">
-                            <i class="bi-luggage-fill fs-1"></i>    Flights and Hotels
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link text-light" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-original-title="Flight Tracker">
-                            <i class="bi-radar fs-1"></i>   Flight Radar
-                        </a>
-                    </li>
-                </ul>
             </div>
         </div>
-    </div>
 
-    <div class="container" id="main-container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+        <div class="container" id="main-container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
 
     </div>
     <footer class="footer text-muted">
@@ -100,4 +104,5 @@
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>
