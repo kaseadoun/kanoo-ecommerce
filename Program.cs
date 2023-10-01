@@ -10,7 +10,7 @@ builder.Services.AddControllersWithViews();
 
 var connectionString = builder.Configuration.GetConnectionString("Default") ?? throw new InvalidOperationException("Connection string not found.");
 
-builder.Services.AddDbContext<ApplicationDbContext>(options => 
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
    options.UseMySQL(connectionString));
 
@@ -32,13 +32,27 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
+    name: "Brief",
+    pattern: "brief",
+    defaults: new { controller = "Home", Action = "Brief" }
+);
+app.MapControllerRoute(
+    name: "Privacy",
+    pattern: "privacy",
+    defaults: new { controller = "Home", Action = "Privacy" }
+);
+
+app.MapControllerRoute(
+    name: "TravelServices",
+    pattern: "travelservices",
+    defaults: new { controller = "Home", Action = "TravelServices" }
+);
+
+
+app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-app.MapControllerRoute(
-    name: "Brief",
-    pattern: "brief",
-    defaults: new {controller="Home", Action="Brief"}
-);
+
 
 app.Run();

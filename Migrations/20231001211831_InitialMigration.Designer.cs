@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Kanoo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231001171205_InitialMigration")]
+    [Migration("20231001211831_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
