@@ -6,6 +6,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+// Adds IEmailSender interface to services and maps it to EmailSender
+builder.Services.AddTransient<IEmailSender, EmailSender>(); 
+
 // Add MySQL
 
 var connectionString = builder.Configuration.GetConnectionString("Default") ?? throw new InvalidOperationException("Connection string not found.");

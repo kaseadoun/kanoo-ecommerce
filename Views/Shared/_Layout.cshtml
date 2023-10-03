@@ -25,15 +25,18 @@
 
 <body>
     <div class="chatBox">
-        <form id="chatBoxForm">
+        <form id="chatBoxForm" asp-controller="Home" asp-action="send">
             <h4>Send a message and we'll reply asap!</h4>
             <label for="name">Name:</label>
             <input class="chatbox-inputs" type="text" name="name" placeholder="Full Name">
 
-            <label for="textarea">Message</label>
-            <textarea class="chatbox-inputs" placeholder="Type Your Message Here" name="textarea"></textarea>
+            <label for="name">Email:</label>
+            <input class="chatbox-inputs" type="text" name="email" placeholder="Email">
 
-            <button type="button" class="btn btn-success">Send</button>
+            <label for="textarea">Message</label>
+            <textarea class="chatbox-inputs" placeholder="Type Your Message Here" name="message"></textarea>
+
+            <input type="submit" value="Send" class="btn btn-warning m-3">
         </form>
     </div>
     <button type="button" class="btn btn-warning" id="chatButton">Help Chat</button>

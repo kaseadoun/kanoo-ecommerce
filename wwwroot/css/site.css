@@ -150,13 +150,13 @@ footer {
   position: fixed;
   display: none;
   width: 20vw;
-  height: 300px;
+  height: auto;
   bottom: 80px;
   right: 20px;
   z-index: 2;
-  background-color: white;
-  color: black;
-  border: 3px solid var(--secondary-bg-colour);
+  background-color: #f4f4f4;
+  color: #0e0e0e;
+  border: 3px solid var(--main-complimentary-colour);
   border-radius: 5px;
   padding-top: 15px;
 }

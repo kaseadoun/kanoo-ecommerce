@@ -1,16 +1,19 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Kanoo.Models;
+using Microsoft.CodeAnalysis.Text;
 
 namespace Kanoo.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly IEmailSender emailSender;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, IEmailSender emailSender)
     {
         _logger = logger;
+        this.emailSender = emailSender;
     }
 
     public IActionResult Index()
@@ -49,5 +52,14 @@ public class HomeController : Controller
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+
+    // Send email based on the contents of the help chat form 
+    [HttpPost]
+    [Route("send")]
+    public async Task<IActionResult> Send(string email, string name, string message)
+    {
+        await emailSender.SendEmailAsync(email, name, message);
+        return View("Index");
     }
 }
