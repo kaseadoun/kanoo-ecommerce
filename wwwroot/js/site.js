@@ -2,3 +2,13 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+const chatBox = document.querySelector(".chatBox");
+const chatButton = document.getElementById("chatButton");
+
+chatButton.addEventListener('click', () => {
+    if (chatBox.style.display === "block") {
+        chatBox.style.display = "none";
+    } else {
+        chatBox.style.display = "block";
+    }
+})
