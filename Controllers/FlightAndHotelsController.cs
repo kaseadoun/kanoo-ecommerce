@@ -48,6 +48,8 @@ namespace Kanoo.Controllers
         public IActionResult Create()
         {
             ViewData["TravelServiceId"] = new SelectList(_context.TravelService, "Id", "Description");
+            ViewData["From"] = new SelectList(Enum.GetValues(typeof(Airport)));
+            ViewData["To"] = new SelectList(Enum.GetValues(typeof(Airport)));
             return View();
         }
 
@@ -65,6 +67,8 @@ namespace Kanoo.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["TravelServiceId"] = new SelectList(_context.TravelService, "Id", "Description", flightAndHotel.TravelServiceId);
+            ViewData["From"] = new SelectList(Enum.GetValues(typeof(Airport)));
+            ViewData["To"] = new SelectList(Enum.GetValues(typeof(Airport)));
             return View(flightAndHotel);
         }
 
@@ -82,6 +86,8 @@ namespace Kanoo.Controllers
                 return NotFound();
             }
             ViewData["TravelServiceId"] = new SelectList(_context.TravelService, "Id", "Description", flightAndHotel.TravelServiceId);
+            ViewData["From"] = new SelectList(Enum.GetValues(typeof(Airport)));
+            ViewData["To"] = new SelectList(Enum.GetValues(typeof(Airport)));
             return View(flightAndHotel);
         }
 
@@ -118,6 +124,8 @@ namespace Kanoo.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["TravelServiceId"] = new SelectList(_context.TravelService, "Id", "Description", flightAndHotel.TravelServiceId);
+            ViewData["From"] = new SelectList(Enum.GetValues(typeof(Airport)));
+            ViewData["To"] = new SelectList(Enum.GetValues(typeof(Airport)));
             return View(flightAndHotel);
         }
 
