@@ -172,3 +172,15 @@ footer {
   margin-bottom: 10px;
   width: 80%;
 }
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card {
+  border: none;
+  background-color: var(--secondary-bg-colour);
+  padding: 10px;
+}
