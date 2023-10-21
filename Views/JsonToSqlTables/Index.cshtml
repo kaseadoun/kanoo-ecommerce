@@ -1,0 +1,107 @@
+@model IEnumerable<Kanoo.Models.Api>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.month)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.day)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hour)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.minute)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.seconds)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.milliSeconds)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.timeZone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dayOfWeek)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dstActive)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.month)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.day)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hour)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.minute)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.seconds)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.milliSeconds)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.timeZone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dayOfWeek)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dstActive)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

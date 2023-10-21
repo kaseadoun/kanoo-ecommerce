@@ -1,0 +1,96 @@
+@model Kanoo.Models.Api
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Api</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.year)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.year)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.month)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.month)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.day)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.day)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.hour)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.hour)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.minute)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.minute)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.seconds)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.seconds)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.milliSeconds)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.milliSeconds)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dateTime)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dateTime)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.date)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.date)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.time)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.time)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.timeZone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.timeZone)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dayOfWeek)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dayOfWeek)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dstActive)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dstActive)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
