@@ -19,60 +19,6 @@ namespace Kanoo.Migrations
                 .HasAnnotation("ProductVersion", "7.0.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("Kanoo.Models.Api", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("date")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<DateTime>("dateTime")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<int>("day")
-                        .HasColumnType("int");
-
-                    b.Property<string>("dayOfWeek")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<bool>("dstActive")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<int>("hour")
-                        .HasColumnType("int");
-
-                    b.Property<int>("milliSeconds")
-                        .HasColumnType("int");
-
-                    b.Property<int>("minute")
-                        .HasColumnType("int");
-
-                    b.Property<int>("month")
-                        .HasColumnType("int");
-
-                    b.Property<int>("seconds")
-                        .HasColumnType("int");
-
-                    b.Property<string>("time")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("timeZone")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<int>("year")
-                        .HasColumnType("int");
-
-                    b.HasKey("id");
-
-                    b.ToTable("Api");
-                });
-
             modelBuilder.Entity("Kanoo.Models.Car", b =>
                 {
                     b.Property<int>("Id")
