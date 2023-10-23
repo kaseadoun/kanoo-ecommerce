@@ -16,7 +16,7 @@ namespace Kanoo.Models {
 
         [Required]
         [Display(Name = "Car Drop Off")]
-        public Airport Destination { get; set; } = Airport.YYZ;
+        public string Destination { get; set; } = "YYZ";
 
         [Required]
         public DateTime From { get; set; } = DateTime.Now;

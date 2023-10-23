@@ -16,11 +16,11 @@ namespace Kanoo.Models {
         public int TravelServiceId { get; set; } = 0;
 
         [Required]
-        public Airport From { get; set; } = Airport.YYZ;
+        public string From { get; set; } = "YYZ";
 
         [Required]
         [Display(Name = "Surrounding Airport")]
-        public Airport To { get; set; } = Airport.DFW;
+        public string To { get; set; } = "DFW";
 
         [Required]
         public DateTime Leave { get; set; } = DateTime.Now;

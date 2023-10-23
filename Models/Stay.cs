@@ -16,7 +16,7 @@ namespace Kanoo.Models {
 
         [Required]
         [Display(Name = "Surrounding Airport")]
-        public Airport Destination { get; set; } = Airport.YYZ;
+        public string Destination { get; set; } = "YYZ";
 
         [Required]
         public DateTime Arrive { get; set; } = DateTime.Now;

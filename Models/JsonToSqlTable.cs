@@ -17,8 +17,6 @@ namespace Kanoo.Models
                - Automatically execute these methods in the Create() method of applicable controllers
                - This will fill our DB with data every time we click "Create New"
        */
-        private static Uri baseAddress = new Uri("https://www.timeapi.io/api");
-
         public JsonToSqlTable() { }
 
         /* 
@@ -35,9 +33,8 @@ namespace Kanoo.Models
         /// </summary>
         public static void PopulateApiTable(ApplicationDbContext _context, HttpClient _httpClient)
         {
-            _httpClient.BaseAddress = baseAddress;
             Api data = new Api();
-            HttpResponseMessage responseMessage = _httpClient.GetAsync(_httpClient.BaseAddress + "/Time/current/zone?timeZone=Europe/Amsterdam").Result;
+            HttpResponseMessage responseMessage = _httpClient.GetAsync("https://www.timeapi.io/api/Time/current/zone?timeZone=Europe/Amsterdam").Result;
 
             if (responseMessage.IsSuccessStatusCode)
             {
@@ -50,8 +47,6 @@ namespace Kanoo.Models
 
         public static void PopulateTravelTable(ApplicationDbContext _context, HttpClient _httpClient)
         {
-            _httpClient.BaseAddress = baseAddress;
-
             // Create a secure ConfigurationBuilder() to read the API key and host from a hidden JSON
             // instead of hard-coding the values in the method
             var builder = new ConfigurationBuilder()
@@ -78,9 +73,9 @@ namespace Kanoo.Models
 
             if (responseMessage.IsSuccessStatusCode)
             {
-                // GET the API JSON result and pass it as a string to JsonToObject()
-                // JsonToObject() will extract all of the data we need to add to our object
-                var totalEntries = JsonToObject(responseMessage.Content.ReadAsStringAsync().Result);
+                // GET the API JSON result and pass it as a string to JsonToTravelAdvisor()
+                // JsonToTravelAdvisor() will extract all of the data we need to add to our object
+                var totalEntries = JsonToTravelAdvisor(responseMessage.Content.ReadAsStringAsync().Result);
 
                 // Add each new object to the database
                 foreach (var entry in totalEntries) {
@@ -97,7 +92,7 @@ namespace Kanoo.Models
             * TL;DR: Turn the JSON into a DOM and navigate through it to find the values we want.
                      Assign the values as properties of the Model we are using.
         */
-        private static List<TravelAdvisor> JsonToObject(string json)
+        private static List<TravelAdvisor> JsonToTravelAdvisor(string json)
         {
             // JsonNode() takes a JsonObject and turns it into a DOM
             // We can access parts of data in the DOM in a very similar way to CSS/JS
@@ -116,16 +111,64 @@ namespace Kanoo.Models
                 TravelAdvisor n = new TravelAdvisor();
 
                 try {
-                    n.text = node!["data"]["Typeahead_autocomplete"]["results"][i]["text"].ToString();
+                    n.Category = node!["data"]["Typeahead_autocomplete"]["results"][i]["buCategory"].ToString();
+                    n.Description = node!["data"]["Typeahead_autocomplete"]["results"][i]["text"].ToString();
+                    n.Address = node!["data"]["Typeahead_autocomplete"]["results"][i]["text"].ToString();
+                    n.ImageUrl = node!["data"]["Typeahead_autocomplete"]["results"][i]["text"].ToString();
                     totalEntries.Add(n);
                 }
                 // If the JSON object does not have the property, catch the error and make the property null
                 catch (NullReferenceException e) {
-                    n.text = null;
                     Console.WriteLine(e.Message);
                 }
             }
             // Return all of the JSON data as a list of objects
+            return totalEntries;
+        }
+
+        public static void PopulateAirportTable(ApplicationDbContext _context)
+        {
+            // Read the local JSON file in full
+            // JSON was pulled from: https://rapidapi.com/aviolog-aviolog-default/api/akrx
+            // Saved as a local file for performance purposes (it returns a ton of data)
+            StreamReader reader = new StreamReader("allsirports.json");
+            string json = reader.ReadToEnd();
+        
+            // Pass the JSON as a string to JsonToAirport() to get the translated Airport objects
+            var totalEntries = JsonToAirport(json);
+
+            // Add each new object to the database
+            foreach (var entry in totalEntries) {
+                    _context.Airport.Add(entry);
+            }
+            _context.SaveChanges();
+            
+        }
+
+        private static List<Airport> JsonToAirport(string json)
+        {
+            JsonNode node = JsonNode.Parse(json)!;
+            List<Airport> totalEntries = new List<Airport>();
+            int totalNodes =
+                node!["airports"].AsArray().Count();
+
+            for (var i = 0; i < totalNodes; i++)
+            {
+                Airport n = new Airport();
+
+                try {
+                    n.AirportName = node!["airports"][i]["airportName"].ToString();
+                    n.AirportIata = node!["airports"][i]["airportIata"].ToString();
+                    n.City = node!["airports"][i]["city"].ToString();
+                    n.Continent = node!["airports"][i]["continent"].ToString();
+                    n.IsoCountry = node!["airports"][i]["isoCountry"].ToString();
+                    totalEntries.Add(n);
+                }
+                // If the JSON object does not have the property, catch the error and make the property null
+                catch (NullReferenceException e) {
+                    Console.WriteLine(e.Message);
+                }
+            }
             return totalEntries;
         }
     }

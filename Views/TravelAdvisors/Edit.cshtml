@@ -12,31 +12,26 @@
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TravelAdvisorId" />
             <div class="form-group">
-                <label asp-for="__typename" class="control-label"></label>
-                <input asp-for="__typename" class="form-control" />
-                <span asp-validation-for="__typename" class="text-danger"></span>
-            </div>
-            <input type="hidden" asp-for="documentId" />
-            <div class="form-group">
-                <label asp-for="suggestionType" class="control-label"></label>
-                <input asp-for="suggestionType" class="form-control" />
-                <span asp-validation-for="suggestionType" class="text-danger"></span>
+                <label asp-for="Category" class="control-label"></label>
+                <input asp-for="Category" class="form-control" />
+                <span asp-validation-for="Category" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="buCategory" class="control-label"></label>
-                <input asp-for="buCategory" class="form-control" />
-                <span asp-validation-for="buCategory" class="text-danger"></span>
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="text" class="control-label"></label>
-                <input asp-for="text" class="form-control" />
-                <span asp-validation-for="text" class="text-danger"></span>
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="scopeType" class="control-label"></label>
-                <input asp-for="scopeType" class="form-control" />
-                <span asp-validation-for="scopeType" class="text-danger"></span>
+                <label asp-for="ImageUrl" class="control-label"></label>
+                <input asp-for="ImageUrl" class="form-control" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

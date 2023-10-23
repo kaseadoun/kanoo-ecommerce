@@ -1,4 +1,3 @@
-using System.Net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,6 +53,22 @@ namespace Kanoo.Controllers
             return View();
         }
 
+        // POST: TravelAdvisors/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("TravelAdvisorId,Category,Description,Address,ImageUrl")] TravelAdvisor travelAdvisor)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(travelAdvisor);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(travelAdvisor);
+        }
+
         // GET: TravelAdvisors/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -75,7 +90,7 @@ namespace Kanoo.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("__typename,documentId,suggestionType,buCategory,text,scopeType")] TravelAdvisor travelAdvisor)
+        public async Task<IActionResult> Edit(int id, [Bind("TravelAdvisorId,Category,Description,Address,ImageUrl")] TravelAdvisor travelAdvisor)
         {
             if (id != travelAdvisor.TravelAdvisorId)
             {
@@ -106,7 +121,7 @@ namespace Kanoo.Controllers
         }
 
         // GET: TravelAdvisors/Delete/5
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.TravelAdvisor == null)
             {
