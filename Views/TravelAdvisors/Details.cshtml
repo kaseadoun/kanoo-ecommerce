@@ -1,0 +1,48 @@
+@model Kanoo.Models.TravelAdvisor
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TravelAdvisor</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.__typename)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.__typename)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.suggestionType)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.suggestionType)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.buCategory)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.buCategory)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.text)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.text)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.scopeType)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.scopeType)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.documentId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

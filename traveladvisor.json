@@ -1,0 +1,471 @@
+{
+    "data": {
+      "Typeahead_autocomplete": {
+        "__typename": "Typeahead_Response",
+        "resultsId": "4f4dfe11-e8b8-4023-b837-38bf628ca61b_ef4ae312-e384-49c3-9cc3-53c4c4e093bb",
+        "results": [
+          {
+            "__typename": "Typeahead_QuerySuggestionItem",
+            "documentId": "geo-pt;10021-60745;g60745;p10021",
+            "suggestionType": "query",
+            "buCategory": "ATTRACTIONS",
+            "text": "boston things to do",
+            "parentGeoDetails": {
+              "__typename": "LocationSelection_LocationInformationV2",
+              "names": {
+                "__typename": "LocationSelection_LocationNames",
+                "longOnlyHierarchyTypeaheadV2": "Massachusetts, United States"
+              }
+            },
+            "route": {
+              "__typename": "Routing_Route",
+              "fragment": null,
+              "page": "AttractionsFusion",
+              "url": "/Attractions-g60745-Activities-Boston_Massachusetts.html",
+              "nonCanonicalUrl": "/Attractions-g60745-Activities-Boston_Massachusetts.html",
+              "typedParams": {
+                "__typename": "Routing_AttractionsFusionParameters"
+              }
+            },
+            "scopeType": "GEO"
+          },
+          {
+            "__typename": "Typeahead_QuerySuggestionItem",
+            "documentId": "geo-pt;10023-60745;g60745;p10023",
+            "suggestionType": "query",
+            "buCategory": "HOTELS",
+            "text": "boston hotels",
+            "parentGeoDetails": {
+              "__typename": "LocationSelection_LocationInformationV2",
+              "names": {
+                "__typename": "LocationSelection_LocationNames",
+                "longOnlyHierarchyTypeaheadV2": "Massachusetts, United States"
+              }
+            },
+            "route": {
+              "__typename": "Routing_Route",
+              "fragment": null,
+              "page": "HotelsFusion",
+              "url": "/Hotels-g60745-Boston_Massachusetts-Hotels.html",
+              "nonCanonicalUrl": "/Hotels-g60745-Boston_Massachusetts-Hotels.html",
+              "typedParams": {
+                "__typename": "Routing_HotelsFusionParameters"
+              }
+            },
+            "scopeType": "GEO"
+          },
+          {
+            "__typename": "Typeahead_QuerySuggestionItem",
+            "documentId": "geo-pt;10022-60745;g60745;p10022",
+            "suggestionType": "query",
+            "buCategory": "RESTAURANTS",
+            "text": "boston restaurants",
+            "parentGeoDetails": {
+              "__typename": "LocationSelection_LocationInformationV2",
+              "names": {
+                "__typename": "LocationSelection_LocationNames",
+                "longOnlyHierarchyTypeaheadV2": "Massachusetts, United States"
+              }
+            },
+            "route": {
+              "__typename": "Routing_Route",
+              "fragment": null,
+              "page": "Restaurants",
+              "url": "/Restaurants-g60745-Boston_Massachusetts.html",
+              "nonCanonicalUrl": "/Restaurants-g60745-Boston_Massachusetts.html",
+              "typedParams": {
+                "__typename": "Routing_RestaurantsParameters"
+              }
+            },
+            "scopeType": "GEO"
+          },
+          {
+            "__typename": "Typeahead_LocationItem",
+            "documentId": "loc;60745;g60745",
+            "detailsV2": {
+              "__typename": "LocationSelection_LocationInformationV2",
+              "locationId": 60745,
+              "isGeo": true,
+              "placeType": "CITY",
+              "names": {
+                "__typename": "LocationSelection_LocationNames",
+                "name": "Boston",
+                "longOnlyHierarchyTypeaheadV2": "Massachusetts, United States"
+              },
+              "geocode": {
+                "__typename": "LocationSelection_LocationInformationV2Geocode",
+                "latitude": 42.357277,
+                "longitude": -71.05834
+              },
+              "contact": {
+                "__typename": "LocationSelection_LocationInformationV2Contact",
+                "streetAddress": {
+                  "__typename": "LocationSelection_Address",
+                  "street1": null
+                }
+              },
+              "route": {
+                "__typename": "Routing_Route",
+                "fragment": null,
+                "page": "Tourism",
+                "url": "/Tourism-g60745-Boston_Massachusetts-Vacations.html",
+                "nonCanonicalUrl": "/Tourism-g60745-Boston_Massachusetts-Vacations.html",
+                "typedParams": {
+                  "__typename": "Routing_TourismParameters",
+                  "geoId": 60745
+                }
+              }
+            },
+            "details": {
+              "__typename": "LocationInformation",
+              "socialStatistics": {
+                "__typename": "SocialStatistics",
+                "isSaved": false
+              }
+            },
+            "image": {
+              "__typename": "PrimaryMedia_PrimaryMedia",
+              "photo": {
+                "__typename": "Photo",
+                "photoSizeDynamic": {
+                  "__typename": "PhotoSizeDynamic",
+                  "maxHeight": 1285,
+                  "maxWidth": 1920,
+                  "urlTemplate": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/bf/a9/dc/caption.jpg?w={width}&h={height}&s=1&cx=1087&cy=670&chk=v1_4c68bfde7cf83674d8a4"
+                },
+                "photoSizes": [
+                  {
+                    "__typename": "PhotoSize",
+                    "height": 0,
+                    "width": 0,
+                    "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/bf/a9/dc/caption.jpg?w=100&h=100&s=1&cx=1087&cy=670&chk=v1_4c68bfde7cf83674d8a4"
+                  },
+                  {
+                    "__typename": "PhotoSize",
+                    "height": 50,
+                    "width": 50,
+                    "url": "https://media-cdn.tripadvisor.com/media/photo-t/1c/bf/a9/dc/caption.jpg"
+                  },
+                  {
+                    "__typename": "PhotoSize",
+                    "height": 150,
+                    "width": 150,
+                    "url": "https://media-cdn.tripadvisor.com/media/photo-l/1c/bf/a9/dc/caption.jpg"
+                  },
+                  {
+                    "__typename": "PhotoSize",
+                    "height": 200,
+                    "width": 180,
+                    "url": "https://media-cdn.tripadvisor.com/media/photo-i/1c/bf/a9/dc/caption.jpg"
+                  },
+                  {
+                    "__typename": "PhotoSize",
+                    "height": 167,
+                    "width": 250,
+                    "url": "https://media-cdn.tripadvisor.com/media/photo-f/1c/bf/a9/dc/caption.jpg"
+                  },
+                  {
+                    "__typename": "PhotoSize",
+                    "height": 368,
+                    "width": 550,
+                    "url": "https://media-cdn.tripadvisor.com/media/photo-s/1c/bf/a9/dc/caption.jpg"
+                  },
+                  {
+                    "__typename": "PhotoSize",
+                    "height": 685,
+                    "width": 1024,
+                    "url": "https://media-cdn.tripadvisor.com/media/photo-w/1c/bf/a9/dc/caption.jpg"
+                  },
+                  {
+                    "__typename": "PhotoSize",
+                    "height": 857,
+                    "width": 1280,
+                    "url": "https://media-cdn.tripadvisor.com/media/photo-m/1280/1c/bf/a9/dc/caption.jpg"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "__typename": "Typeahead_LocationItem",
+            "documentId": "loc;11450485",
+            "detailsV2": {
+              "__typename": "LocationSelection_LocationInformationV2",
+              "locationId": 11450485,
+              "isGeo": false,
+              "placeType": "ACTIVITY",
+              "names": {
+                "__typename": "LocationSelection_LocationNames",
+                "name": "Boston Hop-On Hop-Off Trolley Tour with 14 Stops",
+                "longOnlyHierarchyTypeaheadV2": "Boston, Massachusetts"
+              },
+              "geocode": null,
+              "contact": {
+                "__typename": "LocationSelection_LocationInformationV2Contact",
+                "streetAddress": {
+                  "__typename": "LocationSelection_Address",
+                  "street1": null
+                }
+              },
+              "route": null
+            },
+            "details": {
+              "__typename": "LocationInformation",
+              "socialStatistics": {
+                "__typename": "SocialStatistics",
+                "isSaved": false
+              }
+            },
+            "image": {
+              "__typename": "PrimaryMedia_PrimaryMedia",
+              "photo": {
+                "__typename": "Photo",
+                "photoSizeDynamic": {
+                  "__typename": "PhotoSizeDynamic",
+                  "maxHeight": 480,
+                  "maxWidth": 720,
+                  "urlTemplate": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/73/ac/09/caption.jpg?w={width}&h={height}&s=1"
+                },
+                "photoSizes": [
+                  {
+                    "__typename": "PhotoSize",
+                    "height": 0,
+                    "width": 0,
+                    "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/73/ac/09/caption.jpg?w=100&h=100&s=1"
+                  },
+                  {
+                    "__typename": "PhotoSize",
+                    "height": 50,
+                    "width": 50,
+                    "url": "https://media-cdn.tripadvisor.com/media/photo-t/1b/73/ac/09/caption.jpg"
+                  },
+                  {
+                    "__typename": "PhotoSize",
+                    "height": 150,
+                    "width": 150,
+                    "url": "https://media-cdn.tripadvisor.com/media/photo-l/1b/73/ac/09/caption.jpg"
+                  },
+                  {
+                    "__typename": "PhotoSize",
+                    "height": 200,
+                    "width": 180,
+                    "url": "https://media-cdn.tripadvisor.com/media/photo-i/1b/73/ac/09/caption.jpg"
+                  },
+                  {
+                    "__typename": "PhotoSize",
+                    "height": 167,
+                    "width": 250,
+                    "url": "https://media-cdn.tripadvisor.com/media/photo-f/1b/73/ac/09/caption.jpg"
+                  },
+                  {
+                    "__typename": "PhotoSize",
+                    "height": 367,
+                    "width": 550,
+                    "url": "https://media-cdn.tripadvisor.com/media/photo-s/1b/73/ac/09/caption.jpg"
+                  },
+                  {
+                    "__typename": "PhotoSize",
+                    "height": 480,
+                    "width": 720,
+                    "url": "https://media-cdn.tripadvisor.com/media/photo-o/1b/73/ac/09/caption.jpg"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "__typename": "Typeahead_QuerySuggestionItem",
+            "documentId": "tag;11885;g60745;p10043",
+            "suggestionType": "query",
+            "buCategory": "ATTRACTIONS",
+            "text": "boston day cruises",
+            "parentGeoDetails": {
+              "__typename": "LocationSelection_LocationInformationV2",
+              "names": {
+                "__typename": "LocationSelection_LocationNames",
+                "longOnlyHierarchyTypeaheadV2": "Massachusetts, United States"
+              }
+            },
+            "route": {
+              "__typename": "Routing_Route",
+              "fragment": null,
+              "page": "AttractionProductsFusion",
+              "url": "/Attraction_Products-g60745-t11885-zfg11865-Boston_Massachusetts.html",
+              "nonCanonicalUrl": "/Attraction_Products-g60745-t11885-zfg11865-Boston_Massachusetts.html",
+              "typedParams": {
+                "__typename": "Routing_AttractionProductsFusionParameters"
+              }
+            },
+            "scopeType": "GEO"
+          },
+          {
+            "__typename": "Typeahead_QuerySuggestionItem",
+            "documentId": "tag;11066;g60745;p10021",
+            "suggestionType": "query",
+            "buCategory": "ATTRACTIONS",
+            "text": "boston neighborhoods",
+            "parentGeoDetails": {
+              "__typename": "LocationSelection_LocationInformationV2",
+              "names": {
+                "__typename": "LocationSelection_LocationNames",
+                "longOnlyHierarchyTypeaheadV2": "Massachusetts, United States"
+              }
+            },
+            "route": {
+              "__typename": "Routing_Route",
+              "fragment": null,
+              "page": "AttractionsFusion",
+              "url": "/Attractions-g60745-Activities-c47-t34-Boston_Massachusetts.html",
+              "nonCanonicalUrl": "/Attractions-g60745-Activities-c47-t34-Boston_Massachusetts.html",
+              "typedParams": {
+                "__typename": "Routing_AttractionsFusionParameters"
+              }
+            },
+            "scopeType": "GEO"
+          },
+          {
+            "__typename": "Typeahead_QuerySuggestionItem",
+            "documentId": "tag;10992;g60745;p10022",
+            "suggestionType": "query",
+            "buCategory": "RESTAURANTS",
+            "text": "boston gluten free options",
+            "parentGeoDetails": {
+              "__typename": "LocationSelection_LocationInformationV2",
+              "names": {
+                "__typename": "LocationSelection_LocationNames",
+                "longOnlyHierarchyTypeaheadV2": "Massachusetts, United States"
+              }
+            },
+            "route": {
+              "__typename": "Routing_Route",
+              "fragment": null,
+              "page": "Restaurants",
+              "url": "/Restaurants-g60745-zfz10992-Boston_Massachusetts.html",
+              "nonCanonicalUrl": "/Restaurants-g60745-zfz10992-Boston_Massachusetts.html",
+              "typedParams": {
+                "__typename": "Routing_RestaurantsParameters"
+              }
+            },
+            "scopeType": "GEO"
+          },
+          {
+            "__typename": "Typeahead_QuerySuggestionItem",
+            "documentId": "tag;11214;g60745;p10043",
+            "suggestionType": "query",
+            "buCategory": "ATTRACTIONS",
+            "text": "boston city tours",
+            "parentGeoDetails": {
+              "__typename": "LocationSelection_LocationInformationV2",
+              "names": {
+                "__typename": "LocationSelection_LocationNames",
+                "longOnlyHierarchyTypeaheadV2": "Massachusetts, United States"
+              }
+            },
+            "route": {
+              "__typename": "Routing_Route",
+              "fragment": null,
+              "page": "Search",
+              "url": "/Search?q=city+tours&geo=60745&searchSessionId=1e0c423f-5b7f-4560-8d32-b87456aa4960",
+              "nonCanonicalUrl": "/Search?q=city+tours&geo=60745&searchSessionId=1e0c423f-5b7f-4560-8d32-b87456aa4960",
+              "typedParams": {
+                "__typename": "Routing_SearchParameters"
+              }
+            },
+            "scopeType": "GEO"
+          },
+          {
+            "__typename": "Typeahead_LocationItem",
+            "documentId": "loc;11448728",
+            "detailsV2": {
+              "__typename": "LocationSelection_LocationInformationV2",
+              "locationId": 11448728,
+              "isGeo": false,
+              "placeType": "ACTIVITY",
+              "names": {
+                "__typename": "LocationSelection_LocationNames",
+                "name": "Boston Whale Watching Cruise by High-Speed Catamaran",
+                "longOnlyHierarchyTypeaheadV2": "Boston, Massachusetts"
+              },
+              "geocode": null,
+              "contact": {
+                "__typename": "LocationSelection_LocationInformationV2Contact",
+                "streetAddress": {
+                  "__typename": "LocationSelection_Address",
+                  "street1": null
+                }
+              },
+              "route": null
+            },
+            "details": {
+              "__typename": "LocationInformation",
+              "socialStatistics": {
+                "__typename": "SocialStatistics",
+                "isSaved": false
+              }
+            },
+            "image": {
+              "__typename": "PrimaryMedia_PrimaryMedia",
+              "photo": {
+                "__typename": "Photo",
+                "photoSizeDynamic": {
+                  "__typename": "PhotoSizeDynamic",
+                  "maxHeight": 480,
+                  "maxWidth": 720,
+                  "urlTemplate": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/40/33/42/caption.jpg?w={width}&h={height}&s=1"
+                },
+                "photoSizes": [
+                  {
+                    "__typename": "PhotoSize",
+                    "height": 0,
+                    "width": 0,
+                    "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/40/33/42/caption.jpg?w=100&h=100&s=1"
+                  },
+                  {
+                    "__typename": "PhotoSize",
+                    "height": 50,
+                    "width": 50,
+                    "url": "https://media-cdn.tripadvisor.com/media/photo-t/1c/40/33/42/caption.jpg"
+                  },
+                  {
+                    "__typename": "PhotoSize",
+                    "height": 150,
+                    "width": 150,
+                    "url": "https://media-cdn.tripadvisor.com/media/photo-l/1c/40/33/42/caption.jpg"
+                  },
+                  {
+                    "__typename": "PhotoSize",
+                    "height": 200,
+                    "width": 180,
+                    "url": "https://media-cdn.tripadvisor.com/media/photo-i/1c/40/33/42/caption.jpg"
+                  },
+                  {
+                    "__typename": "PhotoSize",
+                    "height": 167,
+                    "width": 250,
+                    "url": "https://media-cdn.tripadvisor.com/media/photo-f/1c/40/33/42/caption.jpg"
+                  },
+                  {
+                    "__typename": "PhotoSize",
+                    "height": 367,
+                    "width": 550,
+                    "url": "https://media-cdn.tripadvisor.com/media/photo-s/1c/40/33/42/caption.jpg"
+                  },
+                  {
+                    "__typename": "PhotoSize",
+                    "height": 480,
+                    "width": 720,
+                    "url": "https://media-cdn.tripadvisor.com/media/photo-o/1c/40/33/42/caption.jpg"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "__typename": "Typeahead_RescueResultItem",
+            "documentId": "RESCUE",
+            "text": "Boston"
+          }
+        ]
+      }
+    }
+  }
