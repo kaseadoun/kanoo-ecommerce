@@ -11,10 +11,6 @@ namespace Kanoo.Models {
         public int Id { get; set; } = 0;
 
         [Required]
-        [Display(Name = "Travel Service")]
-        public int TravelServiceId { get; set; } = 0;
-
-        [Required]
         [Display(Name = "Surrounding Airport")]
         public Airport Destination { get; set; } = Airport.YYZ;
 
@@ -33,10 +29,5 @@ namespace Kanoo.Models {
 
         [Required]
         public int Children { get; set; } = 0;
-
-        [ForeignKey("TravelServiceId")]
-        // Creates the association to departments 
-        // Allows a department to be stored in an instance of a product
-        public virtual TravelService? Department { get; set; }
     }
 }
