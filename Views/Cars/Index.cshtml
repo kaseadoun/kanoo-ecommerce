@@ -9,7 +9,7 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+@* <table class="table">
     <thead>
         <tr>
             <th>
@@ -62,4 +62,17 @@
         </tr>
 }
     </tbody>
-</table>
+</table> *@
+
+<div class="card-container">
+    @foreach (var item in Model) {
+        <div class="card">
+            <h4>Destination</h4>
+            <p>@Html.DisplayFor(modelItem => item.DestinationName)</p>
+            <h5>Date and Time</h5>
+            <p>@Html.DisplayFor(modelItem => item.StartDate) to @Html.DisplayFor(modelItem => item.EndDate)</p>
+            <h5>Number of Drivers</h5>
+            <p>@Html.DisplayFor(modelItem => item.NumOfDrivers)</p>
+        </div>
+    }
+</div>
