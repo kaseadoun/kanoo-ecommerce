@@ -1,0 +1,44 @@
+@{
+    ViewData["Title"] = "My Project Brief";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/brief.css" asp-append-version="true" />
+</head>
+
+<h1>@ViewData["Title"]</h1>
+
+
+@for (var i = 0; i < Model.Count; i++)
+{
+    @if (i == 0)
+    {
+        <section id="company-info">
+            <table class="table table-striped" style="width: 80%">
+                <h2>Company Info</h2>
+                @foreach (var info in Model[i])
+                {
+                    <thead>
+                        <th>@info.Key</th>
+                    </thead>
+                    <tbody>
+                        <td>@Html.Raw(info.Value)</td>
+                    </tbody>
+                }
+            </table>
+        </section>
+    }
+    else
+    {
+        <section id="proposal">
+            <h2>Proposal</h2>
+            @foreach (var info in Model[i])
+                {
+                    <div>
+                        <h3>@info.Key</h3>
+                        <p>@info.Value</p>
+                    </div>
+                }
+        </section>
+    }
+}
