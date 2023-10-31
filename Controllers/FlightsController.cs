@@ -47,6 +47,9 @@ namespace Kanoo.Controllers
         // GET: Flights/Create
         public IActionResult Create()
         {
+            ViewData["From"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
+            ViewData["To"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
+
             return View();
         }
 
@@ -63,6 +66,9 @@ namespace Kanoo.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["From"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
+            ViewData["To"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
+
             return View(flight);
         }
 
@@ -79,6 +85,9 @@ namespace Kanoo.Controllers
             {
                 return NotFound();
             }
+            ViewData["From"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
+            ViewData["To"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
+
             return View(flight);
         }
 
@@ -114,6 +123,9 @@ namespace Kanoo.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["From"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
+            ViewData["To"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
+
             return View(flight);
         }
 
