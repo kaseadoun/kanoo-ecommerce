@@ -10,7 +10,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Kanoo.Models {
 
-    public enum Airport {
+    public enum AirportCodes {
         ATL,    // Atlanta Hartsfield-jackson Intl Apt
         DXB,    // Dubai International
         HND,    // Tokyo Intl (Haneda)
@@ -33,16 +33,22 @@ namespace Kanoo.Models {
         public int Id { get; set; } = 0;
 
         [Required]
-        public Airport From { get; set; } = Airport.YYZ;
+        public AirportCodes From { get; set; } = AirportCodes.YYZ;
 
         [Required]
-        public Airport To { get; set; } = Airport.DFW;
+        public AirportCodes To { get; set; } = AirportCodes.DFW;
 
         [Required]
-        public DateTime Leave { get; set; } = DateTime.Now;
+        public DateTime StartDate { get; set; } = DateTime.Now;
 
         [Required]
-        public DateTime Return { get; set; } = DateTime.Now;
+        public DateTime EndDate { get; set; } = DateTime.Now;
+
+        [Required]
+        [Range(0.01, 999999.99)]
+        public decimal Price { get; set; } = 0.01M;
+
+        public virtual ICollection<FlightAndStay>? FlightAndStays { get; set; } = new List<FlightAndStay>();
     }
 
 }
