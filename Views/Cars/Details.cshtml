@@ -11,22 +11,28 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Destination)
+            @Html.DisplayNameFor(model => model.DestinationName)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Destination)
+            @Html.DisplayFor(model => model.DestinationName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.From)
+            @Html.DisplayNameFor(model => model.StartDate)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.From)
+            @Html.DisplayFor(model => model.StartDate)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.To)
+            @Html.DisplayNameFor(model => model.EndDate)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.To)
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TypeOfCar)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TypeOfCar)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.NumOfDrivers)
@@ -35,10 +41,10 @@
             @Html.DisplayFor(model => model.NumOfDrivers)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Department)
+            @Html.DisplayNameFor(model => model.PricePerDay)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Department.Description)
+            @Html.DisplayFor(model => model.PricePerDay)
         </dd>
     </dl>
 </div>

@@ -9,96 +9,87 @@ using Kanoo.Models;
 
 namespace Kanoo.Controllers
 {
-    public class FlightsController : Controller
+    public class DiscountsController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public FlightsController(ApplicationDbContext context)
+        public DiscountsController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Flights
+        // GET: Discounts
         public async Task<IActionResult> Index()
         {
-              return _context.Flights != null ? 
-                          View(await _context.Flights.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.Flights'  is null.");
+              return _context.Discounts != null ? 
+                          View(await _context.Discounts.ToListAsync()) :
+                          Problem("Entity set 'ApplicationDbContext.Discounts'  is null.");
         }
 
-        // GET: Flights/Details/5
+        // GET: Discounts/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Flights == null)
+            if (id == null || _context.Discounts == null)
             {
                 return NotFound();
             }
 
-            var flight = await _context.Flights
+            var discount = await _context.Discounts
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (flight == null)
+            if (discount == null)
             {
                 return NotFound();
             }
 
-            return View(flight);
+            return View(discount);
         }
 
-        // GET: Flights/Create
+        // GET: Discounts/Create
         public IActionResult Create()
         {
-            ViewData["From"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
-            ViewData["To"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
-
             return View();
         }
 
-        // POST: Flights/Create
+        // POST: Discounts/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,From,To,StartDate,EndDate,Price")] Flight flight)
+        public async Task<IActionResult> Create([Bind("Id,Description,DiscountAmount")] Discount discount)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(flight);
+                _context.Add(discount);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["From"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
-            ViewData["To"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
-
-            return View(flight);
+            return View(discount);
         }
 
-        // GET: Flights/Edit/5
+        // GET: Discounts/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Flights == null)
+            if (id == null || _context.Discounts == null)
             {
                 return NotFound();
             }
 
-            var flight = await _context.Flights.FindAsync(id);
-            if (flight == null)
+            var discount = await _context.Discounts.FindAsync(id);
+            if (discount == null)
             {
                 return NotFound();
             }
-            ViewData["From"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
-            ViewData["To"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
-
-            return View(flight);
+            return View(discount);
         }
 
-        // POST: Flights/Edit/5
+        // POST: Discounts/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,From,To,StartDate,EndDate,Price")] Flight flight)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Description,DiscountAmount")] Discount discount)
         {
-            if (id != flight.Id)
+            if (id != discount.Id)
             {
                 return NotFound();
             }
@@ -107,12 +98,12 @@ namespace Kanoo.Controllers
             {
                 try
                 {
-                    _context.Update(flight);
+                    _context.Update(discount);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!FlightExists(flight.Id))
+                    if (!DiscountExists(discount.Id))
                     {
                         return NotFound();
                     }
@@ -123,52 +114,49 @@ namespace Kanoo.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["From"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
-            ViewData["To"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
-
-            return View(flight);
+            return View(discount);
         }
 
-        // GET: Flights/Delete/5
+        // GET: Discounts/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Flights == null)
+            if (id == null || _context.Discounts == null)
             {
                 return NotFound();
             }
 
-            var flight = await _context.Flights
+            var discount = await _context.Discounts
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (flight == null)
+            if (discount == null)
             {
                 return NotFound();
             }
 
-            return View(flight);
+            return View(discount);
         }
 
-        // POST: Flights/Delete/5
+        // POST: Discounts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Flights == null)
+            if (_context.Discounts == null)
             {
-                return Problem("Entity set 'ApplicationDbContext.Flights'  is null.");
+                return Problem("Entity set 'ApplicationDbContext.Discounts'  is null.");
             }
-            var flight = await _context.Flights.FindAsync(id);
-            if (flight != null)
+            var discount = await _context.Discounts.FindAsync(id);
+            if (discount != null)
             {
-                _context.Flights.Remove(flight);
+                _context.Discounts.Remove(discount);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool FlightExists(int id)
+        private bool DiscountExists(int id)
         {
-          return (_context.Flights?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Discounts?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

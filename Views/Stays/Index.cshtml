@@ -1,14 +1,10 @@
 @model IEnumerable<Kanoo.Models.Stay>
 
 @{
-    ViewData["Title"] = "Stays";
+    ViewData["Title"] = "Index";
 }
 
-<head>
-    <link rel="stylesheet" href="~/css/stays.css" asp-append-version="true" />
-</head>
-
-<h1>Stays</h1>
+<h1>Index</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -17,13 +13,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Destination)
+                @Html.DisplayNameFor(model => model.DestinationName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Arrive)
+                @Html.DisplayNameFor(model => model.StartDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Depart)
+                @Html.DisplayNameFor(model => model.EndDate)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Rooms)
@@ -35,43 +31,42 @@
                 @Html.DisplayNameFor(model => model.Children)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Department)
+                @Html.DisplayNameFor(model => model.PricePerDay)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Destination)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Arrive)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Depart)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Rooms)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Adults)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Children)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Department.Description)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
-        }
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DestinationName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rooms)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adults)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Children)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PricePerDay)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
     </tbody>
 </table> *@
 
@@ -80,11 +75,11 @@
     {
         <div class="card">
             <h4>Surrounding Airport</h4>
-            <p>@Html.DisplayFor(modelItem => item.Destination)</p>
+            <p>@Html.DisplayFor(modelItem => item.DestinationName)</p>
             <h5>Check In</h5>
-            <p>@Html.DisplayFor(modelItem => item.Arrive)</p>
+            <p>@Html.DisplayFor(modelItem => item.StartDate)</p>
             <h5>Check Out</h5>
-            <p>@Html.DisplayFor(modelItem => item.Depart)</p>
+            <p>@Html.DisplayFor(modelItem => item.EndDate)</p>
             <div class="quantity-container">
                 <div>
                     <h6>Room(s)</h6>
@@ -99,8 +94,6 @@
                     <p>@Html.DisplayFor(modelItem => item.Children)</p>
                 </div>
             </div>
-            <h5>Department</h5>
-            <p>@Html.DisplayFor(modelItem => item.Department.Description)</p>
         </div>
     }
 </div>
