@@ -13,7 +13,10 @@ namespace Kanoo.Models {
         public DbSet<Flight> Flights { get; set; }
         public DbSet<Car> Cars { get; set; }
         public DbSet<Stay> Stays { get; set; }
-        public DbSet<Kanoo.Models.TravelService> TravelService { get; set; } = default!;
+        public DbSet<FlightAndStay> FlightAndStays { get; set; }
+        public DbSet<Airport> Airports { get; set; }
+        public DbSet<Destination> Destinations { get; set; }
+        public DbSet<Discount> Discounts { get; set; }
     }
 
 }
