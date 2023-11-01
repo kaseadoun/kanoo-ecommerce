@@ -1,4 +1,4 @@
-@model Kanoo.Models.FlightAndHotel
+@model Kanoo.Models.FlightAndStay
 
 @{
     ViewData["Title"] = "Details";
@@ -7,7 +7,7 @@
 <h1>Details</h1>
 
 <div>
-    <h4>FlightAndHotel</h4>
+    <h4>FlightAndStay</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -23,22 +23,34 @@
             @Html.DisplayFor(model => model.To)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Leave)
+            @Html.DisplayNameFor(model => model.StartDate)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Leave)
+            @Html.DisplayFor(model => model.StartDate)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Return)
+            @Html.DisplayNameFor(model => model.EndDate)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Return)
+            @Html.DisplayFor(model => model.EndDate)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Department)
+            @Html.DisplayNameFor(model => model.FlightDepartment)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Department.Description)
+            @Html.DisplayFor(model => model.FlightDepartment.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StayDepartment)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StayDepartment.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DiscountDepartment)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DiscountDepartment.Description)
         </dd>
     </dl>
 </div>

@@ -9,7 +9,6 @@ namespace Kanoo.Components.ViewComponents
         {
             var list = new List<MenuItem> {
                 new MenuItem { Controller = "Home", Action = "Index", Label = "Home"},
-                new MenuItem { Controller = "Home", Action = "TravelServices", Label = "Travel Services"},
                 new MenuItem { Controller = "Home", Action = "Privacy", Label = "Privacy"},
                 new MenuItem { Controller = "Home", Action = "Brief", Label = "Brief"}
             };

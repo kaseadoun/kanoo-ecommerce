@@ -26,26 +26,13 @@ namespace Kanoo.Models
             * DeserializeObject() will convert the JSON into an object of type API
             * Said object can then be added to the database and saved as a row
         */
+
         /// <summary>
         /// Method <c>PopulateApiTable</c> submits a GET request to the API and populates the DB with the JSON contents
         /// <para><param name="_context">_context : Represents the table of the database being worked with</param></para>
         /// <para><param name="_httpClient">_httpClient : Represents the protocol used to GET the API response</param></para>
         /// </summary>
-        public static void PopulateApiTable(ApplicationDbContext _context, HttpClient _httpClient)
-        {
-            Api data = new Api();
-            HttpResponseMessage responseMessage = _httpClient.GetAsync("https://www.timeapi.io/api/Time/current/zone?timeZone=Europe/Amsterdam").Result;
-
-            if (responseMessage.IsSuccessStatusCode)
-            {
-                string json = responseMessage.Content.ReadAsStringAsync().Result;
-                data = JsonConvert.DeserializeObject<Api>(json);
-                _context.Api.Add(data);
-                _context.SaveChanges();
-            }
-        }
-
-        public static void PopulateTravelTable(ApplicationDbContext _context, HttpClient _httpClient)
+        public static void PopulateFlightTable(ApplicationDbContext _context, HttpClient _httpClient)
         {
             // Create a secure ConfigurationBuilder() to read the API key and host from a hidden JSON
             // instead of hard-coding the values in the method
@@ -75,31 +62,28 @@ namespace Kanoo.Models
             {
                 // GET the API JSON result and pass it as a string to JsonToTravelAdvisor()
                 // JsonToTravelAdvisor() will extract all of the data we need to add to our object
-                var totalEntries = JsonToTravelAdvisor(responseMessage.Content.ReadAsStringAsync().Result);
+                var totalEntries = JsonToFlight(responseMessage.Content.ReadAsStringAsync().Result);
 
                 // Add each new object to the database
                 foreach (var entry in totalEntries) {
-                     _context.TravelAdvisor.Add(entry);
+                     _context.Flights.Add(entry);
                 }
                 _context.SaveChanges();
             }
         }
 
-        /* https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/use-dom#how-to-search-a-jsondocument-and-jsonelement-for-sub-elements
-
-        https://learn.microsoft.com/en-us/dotnet/api/system.text.json.nodes.jsonnode?view=net-7.0
+        /*  https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/use-dom#how-to-search-a-jsondocument-and-jsonelement-for-sub-elements
+            https://learn.microsoft.com/en-us/dotnet/api/system.text.json.nodes.jsonnode?view=net-7.0
             
-            * TL;DR: Turn the JSON into a DOM and navigate through it to find the values we want.
-                     Assign the values as properties of the Model we are using.
-        */
-        private static List<TravelAdvisor> JsonToTravelAdvisor(string json)
+            * TL;DR: Turn the JSON into a DOM and navigate through it to find the values we want. Assign the values as properties of the Model we are using. */
+        private static List<Flight> JsonToFlight(string json)
         {
             // JsonNode() takes a JsonObject and turns it into a DOM
             // We can access parts of data in the DOM in a very similar way to CSS/JS
             JsonNode node = JsonNode.Parse(json)!;
 
             // Create an empty list of objects to hold the data we will extract
-            List<TravelAdvisor> totalEntries = new List<TravelAdvisor>();
+            List<Flight> totalEntries = new List<Flight>();
 
             // Count how many entries were returned by the API
             int totalNodes =
@@ -108,13 +92,14 @@ namespace Kanoo.Models
             // For each entry returned by the API, make a new object representing its data
             for (var i = 0; i < totalNodes; i++)
             {
-                TravelAdvisor n = new TravelAdvisor();
+                Flight n = new Flight();
 
                 try {
-                    n.Category = node!["data"]["Typeahead_autocomplete"]["results"][i]["buCategory"].ToString();
-                    n.Description = node!["data"]["Typeahead_autocomplete"]["results"][i]["text"].ToString();
-                    n.Address = node!["data"]["Typeahead_autocomplete"]["results"][i]["text"].ToString();
-                    n.ImageUrl = node!["data"]["Typeahead_autocomplete"]["results"][i]["text"].ToString();
+                    // n.From = node!["data"]["Typeahead_autocomplete"]["results"][i]["buCategory"].ToString();
+                    // n.To = node!["data"]["Typeahead_autocomplete"]["results"][i]["text"].ToString();
+                    n.StartDate = (DateTime)node!["data"]["Typeahead_autocomplete"]["results"][i]["text"];
+                    n.EndDate = (DateTime)node!["data"]["Typeahead_autocomplete"]["results"][i]["text"];
+                    n.Price = (Decimal)node!["data"]["Typeahead_autocomplete"]["results"][i]["text"];
                     totalEntries.Add(n);
                 }
                 // If the JSON object does not have the property, catch the error and make the property null
@@ -139,7 +124,7 @@ namespace Kanoo.Models
 
             // Add each new object to the database
             foreach (var entry in totalEntries) {
-                    _context.Airport.Add(entry);
+                    _context.Airports.Add(entry);
             }
             _context.SaveChanges();
             
@@ -157,13 +142,11 @@ namespace Kanoo.Models
                 Airport n = new Airport();
 
                 try {
+                    n.IataCode = node!["airports"][i]["airportIata"].ToString();
                     n.AirportName = node!["airports"][i]["airportName"].ToString();
-                    n.AirportIata = node!["airports"][i]["airportIata"].ToString();
-                    n.City = node!["airports"][i]["city"].ToString();
-                    n.Continent = node!["airports"][i]["continent"].ToString();
-                    n.IsoCountry = node!["airports"][i]["isoCountry"].ToString();
                     totalEntries.Add(n);
                 }
+                
                 // If the JSON object does not have the property, catch the error and make the property null
                 catch (NullReferenceException e) {
                     Console.WriteLine(e.Message);

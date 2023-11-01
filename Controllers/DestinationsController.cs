@@ -9,87 +9,87 @@ using Kanoo.Models;
 
 namespace Kanoo.Controllers
 {
-    public class TravelServicesController : Controller
+    public class DestinationsController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public TravelServicesController(ApplicationDbContext context)
+        public DestinationsController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: TravelServices
+        // GET: Destinations
         public async Task<IActionResult> Index()
         {
-              return _context.TravelService != null ? 
-                          View(await _context.TravelService.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.TravelService'  is null.");
+              return _context.Destinations != null ? 
+                          View(await _context.Destinations.ToListAsync()) :
+                          Problem("Entity set 'ApplicationDbContext.Destinations'  is null.");
         }
 
-        // GET: TravelServices/Details/5
+        // GET: Destinations/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.TravelService == null)
+            if (id == null || _context.Destinations == null)
             {
                 return NotFound();
             }
 
-            var travelService = await _context.TravelService
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (travelService == null)
+            var destination = await _context.Destinations
+                .FirstOrDefaultAsync(m => m.Key == id);
+            if (destination == null)
             {
                 return NotFound();
             }
 
-            return View(travelService);
+            return View(destination);
         }
 
-        // GET: TravelServices/Create
+        // GET: Destinations/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: TravelServices/Create
+        // POST: Destinations/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Description")] TravelService travelService)
+        public async Task<IActionResult> Create([Bind("Key,City,Region,Country")] Destination destination)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(travelService);
+                _context.Add(destination);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(travelService);
+            return View(destination);
         }
 
-        // GET: TravelServices/Edit/5
+        // GET: Destinations/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.TravelService == null)
+            if (id == null || _context.Destinations == null)
             {
                 return NotFound();
             }
 
-            var travelService = await _context.TravelService.FindAsync(id);
-            if (travelService == null)
+            var destination = await _context.Destinations.FindAsync(id);
+            if (destination == null)
             {
                 return NotFound();
             }
-            return View(travelService);
+            return View(destination);
         }
 
-        // POST: TravelServices/Edit/5
+        // POST: Destinations/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description")] TravelService travelService)
+        public async Task<IActionResult> Edit(int id, [Bind("Key,City,Region,Country")] Destination destination)
         {
-            if (id != travelService.Id)
+            if (id != destination.Key)
             {
                 return NotFound();
             }
@@ -98,12 +98,12 @@ namespace Kanoo.Controllers
             {
                 try
                 {
-                    _context.Update(travelService);
+                    _context.Update(destination);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!TravelServiceExists(travelService.Id))
+                    if (!DestinationExists(destination.Key))
                     {
                         return NotFound();
                     }
@@ -114,49 +114,49 @@ namespace Kanoo.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(travelService);
+            return View(destination);
         }
 
-        // GET: TravelServices/Delete/5
+        // GET: Destinations/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.TravelService == null)
+            if (id == null || _context.Destinations == null)
             {
                 return NotFound();
             }
 
-            var travelService = await _context.TravelService
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (travelService == null)
+            var destination = await _context.Destinations
+                .FirstOrDefaultAsync(m => m.Key == id);
+            if (destination == null)
             {
                 return NotFound();
             }
 
-            return View(travelService);
+            return View(destination);
         }
 
-        // POST: TravelServices/Delete/5
+        // POST: Destinations/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.TravelService == null)
+            if (_context.Destinations == null)
             {
-                return Problem("Entity set 'ApplicationDbContext.TravelService'  is null.");
+                return Problem("Entity set 'ApplicationDbContext.Destinations'  is null.");
             }
-            var travelService = await _context.TravelService.FindAsync(id);
-            if (travelService != null)
+            var destination = await _context.Destinations.FindAsync(id);
+            if (destination != null)
             {
-                _context.TravelService.Remove(travelService);
+                _context.Destinations.Remove(destination);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool TravelServiceExists(int id)
+        private bool DestinationExists(int id)
         {
-          return (_context.TravelService?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Destinations?.Any(e => e.Key == id)).GetValueOrDefault();
         }
     }
 }

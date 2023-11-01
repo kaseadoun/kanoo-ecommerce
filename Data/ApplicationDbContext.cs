@@ -15,20 +15,10 @@ namespace Kanoo.Models
         public DbSet<Flight> Flights { get; set; }
         public DbSet<Car> Cars { get; set; }
         public DbSet<Stay> Stays { get; set; }
-        public DbSet<FlightAndHotel> FlightAndHotels { get; set; }
-        public DbSet<TravelService> TravelService { get; set; } = default!;
-        public DbSet<Api> Api { get; set; }
-        public DbSet<TravelAdvisor> TravelAdvisor { get; set; }
-        public DbSet<Airport> Airport { get; set; }
-
-        // https://learn.microsoft.com/en-us/ef/core/modeling/relationships
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            // modelBuilder.Entity<Category>()
-            //     .HasOne(s => s.Parent)
-            //     .WithMany(m => m.Children)
-            //     .HasForeignKey(e => e.ParentId);
-
-        }
+        public DbSet<FlightAndStay> FlightAndStays { get; set; }
+        public DbSet<Airport> Airports { get; set; }
+        public DbSet<Destination> Destinations { get; set; }
+        public DbSet<Discount> Discounts { get; set; }
     }
+
 }

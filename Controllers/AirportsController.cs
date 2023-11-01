@@ -21,21 +21,21 @@ namespace Kanoo.Controllers
         // GET: Airports
         public async Task<IActionResult> Index()
         {
-              return _context.Airport != null ? 
-                          View(await _context.Airport.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.Airport'  is null.");
+              return _context.Airports != null ? 
+                          View(await _context.Airports.ToListAsync()) :
+                          Problem("Entity set 'ApplicationDbContext.Airports'  is null.");
         }
 
         // GET: Airports/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Airport == null)
+            if (id == null || _context.Airports == null)
             {
                 return NotFound();
             }
 
-            var airport = await _context.Airport
-                .FirstOrDefaultAsync(m => m.AirportId == id);
+            var airport = await _context.Airports
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (airport == null)
             {
                 return NotFound();
@@ -54,12 +54,12 @@ namespace Kanoo.Controllers
         // GET: Airports/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Airport == null)
+            if (id == null || _context.Airports == null)
             {
                 return NotFound();
             }
 
-            var airport = await _context.Airport.FindAsync(id);
+            var airport = await _context.Airports.FindAsync(id);
             if (airport == null)
             {
                 return NotFound();
@@ -72,9 +72,9 @@ namespace Kanoo.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("AirportId,AirportName,AirportIata,City,Continent,IsoCountry")] Airport airport)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,IataCode,AirportName")] Airport airport)
         {
-            if (id != airport.AirportId)
+            if (id != airport.Id)
             {
                 return NotFound();
             }
@@ -88,7 +88,7 @@ namespace Kanoo.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AirportExists(airport.AirportId))
+                    if (!AirportExists(airport.Id))
                     {
                         return NotFound();
                     }
@@ -105,13 +105,13 @@ namespace Kanoo.Controllers
         // GET: Airports/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Airport == null)
+            if (id == null || _context.Airports == null)
             {
                 return NotFound();
             }
 
-            var airport = await _context.Airport
-                .FirstOrDefaultAsync(m => m.AirportId == id);
+            var airport = await _context.Airports
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (airport == null)
             {
                 return NotFound();
@@ -125,14 +125,14 @@ namespace Kanoo.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Airport == null)
+            if (_context.Airports == null)
             {
-                return Problem("Entity set 'ApplicationDbContext.Airport'  is null.");
+                return Problem("Entity set 'ApplicationDbContext.Airports'  is null.");
             }
-            var airport = await _context.Airport.FindAsync(id);
+            var airport = await _context.Airports.FindAsync(id);
             if (airport != null)
             {
-                _context.Airport.Remove(airport);
+                _context.Airports.Remove(airport);
             }
             
             await _context.SaveChangesAsync();
@@ -141,7 +141,7 @@ namespace Kanoo.Controllers
 
         private bool AirportExists(int id)
         {
-          return (_context.Airport?.Any(e => e.AirportId == id)).GetValueOrDefault();
+          return (_context.Airports?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

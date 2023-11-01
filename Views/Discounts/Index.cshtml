@@ -1,12 +1,9 @@
-@model IEnumerable<Kanoo.Models.Airport>
+@model IEnumerable<Kanoo.Models.Discount>
 
 @{
-    ViewData["Title"] = "Airports";
+    ViewData["Title"] = "Index";
 }
 
-@* 
-    WE NEED PAGINTATION!! BADLY! LOL
-*@
 <h1>Index</h1>
 
 <p>
@@ -16,10 +13,10 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.IataCode)
+                @Html.DisplayNameFor(model => model.Description)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AirportName)
+                @Html.DisplayNameFor(model => model.DiscountAmount)
             </th>
             <th></th>
         </tr>
@@ -28,10 +25,10 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.IataCode)
+                @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.AirportName)
+                @Html.DisplayFor(modelItem => item.DiscountAmount)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

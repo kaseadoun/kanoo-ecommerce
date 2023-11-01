@@ -1,10 +1,10 @@
 @model IEnumerable<Kanoo.Models.Car>
 
 @{
-    ViewData["Title"] = "Cars";
+    ViewData["Title"] = "Index";
 }
 
-<h1>Vehicles</h1>
+<h1>Index</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -13,19 +13,22 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Destination)
+                @Html.DisplayNameFor(model => model.DestinationName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.From)
+                @Html.DisplayNameFor(model => model.StartDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.To)
+                @Html.DisplayNameFor(model => model.EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypeOfCar)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.NumOfDrivers)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Department)
+                @Html.DisplayNameFor(model => model.PricePerDay)
             </th>
             <th></th>
         </tr>
@@ -34,19 +37,22 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Destination)
+                @Html.DisplayFor(modelItem => item.DestinationName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.From)
+                @Html.DisplayFor(modelItem => item.StartDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.To)
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeOfCar)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.NumOfDrivers)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Department.Description)
+                @Html.DisplayFor(modelItem => item.PricePerDay)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
@@ -62,13 +68,11 @@
     @foreach (var item in Model) {
         <div class="card">
             <h4>Destination</h4>
-            <p>@Html.DisplayFor(modelItem => item.Destination)</p>
+            <p>@Html.DisplayFor(modelItem => item.DestinationName)</p>
             <h5>Date and Time</h5>
-            <p>@Html.DisplayFor(modelItem => item.From) to @Html.DisplayFor(modelItem => item.To)</p>
+            <p>@Html.DisplayFor(modelItem => item.StartDate) to @Html.DisplayFor(modelItem => item.EndDate)</p>
             <h5>Number of Drivers</h5>
             <p>@Html.DisplayFor(modelItem => item.NumOfDrivers)</p>
-            <h5>Department</h5>
-            <p>@Html.DisplayFor(modelItem => item.Department.Description)</p>
         </div>
     }
 </div>

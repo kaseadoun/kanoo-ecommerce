@@ -21,8 +21,9 @@ namespace Kanoo.Controllers
         // GET: Flights
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Flights.Include(f => f.Department);
-            return View(await applicationDbContext.ToListAsync());
+              return _context.Flights != null ? 
+                          View(await _context.Flights.ToListAsync()) :
+                          Problem("Entity set 'ApplicationDbContext.Flights'  is null.");
         }
 
         // GET: Flights/Details/5
@@ -34,7 +35,6 @@ namespace Kanoo.Controllers
             }
 
             var flight = await _context.Flights
-                .Include(f => f.Department)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (flight == null)
             {
@@ -47,9 +47,9 @@ namespace Kanoo.Controllers
         // GET: Flights/Create
         public IActionResult Create()
         {
-            ViewData["TravelServiceId"] = new SelectList(_context.Set<TravelService>(), "Id", "Description");
-            // ViewData["From"] = new SelectList(Enum.GetValues(typeof(Airport)));
-            // ViewData["To"] = new SelectList(Enum.GetValues(typeof(Airport)));
+            ViewData["From"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
+            ViewData["To"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
+
             return View();
         }
 
@@ -58,7 +58,7 @@ namespace Kanoo.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,TravelServiceId,From,To,Leave,Return")] Flight flight)
+        public async Task<IActionResult> Create([Bind("Id,From,To,StartDate,EndDate,Price")] Flight flight)
         {
             if (ModelState.IsValid)
             {
@@ -66,9 +66,9 @@ namespace Kanoo.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TravelServiceId"] = new SelectList(_context.Set<TravelService>(), "Id", "Description", flight.TravelServiceId);
-            // ViewData["From"] = new SelectList(Enum.GetValues(typeof(Airport)));
-            // ViewData["To"] = new SelectList(Enum.GetValues(typeof(Airport)));
+            ViewData["From"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
+            ViewData["To"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
+
             return View(flight);
         }
 
@@ -85,9 +85,9 @@ namespace Kanoo.Controllers
             {
                 return NotFound();
             }
-            ViewData["TravelServiceId"] = new SelectList(_context.Set<TravelService>(), "Id", "Description", flight.TravelServiceId);
-            // ViewData["From"] = new SelectList(Enum.GetValues(typeof(Airport)));
-            // ViewData["To"] = new SelectList(Enum.GetValues(typeof(Airport)));
+            ViewData["From"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
+            ViewData["To"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
+
             return View(flight);
         }
 
@@ -96,7 +96,7 @@ namespace Kanoo.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,TravelServiceId,From,To,Leave,Return")] Flight flight)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,From,To,StartDate,EndDate,Price")] Flight flight)
         {
             if (id != flight.Id)
             {
@@ -123,9 +123,9 @@ namespace Kanoo.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TravelServiceId"] = new SelectList(_context.Set<TravelService>(), "Id", "Description", flight.TravelServiceId);
-            // ViewData["From"] = new SelectList(Enum.GetValues(typeof(Airport)));
-            // ViewData["To"] = new SelectList(Enum.GetValues(typeof(Airport)));
+            ViewData["From"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
+            ViewData["To"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
+
             return View(flight);
         }
 
@@ -138,7 +138,6 @@ namespace Kanoo.Controllers
             }
 
             var flight = await _context.Flights
-                .Include(f => f.Department)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (flight == null)
             {
