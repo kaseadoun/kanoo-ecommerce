@@ -1,0 +1,21 @@
+@model List<SidebarItem>
+
+<div class="container-fluid sticky-top" id="sidebar">
+    <div class="col-sm-auto" style="padding-top: 5em;">
+        <div class="d-flex flex-sm-column flex-row flex-nowrap align-items-center sticky-top">
+            <div class="modal-dialog modal-dialog-centered">
+                <i class="bi-person-circle h2"></i>
+            </div>
+            <ul
+                class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-left align-items-left">
+                @foreach (var menuItem in Model)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link text-light" asp-area="" asp-controller="@menuItem.Controller"
+                            asp-action="@menuItem.Action"><i class="@menuItem.Icon"></i> @menuItem.Label</a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
