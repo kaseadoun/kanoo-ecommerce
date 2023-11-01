@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace Kanoo.Models
 {
-    public class CartItems
+    public class Cart
     {
-
+        public List<CartItem> CartItems { get; set; } = new List<CartItem>();
     }
 }
