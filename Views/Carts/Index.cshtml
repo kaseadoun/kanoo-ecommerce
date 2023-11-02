@@ -1,0 +1,40 @@
+@model Kanoo.Models.Cart
+
+@{
+    ViewData["Title"] = "My Cart";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@if (Model.CartItems != null)
+{
+    <table class="table table-striped table-bordered">
+    <thead>
+        <tr>Name</tr>
+        <tr>Quantity</tr>
+        <tr>Price</tr>
+        <tr>Subtotal</tr>
+    </thead>
+
+    <tbody>
+        @foreach (var cartItem in Model.CartItems)
+            {
+                <tr>
+                    <td>@cartItem.Product.Name</td>
+                    <td>@cartItem.Quantity</td>
+                    <td>@cartItem.Product.MSRP</td>
+                    <td>
+                        @((double)(cartItem.Quantity * cartItem.Product.MSRP))
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+        <tfoot>
+            <th>Total</th>
+            <td colspan="3">
+                @(Model.CartItems.Sum(cartItem => (double)(cartItem.Quantity * cartItem.Product.MSRP)))
+            </td>
+        </tfoot>
+    </table>
+}
