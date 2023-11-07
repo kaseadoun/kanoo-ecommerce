@@ -1,0 +1,2722 @@
+{
+  "status": true,
+  "message": "Success",
+  "timestamp": 1699380263799,
+  "data": {
+    "session": {
+      "searchHash": "0a525d7790bfe5a23978dae6a978cb3d",
+      "pageLoadUid": "aa49ec1d-2ff3-409b-a0a6-58291a086a0c",
+      "searchId": "c791cf60-c0ca-46fa-8288-3414dfff637d.359"
+    },
+    "complete": true,
+    "numOfFilters": 446,
+    "totalNumResults": 446,
+    "flights": [
+      {
+        "segments": [
+          {
+            "legs": [
+              {
+                "originStationCode": "BOM",
+                "isDifferentOriginStation": false,
+                "destinationStationCode": "DEL",
+                "isDifferentDestinationStation": false,
+                "departureDateTime": "2023-11-15T11:55:00+05:30",
+                "arrivalDateTime": "2023-11-15T13:55:00+05:30",
+                "classOfService": "ECONOMY",
+                "marketingCarrierCode": "UK",
+                "operatingCarrierCode": "UK",
+                "equipmentId": "Airbus A320-100/200",
+                "amenities": [],
+                "flightNumber": 960,
+                "seatGuruEquipmentId": 0,
+                "seatGuruAirlineUrl": "",
+                "numStops": 0,
+                "distanceInKM": 1138.1091,
+                "isInternational": false,
+                "selfTransfer": false,
+                "operatingCarrier": {
+                  "locationId": 8729207,
+                  "code": "UK",
+                  "logoUrl": "https://static.tacdn.com/img2/flights/airlines/logos/100x100/Vistara.png",
+                  "displayName": "Vistara"
+                },
+                "marketingCarrier": {
+                  "locationId": 8729207,
+                  "code": "UK",
+                  "logoUrl": "https://static.tacdn.com/img2/flights/airlines/logos/100x100/Vistara.png",
+                  "displayName": "Vistara"
+                }
+              }
+            ],
+            "layovers": []
+          }
+        ],
+        "purchaseLinks": [
+          {
+            "purchaseLinkId": "Kayak|1|957",
+            "providerId": "oojo",
+            "partnerSuppliedProvider": {
+              "id": "OOJO",
+              "displayName": "oojo",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/OOJO.png?crop=false&width=166&height=62&fallback=default3.png&_v=6085ea0fed6df6b71842af94373cbb68"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 83.8,
+            "totalPricePerPassenger": 83.8,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.18994",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|957&area=FLTCenterColumn|1|1|ItinList|2|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.18994&totalPricePerPassenger=83.8"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|958",
+            "providerId": "mytrip.com",
+            "partnerSuppliedProvider": {
+              "id": "AIRTICKETS24DOTCOM",
+              "displayName": "mytrip.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/AIRTICKETS24DOTCOM.png?crop=false&width=166&height=62&fallback=default1.png&_v=1e84439f35e4558f94e874158f6a3eae"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 85.97,
+            "totalPricePerPassenger": 85.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.18995",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|958&area=FLTCenterColumn|1|1|ItinList|2|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.18995&totalPricePerPassenger=85.97"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|959",
+            "providerId": "Trip.com",
+            "partnerSuppliedProvider": {
+              "id": "CTRIPAIR",
+              "displayName": "Trip.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/CTRIPAIR.png?crop=false&width=166&height=62&fallback=default1.png&_v=6ffbb6778ab7d3ee8da1e965010b225e"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 86,
+            "totalPricePerPassenger": 86,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.18996",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|959&area=FLTCenterColumn|1|1|ItinList|2|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.18996&totalPricePerPassenger=86"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|960",
+            "providerId": "eDreams",
+            "partnerSuppliedProvider": {
+              "id": "EDREAMSAIR",
+              "displayName": "eDreams",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/EDREAMSAIR.us.png?crop=false&width=166&height=62&fallback=default2.png&_v=af0479a857c0eb142b1531d305bbf971"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 87.85,
+            "totalPricePerPassenger": 87.85,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.18997",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|960&area=FLTCenterColumn|1|1|ItinList|2|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.18997&totalPricePerPassenger=87.85"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|961",
+            "providerId": "Booking.com",
+            "partnerSuppliedProvider": {
+              "id": "BOOKINGFLIGHTS",
+              "displayName": "Booking.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/BOOKINGFLIGHTS.png?crop=false&width=166&height=62&fallback=default3.png&_v=1233faf051a0a6b9d9807846b1316f74"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 88.97,
+            "totalPricePerPassenger": 88.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.18998",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|961&area=FLTCenterColumn|1|1|ItinList|2|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.18998&totalPricePerPassenger=88.97"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|962",
+            "providerId": "Kiwi.com",
+            "partnerSuppliedProvider": {
+              "id": "SKYPICKER",
+              "displayName": "Kiwi.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/SKYPICKER.png?crop=false&width=166&height=62&fallback=default3.png&_v=0cd3e94b7e8a5f027bff27942a213709"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 89,
+            "totalPricePerPassenger": 89,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.18999",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|962&area=FLTCenterColumn|1|1|ItinList|2|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.18999&totalPricePerPassenger=89"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|963",
+            "providerId": "Vistara",
+            "partnerSuppliedProvider": {
+              "id": "UK",
+              "displayName": "Vistara",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/UK.png?crop=false&width=166&height=62&fallback=default2.png&_v=70673476ce3854369868788c913f25cc"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 90.9,
+            "totalPricePerPassenger": 90.9,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19000",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|963&area=FLTCenterColumn|1|1|ItinList|2|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19000&totalPricePerPassenger=90.9"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|964",
+            "providerId": "Gotogate",
+            "partnerSuppliedProvider": {
+              "id": "GOTOGATE",
+              "displayName": "Gotogate",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/GOTOGATE.png?crop=false&width=166&height=62&fallback=default3.png&_v=a29de71af6666a1a11e42eb0b5f7f84a"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 90.97,
+            "totalPricePerPassenger": 90.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19001",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|964&area=FLTCenterColumn|1|1|ItinList|2|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19001&totalPricePerPassenger=90.97"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|965",
+            "providerId": "Priceline",
+            "partnerSuppliedProvider": {
+              "id": "PRICELINEFLIGHTS",
+              "displayName": "Priceline",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/PRICELINEFLIGHTS.png?crop=false&width=166&height=62&fallback=default3.png&_v=b3e81884c7678f954cce1ed2c441273a"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 95.9,
+            "totalPricePerPassenger": 95.9,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19002",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|965&area=FLTCenterColumn|1|1|ItinList|2|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19002&totalPricePerPassenger=95.9"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|966",
+            "providerId": "OneTravel",
+            "partnerSuppliedProvider": {
+              "id": "ONETRAVEL",
+              "displayName": "OneTravel",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/ONETRAVEL.png?crop=false&width=166&height=62&fallback=default3.png&_v=a4f427102d3cc3ea60270dabc29e547e"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 102.73,
+            "totalPricePerPassenger": 102.73,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19003",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|966&area=FLTCenterColumn|1|1|ItinList|2|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19003&totalPricePerPassenger=102.73"
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "legs": [
+              {
+                "originStationCode": "BOM",
+                "isDifferentOriginStation": false,
+                "destinationStationCode": "DEL",
+                "isDifferentDestinationStation": false,
+                "departureDateTime": "2023-11-15T19:10:00+05:30",
+                "arrivalDateTime": "2023-11-15T21:10:00+05:30",
+                "classOfService": "ECONOMY",
+                "marketingCarrierCode": "UK",
+                "operatingCarrierCode": "UK",
+                "equipmentId": "Airbus A321-100/200",
+                "amenities": [],
+                "flightNumber": 938,
+                "seatGuruEquipmentId": 0,
+                "seatGuruAirlineUrl": "",
+                "numStops": 0,
+                "distanceInKM": 1138.1091,
+                "isInternational": false,
+                "selfTransfer": false,
+                "operatingCarrier": {
+                  "locationId": 8729207,
+                  "code": "UK",
+                  "logoUrl": "https://static.tacdn.com/img2/flights/airlines/logos/100x100/Vistara.png",
+                  "displayName": "Vistara"
+                },
+                "marketingCarrier": {
+                  "locationId": 8729207,
+                  "code": "UK",
+                  "logoUrl": "https://static.tacdn.com/img2/flights/airlines/logos/100x100/Vistara.png",
+                  "displayName": "Vistara"
+                }
+              }
+            ],
+            "layovers": []
+          }
+        ],
+        "purchaseLinks": [
+          {
+            "purchaseLinkId": "Kayak|1|449",
+            "providerId": "oojo",
+            "partnerSuppliedProvider": {
+              "id": "OOJO",
+              "displayName": "oojo",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/OOJO.png?crop=false&width=166&height=62&fallback=default3.png&_v=6085ea0fed6df6b71842af94373cbb68"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 83.8,
+            "totalPricePerPassenger": 83.8,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19004",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|449&area=FLTCenterColumn|1|1|ItinList|3|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19004&totalPricePerPassenger=83.8"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|450",
+            "providerId": "mytrip.com",
+            "partnerSuppliedProvider": {
+              "id": "AIRTICKETS24DOTCOM",
+              "displayName": "mytrip.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/AIRTICKETS24DOTCOM.png?crop=false&width=166&height=62&fallback=default1.png&_v=1e84439f35e4558f94e874158f6a3eae"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 85.97,
+            "totalPricePerPassenger": 85.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19005",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|450&area=FLTCenterColumn|1|1|ItinList|3|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19005&totalPricePerPassenger=85.97"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|451",
+            "providerId": "Trip.com",
+            "partnerSuppliedProvider": {
+              "id": "CTRIPAIR",
+              "displayName": "Trip.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/CTRIPAIR.png?crop=false&width=166&height=62&fallback=default1.png&_v=6ffbb6778ab7d3ee8da1e965010b225e"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 86,
+            "totalPricePerPassenger": 86,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19006",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|451&area=FLTCenterColumn|1|1|ItinList|3|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19006&totalPricePerPassenger=86"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|452",
+            "providerId": "eDreams",
+            "partnerSuppliedProvider": {
+              "id": "EDREAMSAIR",
+              "displayName": "eDreams",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/EDREAMSAIR.us.png?crop=false&width=166&height=62&fallback=default2.png&_v=af0479a857c0eb142b1531d305bbf971"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 87.85,
+            "totalPricePerPassenger": 87.85,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19007",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|452&area=FLTCenterColumn|1|1|ItinList|3|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19007&totalPricePerPassenger=87.85"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|453",
+            "providerId": "Booking.com",
+            "partnerSuppliedProvider": {
+              "id": "BOOKINGFLIGHTS",
+              "displayName": "Booking.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/BOOKINGFLIGHTS.png?crop=false&width=166&height=62&fallback=default3.png&_v=1233faf051a0a6b9d9807846b1316f74"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 88.97,
+            "totalPricePerPassenger": 88.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19008",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|453&area=FLTCenterColumn|1|1|ItinList|3|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19008&totalPricePerPassenger=88.97"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|454",
+            "providerId": "Kiwi.com",
+            "partnerSuppliedProvider": {
+              "id": "SKYPICKER",
+              "displayName": "Kiwi.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/SKYPICKER.png?crop=false&width=166&height=62&fallback=default3.png&_v=0cd3e94b7e8a5f027bff27942a213709"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 89,
+            "totalPricePerPassenger": 89,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19009",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|454&area=FLTCenterColumn|1|1|ItinList|3|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19009&totalPricePerPassenger=89"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|455",
+            "providerId": "Gotogate",
+            "partnerSuppliedProvider": {
+              "id": "GOTOGATE",
+              "displayName": "Gotogate",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/GOTOGATE.png?crop=false&width=166&height=62&fallback=default3.png&_v=a29de71af6666a1a11e42eb0b5f7f84a"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 90.97,
+            "totalPricePerPassenger": 90.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19010",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|455&area=FLTCenterColumn|1|1|ItinList|3|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19010&totalPricePerPassenger=90.97"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|456",
+            "providerId": "Priceline",
+            "partnerSuppliedProvider": {
+              "id": "PRICELINEFLIGHTS",
+              "displayName": "Priceline",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/PRICELINEFLIGHTS.png?crop=false&width=166&height=62&fallback=default3.png&_v=b3e81884c7678f954cce1ed2c441273a"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 95.9,
+            "totalPricePerPassenger": 95.9,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19011",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|456&area=FLTCenterColumn|1|1|ItinList|3|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19011&totalPricePerPassenger=95.9"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|457",
+            "providerId": "OneTravel",
+            "partnerSuppliedProvider": {
+              "id": "ONETRAVEL",
+              "displayName": "OneTravel",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/ONETRAVEL.png?crop=false&width=166&height=62&fallback=default3.png&_v=a4f427102d3cc3ea60270dabc29e547e"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 102.73,
+            "totalPricePerPassenger": 102.73,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19012",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|457&area=FLTCenterColumn|1|1|ItinList|3|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19012&totalPricePerPassenger=102.73"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|458",
+            "providerId": "Vistara",
+            "partnerSuppliedProvider": {
+              "id": "UK",
+              "displayName": "Vistara",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/UK.png?crop=false&width=166&height=62&fallback=default2.png&_v=70673476ce3854369868788c913f25cc"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 103.5,
+            "totalPricePerPassenger": 103.5,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19013",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|458&area=FLTCenterColumn|1|1|ItinList|3|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19013&totalPricePerPassenger=103.5"
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "legs": [
+              {
+                "originStationCode": "BOM",
+                "isDifferentOriginStation": false,
+                "destinationStationCode": "DEL",
+                "isDifferentDestinationStation": false,
+                "departureDateTime": "2023-11-15T06:05:00+05:30",
+                "arrivalDateTime": "2023-11-15T08:05:00+05:30",
+                "classOfService": "ECONOMY",
+                "marketingCarrierCode": "6E",
+                "operatingCarrierCode": "6E",
+                "equipmentId": "Airbus A321neo",
+                "amenities": [],
+                "flightNumber": 762,
+                "seatGuruEquipmentId": 0,
+                "seatGuruAirlineUrl": "",
+                "numStops": 0,
+                "distanceInKM": 1138.1091,
+                "isInternational": false,
+                "selfTransfer": false,
+                "operatingCarrier": {
+                  "locationId": 8729090,
+                  "code": "6E",
+                  "logoUrl": "https://static.tacdn.com/img2/flights/airlines/logos/100x100/IndiGoAirlines.png",
+                  "displayName": "IndiGo"
+                },
+                "marketingCarrier": {
+                  "locationId": 8729090,
+                  "code": "6E",
+                  "logoUrl": "https://static.tacdn.com/img2/flights/airlines/logos/100x100/IndiGoAirlines.png",
+                  "displayName": "IndiGo"
+                }
+              }
+            ],
+            "layovers": []
+          }
+        ],
+        "purchaseLinks": [
+          {
+            "purchaseLinkId": "Kayak|1|99",
+            "providerId": "eDreams",
+            "partnerSuppliedProvider": {
+              "id": "EDREAMSAIR",
+              "displayName": "eDreams",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/EDREAMSAIR.us.png?crop=false&width=166&height=62&fallback=default2.png&_v=af0479a857c0eb142b1531d305bbf971"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 90.94,
+            "totalPricePerPassenger": 90.94,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19014",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|99&area=FLTCenterColumn|1|1|ItinList|4|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19014&totalPricePerPassenger=90.94"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|100",
+            "providerId": "Booking.com",
+            "partnerSuppliedProvider": {
+              "id": "BOOKINGFLIGHTS",
+              "displayName": "Booking.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/BOOKINGFLIGHTS.png?crop=false&width=166&height=62&fallback=default3.png&_v=1233faf051a0a6b9d9807846b1316f74"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 93.97,
+            "totalPricePerPassenger": 93.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19015",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|100&area=FLTCenterColumn|1|1|ItinList|4|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19015&totalPricePerPassenger=93.97"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|101",
+            "providerId": "mytrip.com",
+            "partnerSuppliedProvider": {
+              "id": "AIRTICKETS24DOTCOM",
+              "displayName": "mytrip.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/AIRTICKETS24DOTCOM.png?crop=false&width=166&height=62&fallback=default1.png&_v=1e84439f35e4558f94e874158f6a3eae"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 93.97,
+            "totalPricePerPassenger": 93.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19016",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|101&area=FLTCenterColumn|1|1|ItinList|4|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19016&totalPricePerPassenger=93.97"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|102",
+            "providerId": "Trip.com",
+            "partnerSuppliedProvider": {
+              "id": "CTRIPAIR",
+              "displayName": "Trip.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/CTRIPAIR.png?crop=false&width=166&height=62&fallback=default1.png&_v=6ffbb6778ab7d3ee8da1e965010b225e"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 95,
+            "totalPricePerPassenger": 95,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19017",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|102&area=FLTCenterColumn|1|1|ItinList|4|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19017&totalPricePerPassenger=95"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|103",
+            "providerId": "Kiwi.com",
+            "partnerSuppliedProvider": {
+              "id": "SKYPICKER",
+              "displayName": "Kiwi.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/SKYPICKER.png?crop=false&width=166&height=62&fallback=default3.png&_v=0cd3e94b7e8a5f027bff27942a213709"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 97,
+            "totalPricePerPassenger": 97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19018",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|103&area=FLTCenterColumn|1|1|ItinList|4|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19018&totalPricePerPassenger=97"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|104",
+            "providerId": "Gotogate",
+            "partnerSuppliedProvider": {
+              "id": "GOTOGATE",
+              "displayName": "Gotogate",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/GOTOGATE.png?crop=false&width=166&height=62&fallback=default3.png&_v=a29de71af6666a1a11e42eb0b5f7f84a"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 98.97,
+            "totalPricePerPassenger": 98.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19019",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|104&area=FLTCenterColumn|1|1|ItinList|4|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19019&totalPricePerPassenger=98.97"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|105",
+            "providerId": "Priceline",
+            "partnerSuppliedProvider": {
+              "id": "PRICELINEFLIGHTS",
+              "displayName": "Priceline",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/PRICELINEFLIGHTS.png?crop=false&width=166&height=62&fallback=default3.png&_v=b3e81884c7678f954cce1ed2c441273a"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 100.28,
+            "totalPricePerPassenger": 100.28,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19020",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|105&area=FLTCenterColumn|1|1|ItinList|4|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19020&totalPricePerPassenger=100.28"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|106",
+            "providerId": "OneTravel",
+            "partnerSuppliedProvider": {
+              "id": "ONETRAVEL",
+              "displayName": "OneTravel",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/ONETRAVEL.png?crop=false&width=166&height=62&fallback=default3.png&_v=a4f427102d3cc3ea60270dabc29e547e"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 110.71,
+            "totalPricePerPassenger": 110.71,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19021",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|106&area=FLTCenterColumn|1|1|ItinList|4|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19021&totalPricePerPassenger=110.71"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|107",
+            "providerId": "FlightNetwork",
+            "partnerSuppliedProvider": {
+              "id": "FLIGHTNETWORK",
+              "displayName": "FlightNetwork",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/FLIGHTNETWORK.png?crop=false&width=166&height=62&fallback=default1.png&_v=361ca96e2a811ecf4110c3199b46e971"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 149.97,
+            "totalPricePerPassenger": 149.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19022",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|107&area=FLTCenterColumn|1|1|ItinList|4|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19022&totalPricePerPassenger=149.97"
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "legs": [
+              {
+                "originStationCode": "BOM",
+                "isDifferentOriginStation": false,
+                "destinationStationCode": "DEL",
+                "isDifferentDestinationStation": false,
+                "departureDateTime": "2023-11-15T09:40:00+05:30",
+                "arrivalDateTime": "2023-11-15T11:40:00+05:30",
+                "classOfService": "ECONOMY",
+                "marketingCarrierCode": "SG",
+                "operatingCarrierCode": "SG",
+                "equipmentId": "Boeing 737 MAX 8",
+                "amenities": [],
+                "flightNumber": 8702,
+                "seatGuruEquipmentId": 0,
+                "seatGuruAirlineUrl": "",
+                "numStops": 0,
+                "distanceInKM": 1138.1091,
+                "isInternational": false,
+                "selfTransfer": false,
+                "operatingCarrier": {
+                  "locationId": 8728949,
+                  "code": "SG",
+                  "logoUrl": "https://static.tacdn.com/img2/flights/airlines/logos/100x100/Spicejet.png",
+                  "displayName": "SpiceJet"
+                },
+                "marketingCarrier": {
+                  "locationId": 8728949,
+                  "code": "SG",
+                  "logoUrl": "https://static.tacdn.com/img2/flights/airlines/logos/100x100/Spicejet.png",
+                  "displayName": "SpiceJet"
+                }
+              }
+            ],
+            "layovers": []
+          }
+        ],
+        "purchaseLinks": [
+          {
+            "purchaseLinkId": "Kayak|1|635",
+            "providerId": "eDreams",
+            "partnerSuppliedProvider": {
+              "id": "EDREAMSAIR",
+              "displayName": "eDreams",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/EDREAMSAIR.us.png?crop=false&width=166&height=62&fallback=default2.png&_v=af0479a857c0eb142b1531d305bbf971"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 100.92,
+            "totalPricePerPassenger": 100.92,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19023",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|635&area=FLTCenterColumn|1|1|ItinList|6|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19023&totalPricePerPassenger=100.92"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|636",
+            "providerId": "OneTravel",
+            "partnerSuppliedProvider": {
+              "id": "ONETRAVEL",
+              "displayName": "OneTravel",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/ONETRAVEL.png?crop=false&width=166&height=62&fallback=default3.png&_v=a4f427102d3cc3ea60270dabc29e547e"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 108.74,
+            "totalPricePerPassenger": 108.74,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19024",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|636&area=FLTCenterColumn|1|1|ItinList|6|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19024&totalPricePerPassenger=108.74"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|637",
+            "providerId": "Trip.com",
+            "partnerSuppliedProvider": {
+              "id": "CTRIPAIR",
+              "displayName": "Trip.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/CTRIPAIR.png?crop=false&width=166&height=62&fallback=default1.png&_v=6ffbb6778ab7d3ee8da1e965010b225e"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 109,
+            "totalPricePerPassenger": 109,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19025",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|637&area=FLTCenterColumn|1|1|ItinList|6|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19025&totalPricePerPassenger=109"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|638",
+            "providerId": "Kiwi.com",
+            "partnerSuppliedProvider": {
+              "id": "SKYPICKER",
+              "displayName": "Kiwi.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/SKYPICKER.png?crop=false&width=166&height=62&fallback=default3.png&_v=0cd3e94b7e8a5f027bff27942a213709"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 110,
+            "totalPricePerPassenger": 110,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19026",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|638&area=FLTCenterColumn|1|1|ItinList|6|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19026&totalPricePerPassenger=110"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|639",
+            "providerId": "Priceline",
+            "partnerSuppliedProvider": {
+              "id": "PRICELINEFLIGHTS",
+              "displayName": "Priceline",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/PRICELINEFLIGHTS.png?crop=false&width=166&height=62&fallback=default3.png&_v=b3e81884c7678f954cce1ed2c441273a"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 111.12,
+            "totalPricePerPassenger": 111.12,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19027",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|639&area=FLTCenterColumn|1|1|ItinList|6|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19027&totalPricePerPassenger=111.12"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|640",
+            "providerId": "Booking.com",
+            "partnerSuppliedProvider": {
+              "id": "BOOKINGFLIGHTS",
+              "displayName": "Booking.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/BOOKINGFLIGHTS.png?crop=false&width=166&height=62&fallback=default3.png&_v=1233faf051a0a6b9d9807846b1316f74"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 185.97,
+            "totalPricePerPassenger": 185.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19028",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|640&area=FLTCenterColumn|1|1|ItinList|6|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19028&totalPricePerPassenger=185.97"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|641",
+            "providerId": "mytrip.com",
+            "partnerSuppliedProvider": {
+              "id": "AIRTICKETS24DOTCOM",
+              "displayName": "mytrip.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/AIRTICKETS24DOTCOM.png?crop=false&width=166&height=62&fallback=default1.png&_v=1e84439f35e4558f94e874158f6a3eae"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 195.97,
+            "totalPricePerPassenger": 195.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19029",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|641&area=FLTCenterColumn|1|1|ItinList|6|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19029&totalPricePerPassenger=195.97"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|642",
+            "providerId": "Gotogate",
+            "partnerSuppliedProvider": {
+              "id": "GOTOGATE",
+              "displayName": "Gotogate",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/GOTOGATE.png?crop=false&width=166&height=62&fallback=default3.png&_v=a29de71af6666a1a11e42eb0b5f7f84a"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 198.97,
+            "totalPricePerPassenger": 198.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19030",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|642&area=FLTCenterColumn|1|1|ItinList|6|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19030&totalPricePerPassenger=198.97"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|643",
+            "providerId": "FlightNetwork",
+            "partnerSuppliedProvider": {
+              "id": "FLIGHTNETWORK",
+              "displayName": "FlightNetwork",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/FLIGHTNETWORK.png?crop=false&width=166&height=62&fallback=default1.png&_v=361ca96e2a811ecf4110c3199b46e971"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 241.97,
+            "totalPricePerPassenger": 241.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19031",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|643&area=FLTCenterColumn|1|1|ItinList|6|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19031&totalPricePerPassenger=241.97"
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "legs": [
+              {
+                "originStationCode": "BOM",
+                "isDifferentOriginStation": false,
+                "destinationStationCode": "DEL",
+                "isDifferentDestinationStation": false,
+                "departureDateTime": "2023-11-15T01:20:00+05:30",
+                "arrivalDateTime": "2023-11-15T03:20:00+05:30",
+                "classOfService": "ECONOMY",
+                "marketingCarrierCode": "6E",
+                "operatingCarrierCode": "6E",
+                "equipmentId": "Airbus A321neo",
+                "amenities": [],
+                "flightNumber": 2775,
+                "seatGuruEquipmentId": 0,
+                "seatGuruAirlineUrl": "",
+                "numStops": 0,
+                "distanceInKM": 1138.1091,
+                "isInternational": false,
+                "selfTransfer": false,
+                "operatingCarrier": {
+                  "locationId": 8729090,
+                  "code": "6E",
+                  "logoUrl": "https://static.tacdn.com/img2/flights/airlines/logos/100x100/IndiGoAirlines.png",
+                  "displayName": "IndiGo"
+                },
+                "marketingCarrier": {
+                  "locationId": 8729090,
+                  "code": "6E",
+                  "logoUrl": "https://static.tacdn.com/img2/flights/airlines/logos/100x100/IndiGoAirlines.png",
+                  "displayName": "IndiGo"
+                }
+              }
+            ],
+            "layovers": []
+          }
+        ],
+        "purchaseLinks": [
+          {
+            "purchaseLinkId": "Kayak|1|139",
+            "providerId": "eDreams",
+            "partnerSuppliedProvider": {
+              "id": "EDREAMSAIR",
+              "displayName": "eDreams",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/EDREAMSAIR.us.png?crop=false&width=166&height=62&fallback=default2.png&_v=af0479a857c0eb142b1531d305bbf971"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 154.41,
+            "totalPricePerPassenger": 154.41,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19032",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|139&area=FLTCenterColumn|1|1|ItinList|7|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19032&totalPricePerPassenger=154.41"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|140",
+            "providerId": "Kiwi.com",
+            "partnerSuppliedProvider": {
+              "id": "SKYPICKER",
+              "displayName": "Kiwi.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/SKYPICKER.png?crop=false&width=166&height=62&fallback=default3.png&_v=0cd3e94b7e8a5f027bff27942a213709"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 159,
+            "totalPricePerPassenger": 159,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19033",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|140&area=FLTCenterColumn|1|1|ItinList|7|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19033&totalPricePerPassenger=159"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|141",
+            "providerId": "Trip.com",
+            "partnerSuppliedProvider": {
+              "id": "CTRIPAIR",
+              "displayName": "Trip.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/CTRIPAIR.png?crop=false&width=166&height=62&fallback=default1.png&_v=6ffbb6778ab7d3ee8da1e965010b225e"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 159,
+            "totalPricePerPassenger": 159,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19034",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|141&area=FLTCenterColumn|1|1|ItinList|7|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19034&totalPricePerPassenger=159"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|142",
+            "providerId": "Booking.com",
+            "partnerSuppliedProvider": {
+              "id": "BOOKINGFLIGHTS",
+              "displayName": "Booking.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/BOOKINGFLIGHTS.png?crop=false&width=166&height=62&fallback=default3.png&_v=1233faf051a0a6b9d9807846b1316f74"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 159.97,
+            "totalPricePerPassenger": 159.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19035",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|142&area=FLTCenterColumn|1|1|ItinList|7|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19035&totalPricePerPassenger=159.97"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|143",
+            "providerId": "Priceline",
+            "partnerSuppliedProvider": {
+              "id": "PRICELINEFLIGHTS",
+              "displayName": "Priceline",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/PRICELINEFLIGHTS.png?crop=false&width=166&height=62&fallback=default3.png&_v=b3e81884c7678f954cce1ed2c441273a"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 165.56,
+            "totalPricePerPassenger": 165.56,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19036",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|143&area=FLTCenterColumn|1|1|ItinList|7|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19036&totalPricePerPassenger=165.56"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|144",
+            "providerId": "mytrip.com",
+            "partnerSuppliedProvider": {
+              "id": "AIRTICKETS24DOTCOM",
+              "displayName": "mytrip.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/AIRTICKETS24DOTCOM.png?crop=false&width=166&height=62&fallback=default1.png&_v=1e84439f35e4558f94e874158f6a3eae"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 165.97,
+            "totalPricePerPassenger": 165.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19037",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|144&area=FLTCenterColumn|1|1|ItinList|7|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19037&totalPricePerPassenger=165.97"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|145",
+            "providerId": "Gotogate",
+            "partnerSuppliedProvider": {
+              "id": "GOTOGATE",
+              "displayName": "Gotogate",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/GOTOGATE.png?crop=false&width=166&height=62&fallback=default3.png&_v=a29de71af6666a1a11e42eb0b5f7f84a"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 166.97,
+            "totalPricePerPassenger": 166.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19038",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|145&area=FLTCenterColumn|1|1|ItinList|7|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19038&totalPricePerPassenger=166.97"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|146",
+            "providerId": "OneTravel",
+            "partnerSuppliedProvider": {
+              "id": "ONETRAVEL",
+              "displayName": "OneTravel",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/ONETRAVEL.png?crop=false&width=166&height=62&fallback=default3.png&_v=a4f427102d3cc3ea60270dabc29e547e"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 174.44,
+            "totalPricePerPassenger": 174.44,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19039",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|146&area=FLTCenterColumn|1|1|ItinList|7|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19039&totalPricePerPassenger=174.44"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|147",
+            "providerId": "FlightNetwork",
+            "partnerSuppliedProvider": {
+              "id": "FLIGHTNETWORK",
+              "displayName": "FlightNetwork",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/FLIGHTNETWORK.png?crop=false&width=166&height=62&fallback=default1.png&_v=361ca96e2a811ecf4110c3199b46e971"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 220.97,
+            "totalPricePerPassenger": 220.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19040",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|147&area=FLTCenterColumn|1|1|ItinList|7|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19040&totalPricePerPassenger=220.97"
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "legs": [
+              {
+                "originStationCode": "BOM",
+                "isDifferentOriginStation": false,
+                "destinationStationCode": "DEL",
+                "isDifferentDestinationStation": false,
+                "departureDateTime": "2023-11-15T05:55:00+05:30",
+                "arrivalDateTime": "2023-11-15T07:55:00+05:30",
+                "classOfService": "ECONOMY",
+                "marketingCarrierCode": "UK",
+                "operatingCarrierCode": "UK",
+                "equipmentId": "Airbus A320-100/200",
+                "amenities": [],
+                "flightNumber": 954,
+                "seatGuruEquipmentId": 0,
+                "seatGuruAirlineUrl": "",
+                "numStops": 0,
+                "distanceInKM": 1138.1091,
+                "isInternational": false,
+                "selfTransfer": false,
+                "operatingCarrier": {
+                  "locationId": 8729207,
+                  "code": "UK",
+                  "logoUrl": "https://static.tacdn.com/img2/flights/airlines/logos/100x100/Vistara.png",
+                  "displayName": "Vistara"
+                },
+                "marketingCarrier": {
+                  "locationId": 8729207,
+                  "code": "UK",
+                  "logoUrl": "https://static.tacdn.com/img2/flights/airlines/logos/100x100/Vistara.png",
+                  "displayName": "Vistara"
+                }
+              }
+            ],
+            "layovers": []
+          }
+        ],
+        "purchaseLinks": [
+          {
+            "purchaseLinkId": "Kayak|1|1408",
+            "providerId": "oojo",
+            "partnerSuppliedProvider": {
+              "id": "OOJO",
+              "displayName": "oojo",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/OOJO.png?crop=false&width=166&height=62&fallback=default3.png&_v=6085ea0fed6df6b71842af94373cbb68"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 190.9,
+            "totalPricePerPassenger": 190.9,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19041",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|1408&area=FLTCenterColumn|1|1|ItinList|8|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19041&totalPricePerPassenger=190.9"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|1409",
+            "providerId": "eDreams",
+            "partnerSuppliedProvider": {
+              "id": "EDREAMSAIR",
+              "displayName": "eDreams",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/EDREAMSAIR.us.png?crop=false&width=166&height=62&fallback=default2.png&_v=af0479a857c0eb142b1531d305bbf971"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 193.77,
+            "totalPricePerPassenger": 193.77,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19042",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|1409&area=FLTCenterColumn|1|1|ItinList|8|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19042&totalPricePerPassenger=193.77"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|1410",
+            "providerId": "Kiwi.com",
+            "partnerSuppliedProvider": {
+              "id": "SKYPICKER",
+              "displayName": "Kiwi.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/SKYPICKER.png?crop=false&width=166&height=62&fallback=default3.png&_v=0cd3e94b7e8a5f027bff27942a213709"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 194,
+            "totalPricePerPassenger": 194,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19043",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|1410&area=FLTCenterColumn|1|1|ItinList|8|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19043&totalPricePerPassenger=194"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|1411",
+            "providerId": "Booking.com",
+            "partnerSuppliedProvider": {
+              "id": "BOOKINGFLIGHTS",
+              "displayName": "Booking.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/BOOKINGFLIGHTS.png?crop=false&width=166&height=62&fallback=default3.png&_v=1233faf051a0a6b9d9807846b1316f74"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 194.97,
+            "totalPricePerPassenger": 194.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19044",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|1411&area=FLTCenterColumn|1|1|ItinList|8|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19044&totalPricePerPassenger=194.97"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|1412",
+            "providerId": "Vistara",
+            "partnerSuppliedProvider": {
+              "id": "UK",
+              "displayName": "Vistara",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/UK.png?crop=false&width=166&height=62&fallback=default2.png&_v=70673476ce3854369868788c913f25cc"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 201.1,
+            "totalPricePerPassenger": 201.1,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19045",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|1412&area=FLTCenterColumn|1|1|ItinList|8|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19045&totalPricePerPassenger=201.1"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|1413",
+            "providerId": "mytrip.com",
+            "partnerSuppliedProvider": {
+              "id": "AIRTICKETS24DOTCOM",
+              "displayName": "mytrip.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/AIRTICKETS24DOTCOM.png?crop=false&width=166&height=62&fallback=default1.png&_v=1e84439f35e4558f94e874158f6a3eae"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 203.97,
+            "totalPricePerPassenger": 203.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19046",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|1413&area=FLTCenterColumn|1|1|ItinList|8|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19046&totalPricePerPassenger=203.97"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|1414",
+            "providerId": "Trip.com",
+            "partnerSuppliedProvider": {
+              "id": "CTRIPAIR",
+              "displayName": "Trip.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/CTRIPAIR.png?crop=false&width=166&height=62&fallback=default1.png&_v=6ffbb6778ab7d3ee8da1e965010b225e"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 204,
+            "totalPricePerPassenger": 204,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19047",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|1414&area=FLTCenterColumn|1|1|ItinList|8|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19047&totalPricePerPassenger=204"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|1415",
+            "providerId": "Gotogate",
+            "partnerSuppliedProvider": {
+              "id": "GOTOGATE",
+              "displayName": "Gotogate",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/GOTOGATE.png?crop=false&width=166&height=62&fallback=default3.png&_v=a29de71af6666a1a11e42eb0b5f7f84a"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 205.97,
+            "totalPricePerPassenger": 205.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19048",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|1415&area=FLTCenterColumn|1|1|ItinList|8|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19048&totalPricePerPassenger=205.97"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|1416",
+            "providerId": "Priceline",
+            "partnerSuppliedProvider": {
+              "id": "PRICELINEFLIGHTS",
+              "displayName": "Priceline",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/PRICELINEFLIGHTS.png?crop=false&width=166&height=62&fallback=default3.png&_v=b3e81884c7678f954cce1ed2c441273a"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 207.2,
+            "totalPricePerPassenger": 207.2,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19049",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|1416&area=FLTCenterColumn|1|1|ItinList|8|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19049&totalPricePerPassenger=207.2"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|1417",
+            "providerId": "OneTravel",
+            "partnerSuppliedProvider": {
+              "id": "ONETRAVEL",
+              "displayName": "OneTravel",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/ONETRAVEL.png?crop=false&width=166&height=62&fallback=default3.png&_v=a4f427102d3cc3ea60270dabc29e547e"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 210.2,
+            "totalPricePerPassenger": 210.2,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19050",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|1417&area=FLTCenterColumn|1|1|ItinList|8|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19050&totalPricePerPassenger=210.2"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|1418",
+            "providerId": "FlightNetwork",
+            "partnerSuppliedProvider": {
+              "id": "FLIGHTNETWORK",
+              "displayName": "FlightNetwork",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/FLIGHTNETWORK.png?crop=false&width=166&height=62&fallback=default1.png&_v=361ca96e2a811ecf4110c3199b46e971"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 247.97,
+            "totalPricePerPassenger": 247.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19051",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|1418&area=FLTCenterColumn|1|1|ItinList|8|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19051&totalPricePerPassenger=247.97"
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "legs": [
+              {
+                "originStationCode": "BOM",
+                "isDifferentOriginStation": false,
+                "destinationStationCode": "DEL",
+                "isDifferentDestinationStation": false,
+                "departureDateTime": "2023-11-15T09:40:00+05:30",
+                "arrivalDateTime": "2023-11-15T11:40:00+05:30",
+                "classOfService": "ECONOMY",
+                "marketingCarrierCode": "H1",
+                "operatingCarrierCode": "SG",
+                "equipmentId": "Boeing 737",
+                "amenities": [],
+                "flightNumber": 1809,
+                "seatGuruEquipmentId": 0,
+                "seatGuruAirlineUrl": "",
+                "numStops": 0,
+                "distanceInKM": 1138.1091,
+                "isInternational": false,
+                "selfTransfer": false,
+                "operatingCarrier": {
+                  "locationId": 8728949,
+                  "code": "SG",
+                  "logoUrl": "https://static.tacdn.com/img2/flights/airlines/logos/100x100/Spicejet.png",
+                  "displayName": "SpiceJet"
+                },
+                "marketingCarrier": {
+                  "locationId": 0,
+                  "code": "H1",
+                  "logoUrl": "https://static.tacdn.com/img2/flights/airlines/logos/100x100/HahnAir.png",
+                  "displayName": "Hahn Air"
+                }
+              }
+            ],
+            "layovers": []
+          }
+        ],
+        "purchaseLinks": [
+          {
+            "purchaseLinkId": "Kayak|1|182",
+            "providerId": "Priceline",
+            "partnerSuppliedProvider": {
+              "id": "PRICELINEFLIGHTS",
+              "displayName": "Priceline",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/PRICELINEFLIGHTS.png?crop=false&width=166&height=62&fallback=default3.png&_v=b3e81884c7678f954cce1ed2c441273a"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 254,
+            "totalPricePerPassenger": 254,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19052",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|182&area=FLTCenterColumn|1|1|ItinList|9|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19052&totalPricePerPassenger=254"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|183",
+            "providerId": "mytrip.com",
+            "partnerSuppliedProvider": {
+              "id": "AIRTICKETS24DOTCOM",
+              "displayName": "mytrip.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/AIRTICKETS24DOTCOM.png?crop=false&width=166&height=62&fallback=default1.png&_v=1e84439f35e4558f94e874158f6a3eae"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 257.97,
+            "totalPricePerPassenger": 257.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19053",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|183&area=FLTCenterColumn|1|1|ItinList|9|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19053&totalPricePerPassenger=257.97"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|184",
+            "providerId": "Gotogate",
+            "partnerSuppliedProvider": {
+              "id": "GOTOGATE",
+              "displayName": "Gotogate",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/GOTOGATE.png?crop=false&width=166&height=62&fallback=default3.png&_v=a29de71af6666a1a11e42eb0b5f7f84a"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 258.97,
+            "totalPricePerPassenger": 258.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19054",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|184&area=FLTCenterColumn|1|1|ItinList|9|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19054&totalPricePerPassenger=258.97"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|185",
+            "providerId": "FlightNetwork",
+            "partnerSuppliedProvider": {
+              "id": "FLIGHTNETWORK",
+              "displayName": "FlightNetwork",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/FLIGHTNETWORK.png?crop=false&width=166&height=62&fallback=default1.png&_v=361ca96e2a811ecf4110c3199b46e971"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 300.97,
+            "totalPricePerPassenger": 300.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19055",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|185&area=FLTCenterColumn|1|1|ItinList|9|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19055&totalPricePerPassenger=300.97"
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "legs": [
+              {
+                "originStationCode": "BOM",
+                "isDifferentOriginStation": false,
+                "destinationStationCode": "DEL",
+                "isDifferentDestinationStation": false,
+                "departureDateTime": "2023-11-15T21:15:00+05:30",
+                "arrivalDateTime": "2023-11-15T23:20:00+05:30",
+                "classOfService": "ECONOMY",
+                "marketingCarrierCode": "6E",
+                "operatingCarrierCode": "6E",
+                "equipmentId": "Airbus A321neo",
+                "amenities": [],
+                "flightNumber": 102,
+                "seatGuruEquipmentId": 0,
+                "seatGuruAirlineUrl": "",
+                "numStops": 0,
+                "distanceInKM": 1138.1091,
+                "isInternational": false,
+                "selfTransfer": false,
+                "operatingCarrier": {
+                  "locationId": 8729090,
+                  "code": "6E",
+                  "logoUrl": "https://static.tacdn.com/img2/flights/airlines/logos/100x100/IndiGoAirlines.png",
+                  "displayName": "IndiGo"
+                },
+                "marketingCarrier": {
+                  "locationId": 8729090,
+                  "code": "6E",
+                  "logoUrl": "https://static.tacdn.com/img2/flights/airlines/logos/100x100/IndiGoAirlines.png",
+                  "displayName": "IndiGo"
+                }
+              }
+            ],
+            "layovers": []
+          }
+        ],
+        "purchaseLinks": [
+          {
+            "purchaseLinkId": "Kayak|1|1222",
+            "providerId": "eDreams",
+            "partnerSuppliedProvider": {
+              "id": "EDREAMSAIR",
+              "displayName": "eDreams",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/EDREAMSAIR.us.png?crop=false&width=166&height=62&fallback=default2.png&_v=af0479a857c0eb142b1531d305bbf971"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 92.25,
+            "totalPricePerPassenger": 92.25,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19056",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|1222&area=FLTCenterColumn|1|1|ItinList|10|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19056&totalPricePerPassenger=92.25"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|1223",
+            "providerId": "Trip.com",
+            "partnerSuppliedProvider": {
+              "id": "CTRIPAIR",
+              "displayName": "Trip.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/CTRIPAIR.png?crop=false&width=166&height=62&fallback=default1.png&_v=6ffbb6778ab7d3ee8da1e965010b225e"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 94,
+            "totalPricePerPassenger": 94,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19057",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|1223&area=FLTCenterColumn|1|1|ItinList|10|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19057&totalPricePerPassenger=94"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|1224",
+            "providerId": "mytrip.com",
+            "partnerSuppliedProvider": {
+              "id": "AIRTICKETS24DOTCOM",
+              "displayName": "mytrip.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/AIRTICKETS24DOTCOM.png?crop=false&width=166&height=62&fallback=default1.png&_v=1e84439f35e4558f94e874158f6a3eae"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 94.97,
+            "totalPricePerPassenger": 94.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19058",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|1224&area=FLTCenterColumn|1|1|ItinList|10|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19058&totalPricePerPassenger=94.97"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|1225",
+            "providerId": "Kiwi.com",
+            "partnerSuppliedProvider": {
+              "id": "SKYPICKER",
+              "displayName": "Kiwi.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/SKYPICKER.png?crop=false&width=166&height=62&fallback=default3.png&_v=0cd3e94b7e8a5f027bff27942a213709"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 95,
+            "totalPricePerPassenger": 95,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19059",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|1225&area=FLTCenterColumn|1|1|ItinList|10|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19059&totalPricePerPassenger=95"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|1226",
+            "providerId": "Booking.com",
+            "partnerSuppliedProvider": {
+              "id": "BOOKINGFLIGHTS",
+              "displayName": "Booking.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/BOOKINGFLIGHTS.png?crop=false&width=166&height=62&fallback=default3.png&_v=1233faf051a0a6b9d9807846b1316f74"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 95.97,
+            "totalPricePerPassenger": 95.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19060",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|1226&area=FLTCenterColumn|1|1|ItinList|10|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19060&totalPricePerPassenger=95.97"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|1227",
+            "providerId": "Gotogate",
+            "partnerSuppliedProvider": {
+              "id": "GOTOGATE",
+              "displayName": "Gotogate",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/GOTOGATE.png?crop=false&width=166&height=62&fallback=default3.png&_v=a29de71af6666a1a11e42eb0b5f7f84a"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 99.97,
+            "totalPricePerPassenger": 99.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19061",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|1227&area=FLTCenterColumn|1|1|ItinList|10|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19061&totalPricePerPassenger=99.97"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|1228",
+            "providerId": "Priceline",
+            "partnerSuppliedProvider": {
+              "id": "PRICELINEFLIGHTS",
+              "displayName": "Priceline",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/PRICELINEFLIGHTS.png?crop=false&width=166&height=62&fallback=default3.png&_v=b3e81884c7678f954cce1ed2c441273a"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 101.62,
+            "totalPricePerPassenger": 101.62,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19062",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|1228&area=FLTCenterColumn|1|1|ItinList|10|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19062&totalPricePerPassenger=101.62"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|1229",
+            "providerId": "OneTravel",
+            "partnerSuppliedProvider": {
+              "id": "ONETRAVEL",
+              "displayName": "OneTravel",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/ONETRAVEL.png?crop=false&width=166&height=62&fallback=default3.png&_v=a4f427102d3cc3ea60270dabc29e547e"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 108.11,
+            "totalPricePerPassenger": 108.11,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19063",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|1229&area=FLTCenterColumn|1|1|ItinList|10|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19063&totalPricePerPassenger=108.11"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|1230",
+            "providerId": "FlightNetwork",
+            "partnerSuppliedProvider": {
+              "id": "FLIGHTNETWORK",
+              "displayName": "FlightNetwork",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/FLIGHTNETWORK.png?crop=false&width=166&height=62&fallback=default1.png&_v=361ca96e2a811ecf4110c3199b46e971"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 150.97,
+            "totalPricePerPassenger": 150.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19064",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|1230&area=FLTCenterColumn|1|1|ItinList|10|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19064&totalPricePerPassenger=150.97"
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "legs": [
+              {
+                "originStationCode": "BOM",
+                "isDifferentOriginStation": false,
+                "destinationStationCode": "DEL",
+                "isDifferentDestinationStation": false,
+                "departureDateTime": "2023-11-15T07:00:00+05:30",
+                "arrivalDateTime": "2023-11-15T09:05:00+05:30",
+                "classOfService": "ECONOMY",
+                "marketingCarrierCode": "6E",
+                "operatingCarrierCode": "6E",
+                "equipmentId": "Airbus A321neo",
+                "amenities": [],
+                "flightNumber": 301,
+                "seatGuruEquipmentId": 0,
+                "seatGuruAirlineUrl": "",
+                "numStops": 0,
+                "distanceInKM": 1138.1091,
+                "isInternational": false,
+                "selfTransfer": false,
+                "operatingCarrier": {
+                  "locationId": 8729090,
+                  "code": "6E",
+                  "logoUrl": "https://static.tacdn.com/img2/flights/airlines/logos/100x100/IndiGoAirlines.png",
+                  "displayName": "IndiGo"
+                },
+                "marketingCarrier": {
+                  "locationId": 8729090,
+                  "code": "6E",
+                  "logoUrl": "https://static.tacdn.com/img2/flights/airlines/logos/100x100/IndiGoAirlines.png",
+                  "displayName": "IndiGo"
+                }
+              }
+            ],
+            "layovers": []
+          }
+        ],
+        "purchaseLinks": [
+          {
+            "purchaseLinkId": "Kayak|1|626",
+            "providerId": "eDreams",
+            "partnerSuppliedProvider": {
+              "id": "EDREAMSAIR",
+              "displayName": "eDreams",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/EDREAMSAIR.us.png?crop=false&width=166&height=62&fallback=default2.png&_v=af0479a857c0eb142b1531d305bbf971"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 101.37,
+            "totalPricePerPassenger": 101.37,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19065",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|626&area=FLTCenterColumn|1|1|ItinList|12|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19065&totalPricePerPassenger=101.37"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|627",
+            "providerId": "mytrip.com",
+            "partnerSuppliedProvider": {
+              "id": "AIRTICKETS24DOTCOM",
+              "displayName": "mytrip.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/AIRTICKETS24DOTCOM.png?crop=false&width=166&height=62&fallback=default1.png&_v=1e84439f35e4558f94e874158f6a3eae"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 103.97,
+            "totalPricePerPassenger": 103.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19066",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|627&area=FLTCenterColumn|1|1|ItinList|12|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19066&totalPricePerPassenger=103.97"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|628",
+            "providerId": "Booking.com",
+            "partnerSuppliedProvider": {
+              "id": "BOOKINGFLIGHTS",
+              "displayName": "Booking.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/BOOKINGFLIGHTS.png?crop=false&width=166&height=62&fallback=default3.png&_v=1233faf051a0a6b9d9807846b1316f74"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 104.97,
+            "totalPricePerPassenger": 104.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19067",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|628&area=FLTCenterColumn|1|1|ItinList|12|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19067&totalPricePerPassenger=104.97"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|629",
+            "providerId": "Trip.com",
+            "partnerSuppliedProvider": {
+              "id": "CTRIPAIR",
+              "displayName": "Trip.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/CTRIPAIR.png?crop=false&width=166&height=62&fallback=default1.png&_v=6ffbb6778ab7d3ee8da1e965010b225e"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 105,
+            "totalPricePerPassenger": 105,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19068",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|629&area=FLTCenterColumn|1|1|ItinList|12|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19068&totalPricePerPassenger=105"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|630",
+            "providerId": "Kiwi.com",
+            "partnerSuppliedProvider": {
+              "id": "SKYPICKER",
+              "displayName": "Kiwi.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/SKYPICKER.png?crop=false&width=166&height=62&fallback=default3.png&_v=0cd3e94b7e8a5f027bff27942a213709"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 108,
+            "totalPricePerPassenger": 108,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19069",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|630&area=FLTCenterColumn|1|1|ItinList|12|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19069&totalPricePerPassenger=108"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|631",
+            "providerId": "Gotogate",
+            "partnerSuppliedProvider": {
+              "id": "GOTOGATE",
+              "displayName": "Gotogate",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/GOTOGATE.png?crop=false&width=166&height=62&fallback=default3.png&_v=a29de71af6666a1a11e42eb0b5f7f84a"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 108.97,
+            "totalPricePerPassenger": 108.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19070",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|631&area=FLTCenterColumn|1|1|ItinList|12|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19070&totalPricePerPassenger=108.97"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|632",
+            "providerId": "Priceline",
+            "partnerSuppliedProvider": {
+              "id": "PRICELINEFLIGHTS",
+              "displayName": "Priceline",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/PRICELINEFLIGHTS.png?crop=false&width=166&height=62&fallback=default3.png&_v=b3e81884c7678f954cce1ed2c441273a"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 110.94,
+            "totalPricePerPassenger": 110.94,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19071",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|632&area=FLTCenterColumn|1|1|ItinList|12|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19071&totalPricePerPassenger=110.94"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|633",
+            "providerId": "OneTravel",
+            "partnerSuppliedProvider": {
+              "id": "ONETRAVEL",
+              "displayName": "OneTravel",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/ONETRAVEL.png?crop=false&width=166&height=62&fallback=default3.png&_v=a4f427102d3cc3ea60270dabc29e547e"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 121.12,
+            "totalPricePerPassenger": 121.12,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19072",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|633&area=FLTCenterColumn|1|1|ItinList|12|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19072&totalPricePerPassenger=121.12"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|634",
+            "providerId": "FlightNetwork",
+            "partnerSuppliedProvider": {
+              "id": "FLIGHTNETWORK",
+              "displayName": "FlightNetwork",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/FLIGHTNETWORK.png?crop=false&width=166&height=62&fallback=default1.png&_v=361ca96e2a811ecf4110c3199b46e971"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 159.97,
+            "totalPricePerPassenger": 159.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19073",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|634&area=FLTCenterColumn|1|1|ItinList|12|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19073&totalPricePerPassenger=159.97"
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "legs": [
+              {
+                "originStationCode": "BOM",
+                "isDifferentOriginStation": false,
+                "destinationStationCode": "DEL",
+                "isDifferentDestinationStation": false,
+                "departureDateTime": "2023-11-15T08:30:00+05:30",
+                "arrivalDateTime": "2023-11-15T10:35:00+05:30",
+                "classOfService": "ECONOMY",
+                "marketingCarrierCode": "6E",
+                "operatingCarrierCode": "6E",
+                "equipmentId": "Airbus A321neo",
+                "amenities": [],
+                "flightNumber": 355,
+                "seatGuruEquipmentId": 0,
+                "seatGuruAirlineUrl": "",
+                "numStops": 0,
+                "distanceInKM": 1138.1091,
+                "isInternational": false,
+                "selfTransfer": false,
+                "operatingCarrier": {
+                  "locationId": 8729090,
+                  "code": "6E",
+                  "logoUrl": "https://static.tacdn.com/img2/flights/airlines/logos/100x100/IndiGoAirlines.png",
+                  "displayName": "IndiGo"
+                },
+                "marketingCarrier": {
+                  "locationId": 8729090,
+                  "code": "6E",
+                  "logoUrl": "https://static.tacdn.com/img2/flights/airlines/logos/100x100/IndiGoAirlines.png",
+                  "displayName": "IndiGo"
+                }
+              }
+            ],
+            "layovers": []
+          }
+        ],
+        "purchaseLinks": [
+          {
+            "purchaseLinkId": "Kayak|1|1241",
+            "providerId": "eDreams",
+            "partnerSuppliedProvider": {
+              "id": "EDREAMSAIR",
+              "displayName": "eDreams",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/EDREAMSAIR.us.png?crop=false&width=166&height=62&fallback=default2.png&_v=af0479a857c0eb142b1531d305bbf971"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 101.37,
+            "totalPricePerPassenger": 101.37,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19074",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|1241&area=FLTCenterColumn|1|1|ItinList|13|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19074&totalPricePerPassenger=101.37"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|1242",
+            "providerId": "mytrip.com",
+            "partnerSuppliedProvider": {
+              "id": "AIRTICKETS24DOTCOM",
+              "displayName": "mytrip.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/AIRTICKETS24DOTCOM.png?crop=false&width=166&height=62&fallback=default1.png&_v=1e84439f35e4558f94e874158f6a3eae"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 103.97,
+            "totalPricePerPassenger": 103.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19075",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|1242&area=FLTCenterColumn|1|1|ItinList|13|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19075&totalPricePerPassenger=103.97"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|1243",
+            "providerId": "Booking.com",
+            "partnerSuppliedProvider": {
+              "id": "BOOKINGFLIGHTS",
+              "displayName": "Booking.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/BOOKINGFLIGHTS.png?crop=false&width=166&height=62&fallback=default3.png&_v=1233faf051a0a6b9d9807846b1316f74"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 104.97,
+            "totalPricePerPassenger": 104.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19076",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|1243&area=FLTCenterColumn|1|1|ItinList|13|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19076&totalPricePerPassenger=104.97"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|1244",
+            "providerId": "Trip.com",
+            "partnerSuppliedProvider": {
+              "id": "CTRIPAIR",
+              "displayName": "Trip.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/CTRIPAIR.png?crop=false&width=166&height=62&fallback=default1.png&_v=6ffbb6778ab7d3ee8da1e965010b225e"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 105,
+            "totalPricePerPassenger": 105,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19077",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|1244&area=FLTCenterColumn|1|1|ItinList|13|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19077&totalPricePerPassenger=105"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|1245",
+            "providerId": "Kiwi.com",
+            "partnerSuppliedProvider": {
+              "id": "SKYPICKER",
+              "displayName": "Kiwi.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/SKYPICKER.png?crop=false&width=166&height=62&fallback=default3.png&_v=0cd3e94b7e8a5f027bff27942a213709"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 108,
+            "totalPricePerPassenger": 108,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19078",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|1245&area=FLTCenterColumn|1|1|ItinList|13|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19078&totalPricePerPassenger=108"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|1246",
+            "providerId": "Gotogate",
+            "partnerSuppliedProvider": {
+              "id": "GOTOGATE",
+              "displayName": "Gotogate",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/GOTOGATE.png?crop=false&width=166&height=62&fallback=default3.png&_v=a29de71af6666a1a11e42eb0b5f7f84a"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 108.97,
+            "totalPricePerPassenger": 108.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19079",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|1246&area=FLTCenterColumn|1|1|ItinList|13|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19079&totalPricePerPassenger=108.97"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|1247",
+            "providerId": "Priceline",
+            "partnerSuppliedProvider": {
+              "id": "PRICELINEFLIGHTS",
+              "displayName": "Priceline",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/PRICELINEFLIGHTS.png?crop=false&width=166&height=62&fallback=default3.png&_v=b3e81884c7678f954cce1ed2c441273a"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 110.94,
+            "totalPricePerPassenger": 110.94,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19080",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|1247&area=FLTCenterColumn|1|1|ItinList|13|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19080&totalPricePerPassenger=110.94"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|1248",
+            "providerId": "OneTravel",
+            "partnerSuppliedProvider": {
+              "id": "ONETRAVEL",
+              "displayName": "OneTravel",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/ONETRAVEL.png?crop=false&width=166&height=62&fallback=default3.png&_v=a4f427102d3cc3ea60270dabc29e547e"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 121.12,
+            "totalPricePerPassenger": 121.12,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19081",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|1248&area=FLTCenterColumn|1|1|ItinList|13|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19081&totalPricePerPassenger=121.12"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|1249",
+            "providerId": "FlightNetwork",
+            "partnerSuppliedProvider": {
+              "id": "FLIGHTNETWORK",
+              "displayName": "FlightNetwork",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/FLIGHTNETWORK.png?crop=false&width=166&height=62&fallback=default1.png&_v=361ca96e2a811ecf4110c3199b46e971"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 159.97,
+            "totalPricePerPassenger": 159.97,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19082",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|1249&area=FLTCenterColumn|1|1|ItinList|13|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19082&totalPricePerPassenger=159.97"
+          }
+        ]
+      },
+      {
+        "segments": [
+          {
+            "legs": [
+              {
+                "originStationCode": "BOM",
+                "isDifferentOriginStation": false,
+                "destinationStationCode": "DEL",
+                "isDifferentDestinationStation": false,
+                "departureDateTime": "2023-11-15T18:45:00+05:30",
+                "arrivalDateTime": "2023-11-15T20:50:00+05:30",
+                "classOfService": "ECONOMY",
+                "marketingCarrierCode": "QP",
+                "operatingCarrierCode": "QP",
+                "equipmentId": "Airbus A320-100/200",
+                "amenities": [],
+                "flightNumber": 1120,
+                "seatGuruEquipmentId": 0,
+                "seatGuruAirlineUrl": "",
+                "numStops": 0,
+                "distanceInKM": 1138.1091,
+                "isInternational": false,
+                "selfTransfer": false,
+                "operatingCarrier": {
+                  "locationId": 0,
+                  "code": "QP",
+                  "logoUrl": "https://static.tacdn.com/img2/flights/airlines/logos/100x100/api_default.png",
+                  "displayName": "Starlight Airline"
+                },
+                "marketingCarrier": {
+                  "locationId": 0,
+                  "code": "QP",
+                  "logoUrl": "https://static.tacdn.com/img2/flights/airlines/logos/100x100/api_default.png",
+                  "displayName": "Starlight Airline"
+                }
+              }
+            ],
+            "layovers": []
+          }
+        ],
+        "purchaseLinks": [
+          {
+            "purchaseLinkId": "Kayak|1|414",
+            "providerId": "Kiwi.com",
+            "partnerSuppliedProvider": {
+              "id": "SKYPICKER",
+              "displayName": "Kiwi.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/SKYPICKER.png?crop=false&width=166&height=62&fallback=default3.png&_v=0cd3e94b7e8a5f027bff27942a213709"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 102,
+            "totalPricePerPassenger": 102,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19083",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|414&area=FLTCenterColumn|1|1|ItinList|14|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19083&totalPricePerPassenger=102"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|415",
+            "providerId": "Trip.com",
+            "partnerSuppliedProvider": {
+              "id": "CTRIPAIR",
+              "displayName": "Trip.com",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/CTRIPAIR.png?crop=false&width=166&height=62&fallback=default1.png&_v=6ffbb6778ab7d3ee8da1e965010b225e"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 103,
+            "totalPricePerPassenger": 103,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19084",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|415&area=FLTCenterColumn|1|1|ItinList|14|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19084&totalPricePerPassenger=103"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|416",
+            "providerId": "eDreams",
+            "partnerSuppliedProvider": {
+              "id": "EDREAMSAIR",
+              "displayName": "eDreams",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/EDREAMSAIR.us.png?crop=false&width=166&height=62&fallback=default2.png&_v=af0479a857c0eb142b1531d305bbf971"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 110.6,
+            "totalPricePerPassenger": 110.6,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19085",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|416&area=FLTCenterColumn|1|1|ItinList|14|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19085&totalPricePerPassenger=110.6"
+          },
+          {
+            "purchaseLinkId": "Kayak|1|417",
+            "providerId": "OneTravel",
+            "partnerSuppliedProvider": {
+              "id": "ONETRAVEL",
+              "displayName": "OneTravel",
+              "logoUrl": "https://content.r9cdn.net/rimg/provider-logos/airlines/h/ONETRAVEL.png?crop=false&width=166&height=62&fallback=default3.png&_v=a4f427102d3cc3ea60270dabc29e547e"
+            },
+            "commerceName": "KayakFlightsMeta",
+            "currency": "USD",
+            "originalCurrency": "USD",
+            "seatAvailability": 0,
+            "taxesAndFees": 0,
+            "taxesAndFeesPerPassenger": 0,
+            "totalPrice": 110.72,
+            "totalPricePerPassenger": 110.72,
+            "fareBasisCodes": [],
+            "containedPurchaseLinks": [],
+            "impressionId": "7acf935d-4675-4821-82a6-a69bd4796ceb.19086",
+            "partnerData": {},
+            "isPaid": false,
+            "fareAttributesList": [],
+            "url": "https://www.tripadvisor.com/CheapFlightsPartnerHandoff?searchHash=0a525d7790bfe5a23978dae6a978cb3d&provider=Kayak|1|417&area=FLTCenterColumn|1|1|ItinList|14|Meta_ItineraryPrice&resultsServlet=CheapFlightsSearchResults&handoffPlatform=desktop&impressionId=7acf935d-4675-4821-82a6-a69bd4796ceb.19086&totalPricePerPassenger=110.72"
+          }
+        ]
+      }
+    ]
+  }
+}

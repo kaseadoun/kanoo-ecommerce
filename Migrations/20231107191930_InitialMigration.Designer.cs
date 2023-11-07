@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Kanoo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231031035402_InitialDatabaseRestructure")]
-    partial class InitialDatabaseRestructure
+    [Migration("20231107191930_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -49,8 +49,9 @@ namespace Kanoo.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("DestinationName")
-                        .HasColumnType("int");
+                    b.Property<string>("DestinationName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime(6)");
@@ -124,22 +125,43 @@ namespace Kanoo.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("EndDate")
+                    b.Property<DateTime>("Arrival")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int>("From")
+                    b.Property<int>("ArrivalAirportId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Departure")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("DepartureAirportId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("From")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("NumOfAdults")
+                        .HasColumnType("int");
+
+                    b.Property<int>("NumOfSeniors")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<DateTime>("StartDate")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<int>("To")
+                    b.Property<int>("ServiceClass")
                         .HasColumnType("int");
 
+                    b.Property<string>("To")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("ArrivalAirportId");
+
+                    b.HasIndex("DepartureAirportId");
 
                     b.ToTable("Flights");
                 });
@@ -159,8 +181,9 @@ namespace Kanoo.Migrations
                     b.Property<int>("FlightId")
                         .HasColumnType("int");
 
-                    b.Property<int>("From")
-                        .HasColumnType("int");
+                    b.Property<string>("From")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime(6)");
@@ -168,8 +191,9 @@ namespace Kanoo.Migrations
                     b.Property<int>("StayId")
                         .HasColumnType("int");
 
-                    b.Property<int>("To")
-                        .HasColumnType("int");
+                    b.Property<string>("To")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
@@ -194,8 +218,9 @@ namespace Kanoo.Migrations
                     b.Property<int>("Children")
                         .HasColumnType("int");
 
-                    b.Property<int>("DestinationName")
-                        .HasColumnType("int");
+                    b.Property<string>("DestinationName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime(6)");
@@ -212,6 +237,25 @@ namespace Kanoo.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Stays");
+                });
+
+            modelBuilder.Entity("Kanoo.Models.Flight", b =>
+                {
+                    b.HasOne("Kanoo.Models.Airport", "ArrivalAirport")
+                        .WithMany()
+                        .HasForeignKey("ArrivalAirportId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Kanoo.Models.Airport", "DepartureAirport")
+                        .WithMany()
+                        .HasForeignKey("DepartureAirportId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ArrivalAirport");
+
+                    b.Navigation("DepartureAirport");
                 });
 
             modelBuilder.Entity("Kanoo.Models.FlightAndStay", b =>

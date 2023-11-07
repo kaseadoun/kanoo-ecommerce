@@ -13,7 +13,7 @@ namespace Kanoo.Models {
 
         [Required]
         [Display(Name = "Destination")]
-        public AirportCodes DestinationName { get; set; } = AirportCodes.YYZ;
+        public string DestinationName { get; set; } = "YYZ";
 
         [Required]
         public DateTime StartDate { get; set; } = DateTime.Now;

@@ -25,10 +25,10 @@ namespace Kanoo.Models
         public int DiscountId { get; set; } = 0;
 
         [Required]
-        public AirportCodes From { get; set; } = AirportCodes.YYZ;
+        public string From { get; set; } = "YYZ";
 
         [Required]
-        public AirportCodes To { get; set; } = AirportCodes.LAX;
+        public string To { get; set; } = "LAX";
 
         [Required]
         public DateTime StartDate { get; set; } = DateTime.Now;

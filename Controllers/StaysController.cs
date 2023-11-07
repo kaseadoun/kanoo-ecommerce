@@ -47,7 +47,6 @@ namespace Kanoo.Controllers
         // GET: Stays/Create
         public IActionResult Create()
         {
-            ViewData["DestinationName"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
 
             return View();
         }
@@ -65,7 +64,6 @@ namespace Kanoo.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DestinationName"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
 
             return View(stay);
         }
@@ -83,7 +81,6 @@ namespace Kanoo.Controllers
             {
                 return NotFound();
             }
-            ViewData["DestinationName"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
 
             return View(stay);
         }
@@ -120,7 +117,6 @@ namespace Kanoo.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DestinationName"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
 
             return View(stay);
         }

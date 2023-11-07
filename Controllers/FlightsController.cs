@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -12,10 +8,12 @@ namespace Kanoo.Controllers
     public class FlightsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly HttpClient _httpClient;
 
         public FlightsController(ApplicationDbContext context)
         {
             _context = context;
+            _httpClient = new HttpClient();
         }
 
         // GET: Flights
@@ -47,31 +45,33 @@ namespace Kanoo.Controllers
         // GET: Flights/Create
         public IActionResult Create()
         {
-            ViewData["From"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
-            ViewData["To"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
-
+            ViewData["From"] = new SelectList(_context.Airports, "IataCode", "IataCode");
+            ViewData["To"] = new SelectList(_context.Airports, "IataCode", "IataCode");
+            ViewData["ServiceClass"] = new SelectList(Enum.GetValues(typeof(ServiceClass)));
             return View();
         }
 
-        // POST: Flights/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,From,To,StartDate,EndDate,Price")] Flight flight)
+        public async Task<IActionResult> Create([Bind("From,To,Arrival,Departure,NumOfAdults,NumOfSeniors,ServiceClass")] Flight flight)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(flight);
+                // Make a new object with the parameters in Bind() from the form data, and send the object with those
+                // parameters to PopulateFlightTable() to call the API
+                PopulateSqlTable.PopulateFlightTable(_context, _httpClient, flight);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["From"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
-            ViewData["To"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
 
+            // Display all of the IataCodes from the database
+            ViewData["From"] = new SelectList(_context.Airports, "IataCode", "IataCode");
+            ViewData["To"] = new SelectList(_context.Airports, "IataCode", "IataCode");
+            // Display all of the service class options from the ServiceClass enum
+            ViewData["ServiceClass"] = new SelectList(Enum.GetValues(typeof(ServiceClass)));
             return View(flight);
         }
-
+        
         // GET: Flights/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -85,8 +85,6 @@ namespace Kanoo.Controllers
             {
                 return NotFound();
             }
-            ViewData["From"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
-            ViewData["To"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
 
             return View(flight);
         }
@@ -123,8 +121,6 @@ namespace Kanoo.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["From"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
-            ViewData["To"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
 
             return View(flight);
         }

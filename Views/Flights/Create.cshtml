@@ -11,31 +11,44 @@
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
+            @*number of adults, number of seniors (65+), class (FIRST, BUSINESS, ECONOMY, PREMIUM_ECONOMY) *@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="From" class="control-label"></label>
+                @* <input asp-for="From" class="form-control" /> *@
                 <select asp-for="From" class="form-control" asp-items="ViewBag.From"></select>
                 <span asp-validation-for="From" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="To" class="control-label"></label>
+                @* <input asp-for="To" class="form-control" /> *@
                 <select asp-for="To" class="form-control" asp-items="ViewBag.To"></select>
                 <span asp-validation-for="To" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="StartDate" class="control-label"></label>
-                <input asp-for="StartDate" class="form-control" />
-                <span asp-validation-for="StartDate" class="text-danger"></span>
+                <label asp-for="Arrival" class="control-label"></label>
+                <input asp-for="Arrival" class="form-control" />
+                <span asp-validation-for="Arrival" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="EndDate" class="control-label"></label>
-                <input asp-for="EndDate" class="form-control" />
-                <span asp-validation-for="EndDate" class="text-danger"></span>
+                <label asp-for="Departure.Date" class="control-label"></label>
+                <input asp-for="Departure.Date" class="form-control" />
+                <span asp-validation-for="Departure.Date" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Price" class="control-label"></label>
-                <input asp-for="Price" class="form-control" />
-                <span asp-validation-for="Price" class="text-danger"></span>
+                <label asp-for="NumOfAdults" class="control-label"></label>
+                <input asp-for="NumOfAdults" class="form-control" />
+                <span asp-validation-for="NumOfAdults" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumOfSeniors" class="control-label"></label>
+                <input asp-for="NumOfSeniors" class="form-control" />
+                <span asp-validation-for="NumOfSeniors" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceClass" class="control-label"></label>
+                <select asp-for="ServiceClass" class="form-control" asp-items="ViewBag.ServiceClass"></select>
+                <span asp-validation-for="NumOfSeniors" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

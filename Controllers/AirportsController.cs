@@ -47,7 +47,7 @@ namespace Kanoo.Controllers
         // GET: Airports/Create
         public IActionResult Create()
         {
-            JsonToSqlTable.PopulateAirportTable(_context);
+            PopulateSqlTable.PopulateAirportTable(_context);
             return View();
         }
 
