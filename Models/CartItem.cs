@@ -12,7 +12,10 @@ namespace Kanoo.Models
         public int Quantity { get; set; }
 
         // Change the Product to our respective items.
-        // public Product Product { get; set; } = new Product();
+        public Flight Flight { get; set; } = new Flight();
+        public Stay Stay { get; set; } = new Stay();
+        public Car Car { get; set; } = new Car();
+        public FlightAndHotel FlightAndHotel { get; set; } = new FlightAndHotel();
 
     }
 }

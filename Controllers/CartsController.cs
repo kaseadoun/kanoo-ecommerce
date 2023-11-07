@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Kanoo.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Microsoft.EntityFrameworkCore;
 
 namespace Kanoo.Controllers
 {
@@ -32,18 +33,82 @@ namespace Kanoo.Controllers
             {
                 foreach (var cartItem in cart.CartItems)
                 {
-                    var product = await _context.Products
+                    var flight = await _context.Flights
                     .Include(product => product.Department)
                     .FirstOrDefaultAsync(product => product.Id == cartItem.ProductId);
 
-                    if (product != null)
+                    if (flight != null)
                     {
-                        cartItem.Product = product;
+                        cartItem.Flight = flight;
+                    }
+
+                    var car = await _context.Cars
+                    .Include(product => product.Department)
+                    .FirstOrDefaultAsync(product => product.Id == cartItem.ProductId);
+
+                    if (car != null)
+                    {
+                        cartItem.Car = car;
+                    }
+
+                    var stays = await _context.Stays
+                   .Include(product => product.Department)
+                   .FirstOrDefaultAsync(product => product.Id == cartItem.ProductId);
+
+                    if (stays != null)
+                    {
+                        cartItem.Stay = stays;
+                    }
+
+                    var flightAndHotel = await _context.FlightAndHotels
+                   .Include(product => product.Department)
+                   .FirstOrDefaultAsync(product => product.Id == cartItem.ProductId);
+
+                    if (flightAndHotel != null)
+                    {
+                        cartItem.FlightAndHotel = flightAndHotel;
                     }
                 }
             }
 
-            return View();
+            return View(cart);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddToCart(int productId, int quantity)
+        {
+            var cart = GetCart();
+
+            if (cart == null)
+            {
+                return NotFound();
+            }
+
+            var cartItem = cart.CartItems.Find(cartItem => cartItem.ProductId == productId);
+
+            // Add Flight
+            if (cartItem != null && cartItem.Flight != null)
+            {
+                cartItem.Quantity += quantity;
+            }
+            else
+            {
+                var product = await _context.Flights
+                    .FirstOrDefaultAsync(p => p.Id == productId);
+
+                if (product == null)
+                {
+                    return NotFound();
+                }
+
+                cartItem = new CartItem { ProductId = productId, Quantity = quantity, Flight = product };
+                cart.CartItems.Add(cartItem);
+            }
+
+
+            SaveCart(cart);
+
+            return RedirectToAction("Index");
         }
 
         private Cart? GetCart()

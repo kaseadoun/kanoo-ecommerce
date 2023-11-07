@@ -20,12 +20,29 @@
         @foreach (var cartItem in Model.CartItems)
             {
                 <tr>
-                    <td>@cartItem.Product.Name</td>
+                    <td>@cartItem.Flight.From</td>
+                    <td>@cartItem.Flight.To</td>
                     <td>@cartItem.Quantity</td>
-                    <td>@cartItem.Product.MSRP</td>
-                    <td>
-                        @((double)(cartItem.Quantity * cartItem.Product.MSRP))
-                    </td>
+                </tr>
+                <tr>
+                    <td>@cartItem.Stay.Destination</td>
+                    <td>@cartItem.Stay.Rooms</td>
+                    <td>@cartItem.Stay.Arrive</td>
+                    <td>@cartItem.Stay.Depart</td>
+                    <td>@cartItem.Stay.Adults</td>
+                    <td>@cartItem.Stay.Children</td>
+                </tr>
+                <tr>
+                    <td>@cartItem.FlightAndHotel.From</td>
+                    <td>@cartItem.FlightAndHotel.To</td>
+                    <td>@cartItem.FlightAndHotel.Leave</td>
+                    <td>@cartItem.FlightAndHotel.Return</td>
+                </tr>
+                <tr>
+                    <td>@cartItem.Car.Destination</td>
+                    <td>@cartItem.Car.From</td>
+                    <td>@cartItem.Car.To</td>
+                    <td>@cartItem.Car.NumOfDrivers</td>
                 </tr>
             }
         </tbody>
@@ -33,7 +50,7 @@
         <tfoot>
             <th>Total</th>
             <td colspan="3">
-                @(Model.CartItems.Sum(cartItem => (double)(cartItem.Quantity * cartItem.Product.MSRP)))
+                @* @(Model.CartItems.Sum(cartItem => (double)(cartItem.Quantity * cartItem.Product.MSRP))) *@
             </td>
         </tfoot>
     </table>

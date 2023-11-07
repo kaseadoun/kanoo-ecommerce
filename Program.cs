@@ -61,11 +61,14 @@ app.MapControllerRoute(
     defaults: new { controller = "Home", Action = "TravelServices" }
 );
 
+app.MapControllerRoute(
+    name: "View My Cart",
+    pattern: "Carts",
+    defaults: new { controller = "Home", Action = "Carts" }
+);
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
-
 
 app.Run();
