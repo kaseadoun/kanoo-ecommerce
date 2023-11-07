@@ -42,8 +42,8 @@ namespace Kanoo.Models
                 // Send a request to the API from the inputted form data
                 RequestUri = new Uri(String
                     .Format("https://tripadvisor16.p.rapidapi.com/api/v1/flights/searchFlights?sourceAirportCode={0}&destinationAirportCode={1}&date={2}&itineraryType=ONE_WAY&sortOrder=PRICE&numAdults={3}&numSeniors={4}&classOfService={5}&pageNumber=1&currencyCode=CAD", 
-                        flight.From, flight.To, DateOnly.FromDateTime(flight.Departure), flight.NumOfAdults, 
-                        flight.NumOfSeniors, flight.ServiceClass)),
+                            flight.From, flight.To, DateOnly.FromDateTime(flight.Departure), flight.NumOfAdults, 
+                            flight.NumOfSeniors, flight.ServiceClass)),
                 Headers =
                 {
                     { "X-RapidAPI-Key", key },
@@ -62,6 +62,91 @@ namespace Kanoo.Models
                 // Add each new object to the database
                 foreach (var entry in totalEntries) {
                      _context.Flights.Add(entry);
+                }
+                _context.SaveChanges();
+            } 
+        }
+
+        /// <summary>
+        /// Data pulled from: https://rapidapi.com/tipsters/api/hotels-com-provider
+        /// <para>"GET/Regions Search"</para>
+        /// </summary>
+        public static void PopulateDestinationTable(ApplicationDbContext _context, HttpClient _httpClient, Destination destination)
+        {
+             var builder = new ConfigurationBuilder()
+                                .SetBasePath(Directory.GetCurrentDirectory())
+                                .AddJsonFile("appsettings.Development.json");
+
+            var config = builder.Build();
+            var key = config["Api:X-RapidAPI-Key"];
+            var host = config["Api:X-RapidAPI-Stay-Host"];
+
+            var request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Get,
+                // Send a request to the API from the inputted form data
+                RequestUri = new Uri(String
+                    .Format("https://hotels-com-provider.p.rapidapi.com/v2/regions?locale=en_GB&domain=GB&query={0}", 
+                            destination.City)),
+                Headers =
+                {
+                    { "X-RapidAPI-Key", key },
+                    { "X-RapidAPI-Host", host },
+                },
+            };
+
+            HttpResponseMessage responseMessage = _httpClient.SendAsync(request).Result;
+
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var totalEntries = JsonToObject.JsonToDestination(responseMessage.Content.ReadAsStringAsync().Result);
+
+                foreach (var entry in totalEntries) {
+                     _context.Destinations.Add(entry);
+                }
+                _context.SaveChanges();
+            } 
+        }
+
+        public static void PopulateStayTable(ApplicationDbContext _context, HttpClient _httpClient, Stay stay)
+        {
+            // Create a secure ConfigurationBuilder() to read the API key and host from a hidden JSON
+            // instead of hard-coding the values in the method
+             var builder = new ConfigurationBuilder()
+                                .SetBasePath(Directory.GetCurrentDirectory())
+                                .AddJsonFile("appsettings.Development.json");
+
+            var config = builder.Build();
+            var key = config["Api:X-RapidAPI-Key"];
+            var host = config["Api:X-RapidAPI-Stay-Host"];
+
+            // Create the request using the API URL and our hidden credentials
+            var request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Get,
+                // Send a request to the API from the inputted form data
+                /* RequestUri = new Uri(String
+                    .Format("https://tripadvisor16.p.rapidapi.com/api/v1/stays/searchStays?sourceAirportCode={0}&destinationAirportCode={1}&date={2}&itineraryType=ONE_WAY&sortOrder=PRICE&numAdults={3}&numSeniors={4}&classOfService={5}&pageNumber=1&currencyCode=CAD", 
+                        stay.From, stay.To, DateOnly.FromDateTime(stay.Departure), stay.NumOfAdults, 
+                        stay.NumOfSeniors, stay.ServiceClass)), */
+                Headers =
+                {
+                    { "X-RapidAPI-Key", key },
+                    { "X-RapidAPI-Host", host },
+                },
+            };
+
+            HttpResponseMessage responseMessage = _httpClient.SendAsync(request).Result;
+
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                // GET the API JSON result and pass it as a string to JsonToStay()
+                // JsonToStay() will extract all of the data from the JSON and convert it into a Stay object
+                var totalEntries = JsonToObject.JsonToStay(responseMessage.Content.ReadAsStringAsync().Result, _context, stay);
+
+                // Add each new object to the database
+                foreach (var entry in totalEntries) {
+                     _context.Stays.Add(entry);
                 }
                 _context.SaveChanges();
             } 

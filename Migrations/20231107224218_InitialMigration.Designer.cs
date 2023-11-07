@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Kanoo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231107191930_InitialMigration")]
+    [Migration("20231107224218_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -91,10 +91,14 @@ namespace Kanoo.Migrations
                         .HasMaxLength(80)
                         .HasColumnType("varchar(80)");
 
-                    b.Property<string>("Region")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
+                    b.Property<double>("Latitude")
+                        .HasColumnType("double");
+
+                    b.Property<double>("Longitude")
+                        .HasColumnType("double");
+
+                    b.Property<int>("RegionId")
+                        .HasColumnType("int");
 
                     b.HasKey("Key");
 

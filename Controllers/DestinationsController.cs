@@ -12,10 +12,12 @@ namespace Kanoo.Controllers
     public class DestinationsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly HttpClient _httpClient;
 
         public DestinationsController(ApplicationDbContext context)
         {
             _context = context;
+            _httpClient = new HttpClient();
         }
 
         // GET: Destinations
@@ -55,11 +57,11 @@ namespace Kanoo.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Key,City,Region,Country")] Destination destination)
+        public async Task<IActionResult> Create([Bind("RegionId,City,Country,Latitude,Longitude")] Destination destination)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(destination);
+                PopulateSqlTable.PopulateDestinationTable(_context, _httpClient, destination);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }

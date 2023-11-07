@@ -55,9 +55,11 @@ namespace Kanoo.Migrations
                 {
                     Key = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    RegionId = table.Column<int>(type: "int", nullable: false),
                     City = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
-                    Region = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
-                    Country = table.Column<string>(type: "varchar(80)", maxLength: 80, nullable: false)
+                    Country = table.Column<string>(type: "varchar(80)", maxLength: 80, nullable: false),
+                    Latitude = table.Column<double>(type: "double", nullable: false),
+                    Longitude = table.Column<double>(type: "double", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -110,8 +112,8 @@ namespace Kanoo.Migrations
                     DepartureAirportId = table.Column<int>(type: "int", nullable: false),
                     From = table.Column<string>(type: "longtext", nullable: false),
                     To = table.Column<string>(type: "longtext", nullable: false),
-                    Arrival = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     Departure = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    Arrival = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     NumOfAdults = table.Column<int>(type: "int", nullable: false),
                     NumOfSeniors = table.Column<int>(type: "int", nullable: false),
                     ServiceClass = table.Column<int>(type: "int", nullable: false),
