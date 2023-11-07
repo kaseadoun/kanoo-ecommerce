@@ -10,12 +10,14 @@
 {
     <table class="table table-striped table-bordered">
     <thead>
-        <tr>Name</tr>
-        <tr>Quantity</tr>
-        <tr>Price</tr>
-        <tr>Subtotal</tr>
+        <tr>
+            <th>From</th>
+            <th>To</th>
+            <th>Quantity</th>
+            @* The subtotal is not visible yet as we will work on price later using API to access prices *@
+            <th>Subtotal</th>
+        </tr>
     </thead>
-
     <tbody>
         @foreach (var cartItem in Model.CartItems)
             {
@@ -23,7 +25,63 @@
                     <td>@cartItem.Flight.From</td>
                     <td>@cartItem.Flight.To</td>
                     <td>@cartItem.Quantity</td>
+                    @* We need a price here later *@
                 </tr>
+            }
+        </tbody>
+        <tfoot>
+            <th>Total</th>
+            <td colspan="3">
+                @* @(Model.CartItems.Sum(cartItem => (double)(cartItem.Quantity * cartItem.Product.MSRP))) *@
+            </td>
+        </tfoot>
+    </table>
+
+    <table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Destination</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Number of Drivers</th>
+            <th>Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cartItem in Model.CartItems)
+            {
+                <tr>
+                    <td>@cartItem.Car.Destination</td>
+                    <td>@cartItem.Car.From</td>
+                    <td>@cartItem.Car.To</td>
+                    <td>@cartItem.Car.NumOfDrivers</td>
+                    @* We need a price here later *@
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <th>Total</th>
+            <td colspan="4">
+                @* @(Model.CartItems.Sum(cartItem => (double)(cartItem.Quantity * cartItem.Product.MSRP))) *@
+            </td>
+        </tfoot>
+    </table>
+
+    <table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Destination</th>
+            <th>Rooms</th>
+            <th>Arrival</th>
+            <th>Departure</th>
+            <th>Adults</th>
+            <th>Children</th>
+            <th>Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cartItem in Model.CartItems)
+            {
                 <tr>
                     <td>@cartItem.Stay.Destination</td>
                     <td>@cartItem.Stay.Rooms</td>
@@ -31,25 +89,43 @@
                     <td>@cartItem.Stay.Depart</td>
                     <td>@cartItem.Stay.Adults</td>
                     <td>@cartItem.Stay.Children</td>
+                    @* Subtotal to be added here later *@
                 </tr>
+            }
+        </tbody>
+        <tfoot>
+            <th>Total</th>
+            <td colspan="6">
+                @* @(Model.CartItems.Sum(cartItem => (double)(cartItem.Quantity * cartItem.Product.MSRP))) *@
+            </td>
+        </tfoot>
+    </table>
+
+    <table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>From</th>
+            <th>To</th>
+            <th>Leave</th>
+            <th>Return</th>
+            <th>Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cartItem in Model.CartItems)
+            {
                 <tr>
                     <td>@cartItem.FlightAndHotel.From</td>
                     <td>@cartItem.FlightAndHotel.To</td>
                     <td>@cartItem.FlightAndHotel.Leave</td>
                     <td>@cartItem.FlightAndHotel.Return</td>
-                </tr>
-                <tr>
-                    <td>@cartItem.Car.Destination</td>
-                    <td>@cartItem.Car.From</td>
-                    <td>@cartItem.Car.To</td>
-                    <td>@cartItem.Car.NumOfDrivers</td>
+                    @* Subtotal to be added here later *@
                 </tr>
             }
         </tbody>
-
         <tfoot>
             <th>Total</th>
-            <td colspan="3">
+            <td colspan="4">
                 @* @(Model.CartItems.Sum(cartItem => (double)(cartItem.Quantity * cartItem.Product.MSRP))) *@
             </td>
         </tfoot>
