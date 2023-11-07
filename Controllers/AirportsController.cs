@@ -9,87 +9,87 @@ using Kanoo.Models;
 
 namespace Kanoo.Controllers
 {
-    public class TravelServicesController : Controller
+    public class AirportsController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public TravelServicesController(ApplicationDbContext context)
+        public AirportsController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: TravelServices
+        // GET: Airports
         public async Task<IActionResult> Index()
         {
-              return _context.TravelService != null ? 
-                          View(await _context.TravelService.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.TravelService'  is null.");
+              return _context.Airports != null ? 
+                          View(await _context.Airports.ToListAsync()) :
+                          Problem("Entity set 'ApplicationDbContext.Airports'  is null.");
         }
 
-        // GET: TravelServices/Details/5
+        // GET: Airports/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.TravelService == null)
+            if (id == null || _context.Airports == null)
             {
                 return NotFound();
             }
 
-            var travelService = await _context.TravelService
+            var airport = await _context.Airports
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (travelService == null)
+            if (airport == null)
             {
                 return NotFound();
             }
 
-            return View(travelService);
+            return View(airport);
         }
 
-        // GET: TravelServices/Create
+        // GET: Airports/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: TravelServices/Create
+        // POST: Airports/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Description")] TravelService travelService)
+        public async Task<IActionResult> Create([Bind("Id,IataCode,AirportName")] Airport airport)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(travelService);
+                _context.Add(airport);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(travelService);
+            return View(airport);
         }
 
-        // GET: TravelServices/Edit/5
+        // GET: Airports/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.TravelService == null)
+            if (id == null || _context.Airports == null)
             {
                 return NotFound();
             }
 
-            var travelService = await _context.TravelService.FindAsync(id);
-            if (travelService == null)
+            var airport = await _context.Airports.FindAsync(id);
+            if (airport == null)
             {
                 return NotFound();
             }
-            return View(travelService);
+            return View(airport);
         }
 
-        // POST: TravelServices/Edit/5
+        // POST: Airports/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description")] TravelService travelService)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,IataCode,AirportName")] Airport airport)
         {
-            if (id != travelService.Id)
+            if (id != airport.Id)
             {
                 return NotFound();
             }
@@ -98,12 +98,12 @@ namespace Kanoo.Controllers
             {
                 try
                 {
-                    _context.Update(travelService);
+                    _context.Update(airport);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!TravelServiceExists(travelService.Id))
+                    if (!AirportExists(airport.Id))
                     {
                         return NotFound();
                     }
@@ -114,49 +114,49 @@ namespace Kanoo.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(travelService);
+            return View(airport);
         }
 
-        // GET: TravelServices/Delete/5
+        // GET: Airports/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.TravelService == null)
+            if (id == null || _context.Airports == null)
             {
                 return NotFound();
             }
 
-            var travelService = await _context.TravelService
+            var airport = await _context.Airports
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (travelService == null)
+            if (airport == null)
             {
                 return NotFound();
             }
 
-            return View(travelService);
+            return View(airport);
         }
 
-        // POST: TravelServices/Delete/5
+        // POST: Airports/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.TravelService == null)
+            if (_context.Airports == null)
             {
-                return Problem("Entity set 'ApplicationDbContext.TravelService'  is null.");
+                return Problem("Entity set 'ApplicationDbContext.Airports'  is null.");
             }
-            var travelService = await _context.TravelService.FindAsync(id);
-            if (travelService != null)
+            var airport = await _context.Airports.FindAsync(id);
+            if (airport != null)
             {
-                _context.TravelService.Remove(travelService);
+                _context.Airports.Remove(airport);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool TravelServiceExists(int id)
+        private bool AirportExists(int id)
         {
-          return (_context.TravelService?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Airports?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

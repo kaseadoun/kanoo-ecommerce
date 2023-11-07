@@ -14,11 +14,6 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <label asp-for="TravelServiceId" class="control-label"></label>
-                <select asp-for="TravelServiceId" class="form-control" asp-items="ViewBag.TravelServiceId"></select>
-                <span asp-validation-for="TravelServiceId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="From" class="control-label"></label>
                 <select asp-for="From" class="form-control"></select>
                 <span asp-validation-for="From" class="text-danger"></span>
@@ -29,14 +24,19 @@
                 <span asp-validation-for="To" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Leave" class="control-label"></label>
-                <input asp-for="Leave" class="form-control" />
-                <span asp-validation-for="Leave" class="text-danger"></span>
+                <label asp-for="StartDate" class="control-label"></label>
+                <input asp-for="StartDate" class="form-control" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Return" class="control-label"></label>
-                <input asp-for="Return" class="form-control" />
-                <span asp-validation-for="Return" class="text-danger"></span>
+                <label asp-for="EndDate" class="control-label"></label>
+                <input asp-for="EndDate" class="form-control" />
+                <span asp-validation-for="EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
