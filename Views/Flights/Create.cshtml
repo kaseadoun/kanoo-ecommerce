@@ -13,6 +13,7 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
+                <p>Seed the DB with IATA codes first in /Airports/Create to proceed.</p>
                 <label asp-for="From" class="control-label"></label>
                 <select asp-for="From" class="form-control" asp-items="ViewBag.From"></select>
                 <span asp-validation-for="From" class="text-danger"></span>

@@ -40,7 +40,7 @@ namespace Kanoo.Models {
 
         [Required]
         [Range(0.01, 999999.99)]
-        public decimal PricePerDay { get; set; } = 0.01M;
+        public decimal PricePerDay { get; set; } = 50.00M;
 
         [ForeignKey("RegionId")]
         public virtual Destination? Region { get; set; }

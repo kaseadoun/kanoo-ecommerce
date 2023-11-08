@@ -30,6 +30,10 @@ namespace Kanoo.Models
             {
                 // Count how many entries were returned by the API
                 int totalNodes = node!["data"]["flights"].AsArray().Count();
+
+                // If there is more than 5 entries returned, only evaluate the first 5
+                totalNodes = (totalNodes > 5) ? 5 : totalNodes;
+                
                 // For each entry returned by the API, make a new object representing its data
                 for (var i = 0; i < totalNodes; i++)
                 {

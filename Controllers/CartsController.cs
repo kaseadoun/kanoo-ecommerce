@@ -28,7 +28,6 @@ namespace Kanoo.Controllers
                 return NotFound();
             }
 
-            // again, we need to change product to the equivalent to our project
             if (cart.CartItems.Count > 0)
             {
                 foreach (var cartItem in cart.CartItems)

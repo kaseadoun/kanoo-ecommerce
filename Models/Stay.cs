@@ -22,7 +22,7 @@ namespace Kanoo.Models
 
         [Required]
         [Display(Name = "Hotel")]
-        public string HotelName { get; set; } = "";
+        public string HotelName { get; set; } = "Default";
 
         [Required]
         public DateTime StartDate { get; set; } = DateTime.Now;
