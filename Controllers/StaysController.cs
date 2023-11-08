@@ -56,7 +56,7 @@ namespace Kanoo.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,DestinationName,RegionId,StartDate,EndDate,Rooms,Adults,Children,PricePerDay")] Stay stay)
+        public async Task<IActionResult> Create([Bind("Id,DestinationName,RegionId,HotelName,StartDate,EndDate,Rooms,Adults,Children,PricePerDay")] Stay stay)
         {
             if (ModelState.IsValid)
             {

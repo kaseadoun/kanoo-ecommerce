@@ -21,6 +21,10 @@ namespace Kanoo.Models
         public int RegionId { get; set; } = 0;
 
         [Required]
+        [Display(Name = "Hotel")]
+        public string HotelName { get; set; } = "";
+
+        [Required]
         public DateTime StartDate { get; set; } = DateTime.Now;
 
         [Required]

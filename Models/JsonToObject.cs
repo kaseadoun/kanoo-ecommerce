@@ -95,7 +95,7 @@ namespace Kanoo.Models
             }
         }
         
-        public static List<Stay> JsonToStay(string json, ApplicationDbContext _context, Stay stay)
+        public static List<Stay> JsonToStay(string json, Stay stay)
         {
             JsonNode node = JsonNode.Parse(json)!;
 
@@ -113,6 +113,8 @@ namespace Kanoo.Models
                     Stay n = new Stay();
 
                     n.DestinationName = node!["properties"][i]["neighborhood"]["name"].ToString();
+                    n.HotelName = node!["properties"][i]["name"].ToString();
+                    n.RegionId = stay.RegionId;
                     n.StartDate = stay.StartDate;
                     n.EndDate = stay.EndDate;
                     n.Rooms = stay.Rooms;
@@ -132,11 +134,6 @@ namespace Kanoo.Models
                         n.PricePerDay = localCost;
                     }
 
-                    // Establish relationship with the Destinations table
-                    var region = _context.Destinations
-                        .FirstOrDefault(entity => entity.Id == stay.RegionId);
-                    n.RegionId = region.Id;
-
                     totalEntries.Add(n);
                 }
                 // Return all of the JSON data as a list of objects
@@ -147,6 +144,62 @@ namespace Kanoo.Models
             {
                 Console.WriteLine(e.Message);
                 return new List<Stay>();
+            }
+        }
+        
+        public static List<Car> JsonToCar(string json, Car car)
+        {
+            JsonNode node = JsonNode.Parse(json)!;
+
+            List<Car> totalEntries = new List<Car>();
+
+            try
+            {
+                int totalNodes = node!["search_results"].AsArray().Count();
+
+                // If there is more than 5 entries returned, only evaluate the first 5
+                totalNodes = (totalNodes > 5) ? 5 : totalNodes;
+                
+                for (var i = 0; i < totalNodes; i++)
+                {
+                    // Some of the objects returned have different formatting. We only want ones with pricing info
+                    if (node!["search_results"][i]["pricing_info"] != null)
+                    {
+                        Car n = new Car();
+
+                        n.DestinationName = node!["search_results"][i]["route_info"]["pickup"]["name"].ToString();
+                        n.CompanyName = node!["search_results"][i]["supplier_info"]["name"].ToString();
+                        n.Region = car.Region;
+                        n.StartDate = car.StartDate;
+                        n.EndDate = car.EndDate;
+                        n.TypeOfCar = node!["search_results"][i]["vehicle_info"]["v_name"].ToString();
+                        n.NumOfDrivers = car.NumOfDrivers;
+
+                        // Get the cost in local currency
+                        var localCost = (decimal)node!["search_results"][i]["pricing_info"]["price"];
+                        var localCurrency = node!["search_results"][i]["pricing_info"]["base_currency"].ToString();
+
+                        // Convert local currency into CAD
+                        if (localCurrency != "CAD")
+                        {
+                            n.PricePerDay = CurrencyConverter.ConvertToCAD(localCurrency, localCost);
+                        }
+                        else
+                        {
+                            n.PricePerDay = localCost;
+                        }
+                    
+                    totalEntries.Add(n);
+                    }
+                }
+                // Return all of the JSON data as a list of objects
+                return totalEntries;
+            }
+            // If the JSON object does not have the property, catch the error and make the property null
+            catch (NullReferenceException e) 
+            {
+                Console.WriteLine(e.Message);
+                return new List<Car>();
             }
         }
 
