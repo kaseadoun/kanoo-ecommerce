@@ -211,7 +211,7 @@ namespace Kanoo.Models
         /// </summary>
         public static async void PopulateAirportTable(ApplicationDbContext _context)
         {
-            StreamReader reader = new StreamReader("allsirports.json");
+            StreamReader reader = new StreamReader("allairports.json");
             string json = reader.ReadToEnd();
         
             // Pass the JSON as a string to JsonToAirport() to get the translated Airport objects

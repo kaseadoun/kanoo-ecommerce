@@ -220,9 +220,12 @@ namespace Kanoo.Models
 
                 try 
                 {
-                    n.IataCode = node!["airports"][i]["airportIata"].ToString();
-                    n.AirportName = node!["airports"][i]["airportName"].ToString();
-                    totalEntries.Add(n);
+                    if (node!["airports"][i]["airportIata"] != null)
+                    {
+                        n.IataCode = node!["airports"][i]["airportIata"].ToString();
+                        n.AirportName = node!["airports"][i]["airportName"].ToString();
+                        totalEntries.Add(n);
+                    }
                 }
                 
                 // If the JSON object does not have the property, catch the error and make the property null
