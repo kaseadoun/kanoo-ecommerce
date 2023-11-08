@@ -53,8 +53,6 @@ namespace Kanoo.Controllers
             ViewData["FlightId"] = new SelectList(_context.Flights, "Id", "Id");
             ViewData["StayId"] = new SelectList(_context.Stays, "Id", "Id");
 
-            ViewData["From"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
-            ViewData["To"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
             return View();
         }
 
@@ -74,9 +72,6 @@ namespace Kanoo.Controllers
             ViewData["DiscountId"] = new SelectList(_context.Discounts, "Id", "Description", flightAndStay.DiscountId);
             ViewData["FlightId"] = new SelectList(_context.Flights, "Id", "Id", flightAndStay.FlightId);
             ViewData["StayId"] = new SelectList(_context.Stays, "Id", "Id", flightAndStay.StayId);
-
-            ViewData["From"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
-            ViewData["To"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
             return View(flightAndStay);
         }
 
@@ -96,8 +91,6 @@ namespace Kanoo.Controllers
             ViewData["DiscountId"] = new SelectList(_context.Discounts, "Id", "Description", flightAndStay.DiscountId);
             ViewData["FlightId"] = new SelectList(_context.Flights, "Id", "Id", flightAndStay.FlightId);
             ViewData["StayId"] = new SelectList(_context.Stays, "Id", "Id", flightAndStay.StayId);
-            ViewData["From"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
-            ViewData["To"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
             return View(flightAndStay);
         }
 
@@ -136,8 +129,6 @@ namespace Kanoo.Controllers
             ViewData["DiscountId"] = new SelectList(_context.Discounts, "Id", "Description", flightAndStay.DiscountId);
             ViewData["FlightId"] = new SelectList(_context.Flights, "Id", "Id", flightAndStay.FlightId);
             ViewData["StayId"] = new SelectList(_context.Stays, "Id", "Id", flightAndStay.StayId);
-            ViewData["From"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
-            ViewData["To"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
             return View(flightAndStay);
         }
 

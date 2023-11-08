@@ -16,7 +16,7 @@ namespace Kanoo.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.11")
+                .HasAnnotation("ProductVersion", "7.0.13")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("Kanoo.Models.Airport", b =>
@@ -46,8 +46,13 @@ namespace Kanoo.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("DestinationName")
-                        .HasColumnType("int");
+                    b.Property<string>("CompanyName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("DestinationName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime(6)");
@@ -57,6 +62,9 @@ namespace Kanoo.Migrations
 
                     b.Property<decimal>("PricePerDay")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("RegionId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime(6)");
@@ -68,12 +76,14 @@ namespace Kanoo.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("RegionId");
+
                     b.ToTable("Cars");
                 });
 
             modelBuilder.Entity("Kanoo.Models.Destination", b =>
                 {
-                    b.Property<int>("Key")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -87,12 +97,13 @@ namespace Kanoo.Migrations
                         .HasMaxLength(80)
                         .HasColumnType("varchar(80)");
 
-                    b.Property<string>("Region")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
+                    b.Property<double>("Latitude")
+                        .HasColumnType("double");
 
-                    b.HasKey("Key");
+                    b.Property<double>("Longitude")
+                        .HasColumnType("double");
+
+                    b.HasKey("Id");
 
                     b.ToTable("Destinations");
                 });
@@ -121,22 +132,43 @@ namespace Kanoo.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("EndDate")
+                    b.Property<DateTime>("Arrival")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int>("From")
+                    b.Property<int>("ArrivalAirportId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Departure")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("DepartureAirportId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("From")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("NumOfAdults")
+                        .HasColumnType("int");
+
+                    b.Property<int>("NumOfSeniors")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<DateTime>("StartDate")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<int>("To")
+                    b.Property<int>("ServiceClass")
                         .HasColumnType("int");
 
+                    b.Property<string>("To")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("ArrivalAirportId");
+
+                    b.HasIndex("DepartureAirportId");
 
                     b.ToTable("Flights");
                 });
@@ -156,8 +188,9 @@ namespace Kanoo.Migrations
                     b.Property<int>("FlightId")
                         .HasColumnType("int");
 
-                    b.Property<int>("From")
-                        .HasColumnType("int");
+                    b.Property<string>("From")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime(6)");
@@ -165,8 +198,9 @@ namespace Kanoo.Migrations
                     b.Property<int>("StayId")
                         .HasColumnType("int");
 
-                    b.Property<int>("To")
-                        .HasColumnType("int");
+                    b.Property<string>("To")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
@@ -191,14 +225,22 @@ namespace Kanoo.Migrations
                     b.Property<int>("Children")
                         .HasColumnType("int");
 
-                    b.Property<int>("DestinationName")
-                        .HasColumnType("int");
+                    b.Property<string>("DestinationName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<string>("HotelName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<decimal>("PricePerDay")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("RegionId")
+                        .HasColumnType("int");
 
                     b.Property<int>("Rooms")
                         .HasColumnType("int");
@@ -208,7 +250,235 @@ namespace Kanoo.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("RegionId");
+
                     b.ToTable("Stays");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex");
+
+                    b.ToTable("AspNetRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("RoleId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("longtext");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("longtext");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex");
+
+                    b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.Property<string>("LoginProvider")
+                        .HasMaxLength(128)
+                        .HasColumnType("varchar(128)");
+
+                    b.Property<string>("ProviderKey")
+                        .HasMaxLength(128)
+                        .HasColumnType("varchar(128)");
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserLogins", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("RoleId")
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetUserRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("LoginProvider")
+                        .HasMaxLength(128)
+                        .HasColumnType("varchar(128)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(128)
+                        .HasColumnType("varchar(128)");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("UserId", "LoginProvider", "Name");
+
+                    b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("Kanoo.Models.Car", b =>
+                {
+                    b.HasOne("Kanoo.Models.Destination", "Region")
+                        .WithMany()
+                        .HasForeignKey("RegionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Region");
+                });
+
+            modelBuilder.Entity("Kanoo.Models.Flight", b =>
+                {
+                    b.HasOne("Kanoo.Models.Airport", "ArrivalAirport")
+                        .WithMany()
+                        .HasForeignKey("ArrivalAirportId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Kanoo.Models.Airport", "DepartureAirport")
+                        .WithMany()
+                        .HasForeignKey("DepartureAirportId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ArrivalAirport");
+
+                    b.Navigation("DepartureAirport");
                 });
 
             modelBuilder.Entity("Kanoo.Models.FlightAndStay", b =>
@@ -236,6 +506,68 @@ namespace Kanoo.Migrations
                     b.Navigation("FlightDepartment");
 
                     b.Navigation("StayDepartment");
+                });
+
+            modelBuilder.Entity("Kanoo.Models.Stay", b =>
+                {
+                    b.HasOne("Kanoo.Models.Destination", "Region")
+                        .WithMany()
+                        .HasForeignKey("RegionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Region");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Kanoo.Models.Flight", b =>

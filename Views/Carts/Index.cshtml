@@ -14,12 +14,14 @@
         <tr>
             <th>From</th>
             <th>To</th>
-            <th>Start Date</th>
-            <th>End Date</th>
+            <th>Departure</th>
+            <th>Arrival</th>
+            <th>Class</th>
             <th>Price</th>
         </tr>
     </thead>
     <tbody>
+        @{decimal flightTotal = 0;}
         @foreach (var cartItem in Model.CartItems)
             {
                 if (cartItem.ProductType == ProductType.Flight && cartItem.Flight != null)
@@ -27,10 +29,12 @@
                     <tr>
                         <td>@cartItem.Flight.From</td>
                         <td>@cartItem.Flight.To</td>
-                        <td>@cartItem.Flight.StartDate</td>
-                        <td>@cartItem.Flight.EndDate</td>
+                        <td>@cartItem.Flight.Departure</td>
+                        <td>@cartItem.Flight.Arrival</td>
+                        <td>@cartItem.Flight.ServiceClass</td>
                         <td>@cartItem.Flight.Price</td>
                     </tr>
+                    flightTotal += cartItem.Flight.Price;
                 }
 
             }
@@ -38,7 +42,7 @@
         <tfoot>
             <th>Total</th>
             <td colspan="5">
-                @* @(Model.CartItems.Sum(cartItem => (double)(cartItem.Quantity * cartItem.Product.MSRP))) *@
+                @Html.Raw(flightTotal)
             </td>
         </tfoot>
     </table>
@@ -48,14 +52,14 @@
     <thead>
         <tr>
             <th>Destination</th>
-            <th>Start Date</th>
-            <th>End Date</th>
+            <th>From</th>
+            <th>To</th>
             <th>Type of Car</th>
             <th>Price Per Day</th>
-            <th>Subtotal</th>
         </tr>
     </thead>
     <tbody>
+        @{decimal carTotal = 0;}
         @foreach (var cartItem in Model.CartItems)
             {
                 if (cartItem.ProductType == ProductType.Car && cartItem.Car != null)
@@ -67,13 +71,14 @@
                         <td>@cartItem.Car.TypeOfCar</td>
                         <td>@cartItem.Car.PricePerDay</td>
                     </tr>
+                    carTotal += cartItem.Car.PricePerDay;
                 }
             }
         </tbody>
         <tfoot>
             <th>Total</th>
             <td colspan="5">
-                @* @(Model.CartItems.Sum(cartItem => (double)(cartItem.Quantity * cartItem.Product.MSRP))) *@
+                @Html.Raw(carTotal)
             </td>
         </tfoot>
     </table>
@@ -92,6 +97,7 @@
         </tr>
     </thead>
     <tbody>
+        @{decimal stayTotal = 0;}
         @foreach (var cartItem in Model.CartItems)
             {
                 if (cartItem.ProductType == ProductType.Stay && cartItem.Stay != null)
@@ -105,13 +111,14 @@
                         <td>@cartItem.Stay.Children</td>
                         <td>@cartItem.Stay.PricePerDay</td>
                     </tr>
+                    stayTotal += cartItem.Stay.PricePerDay;
                 }
             }
         </tbody>
         <tfoot>
             <th>Total</th>
             <td colspan="6">
-                @* @(Model.CartItems.Sum(cartItem => (double)(cartItem.Quantity * cartItem.Product.MSRP))) *@
+                @Html.Raw(stayTotal)
             </td>
         </tfoot>
     </table>
@@ -149,4 +156,7 @@
             </td>
         </tfoot>
     </table>
+
+    <h5>Total:</h5>
+    <p>@Html.Raw(flightTotal + carTotal + stayTotal)</p>
 }

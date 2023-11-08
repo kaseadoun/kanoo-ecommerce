@@ -1,10 +1,17 @@
 using Microsoft.EntityFrameworkCore;
 using Kanoo.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 
-namespace Kanoo.Models {
+namespace Kanoo.Models
+{
 
-    public class ApplicationDbContext : DbContext {
+    public class ApplicationDbContext : IdentityDbContext<IdentityUser, IdentityRole, string>
+    {
+        public ApplicationDbContext()
+        {
+        }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {

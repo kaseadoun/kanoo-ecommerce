@@ -13,15 +13,18 @@ namespace Kanoo.Models
     public class Destination
     {
         [Key]
-        public int Key { get; set; } = 0;
+        public int Id { get; set; } = 0;
 
         [Required, StringLength(100)]
-        public string City { get; set; }
-
-        [Required, StringLength(100)]
-        public string Region { get; set; }
+        public string City { get; set; } = "Toronto";
 
         [Required, StringLength(80)]
-        public string Country { get; set; }
+        public string Country { get; set; } = "Canada";
+
+        [Required]
+        public double Latitude { get; set; } = 43.6532;
+
+        [Required]
+        public double Longitude { get; set; } = -79.3832;
     }
 }

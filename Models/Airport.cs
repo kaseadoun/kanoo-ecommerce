@@ -10,6 +10,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Kanoo.Models
 {
+    // https://www.entityframeworktutorial.net/code-first/configure-one-to-many-relationship-in-code-first.aspx
+    // https://www.entityframeworktutorial.net/code-first/foreignkey-dataannotations-attribute-in-code-first.aspx
     public class Airport
     {
         [Key]

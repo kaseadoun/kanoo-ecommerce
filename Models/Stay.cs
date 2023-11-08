@@ -14,7 +14,15 @@ namespace Kanoo.Models
 
         [Required]
         [Display(Name = "Destination")]
-        public AirportCodes DestinationName { get; set; } = AirportCodes.YYZ;
+        public string DestinationName { get; set; } = "Toronto";
+
+        [Required]
+        [Display(Name = "Region ID")]
+        public int RegionId { get; set; } = 0;
+
+        [Required]
+        [Display(Name = "Hotel")]
+        public string HotelName { get; set; } = "Default";
 
         [Required]
         public DateTime StartDate { get; set; } = DateTime.Now;
@@ -35,6 +43,9 @@ namespace Kanoo.Models
         [Required]
         [Range(0.01, 999999.99)]
         public decimal PricePerDay { get; set; } = 0.01M;
+
+        [ForeignKey("RegionId")]
+        public virtual Destination? Region { get; set; }
 
         public virtual ICollection<FlightAndStay>? FlightAndStays { get; set; } = new List<FlightAndStay>();
     }

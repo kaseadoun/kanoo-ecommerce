@@ -1,4 +1,6 @@
+using Kanoo.Data;
 using Kanoo.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,6 +26,15 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
+// Adding identity service and roles
+builder.Services.AddDefaultIdentity<IdentityUser>()
+    .AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>();
+
+// Program.cs
+// Registering the DbInitializer seeder
+builder.Services.AddTransient<DbInitializer>();
+
 var app = builder.Build();
 
 app.UseSession();
@@ -36,8 +47,22 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+// Seed roles
+var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
+using var scope = scopeFactory.CreateScope();
+var initializer = scope.ServiceProvider.GetRequiredService<DbInitializer>();
+await DbInitializer.Initialize(
+    scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>(),
+    scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>()
+);
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+// Setup authentication and authorization
+app.UseAuthentication();
+app.UseAuthorization();
+app.MapRazorPages();
 
 app.UseRouting();
 

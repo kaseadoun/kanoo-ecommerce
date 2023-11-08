@@ -47,8 +47,7 @@ namespace Kanoo.Controllers
         // GET: Cars/Create
         public IActionResult Create()
         {
-            ViewData["DestinationName"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
-
+            ViewData["RegionId"] = new SelectList(_context.Destinations, "Id", "Id");
             return View();
         }
 
@@ -57,16 +56,16 @@ namespace Kanoo.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,DestinationName,StartDate,EndDate,TypeOfCar,NumOfDrivers,PricePerDay")] Car car)
+        public async Task<IActionResult> Create([Bind("Id,DestinationName,RegionId,CompanyName,StartDate,EndDate,TypeOfCar,NumOfDrivers,PricePerDay")] Car car)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(car);
+                PopulateSqlTable.PopulateCarTable(_context, car);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DestinationName"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
 
+            ViewData["RegionId"] = new SelectList(_context.Destinations, "Id", "Id");
             return View(car);
         }
 
@@ -83,7 +82,6 @@ namespace Kanoo.Controllers
             {
                 return NotFound();
             }
-            ViewData["DestinationName"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
 
             return View(car);
         }
@@ -120,7 +118,6 @@ namespace Kanoo.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DestinationName"] = new SelectList(Enum.GetValues(typeof(AirportCodes)));
             
             return View(car);
         }

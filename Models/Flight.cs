@@ -1,30 +1,14 @@
-using System.ComponentModel;
-using System.Runtime.Serialization;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.VisualBasic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Kanoo.Models {
 
-    public enum AirportCodes {
-        ATL,    // Atlanta Hartsfield-jackson Intl Apt
-        DXB,    // Dubai International
-        HND,    // Tokyo Intl (Haneda)
-        LHR,    // London Heathrow Apt
-        IST,    // Istanbul Airport
-        DEN,    // Denver Intl Apt
-        DFW,    // Dallas Dallas/Fort Worth Intl Apt
-        CAN,    // Guangzhou (CN)
-        ORD,    // Chicago O'Hare International Apt
-        LAX,    // Los Angeles International Airport
-        YYZ,    // Toronto Pearson International Airport
-        YYC,    // Calgary International Airport
-        YUL,    // Montreal-Pierre Elliott Trudeau International Airport
-        YWH     // Victoria Harbour Airport
+    public enum ServiceClass
+    {
+        ECONOMY,
+        PREMIUM_ECONOMY,
+        BUSINESS,
+        FIRST
     }
 
     public class Flight {
@@ -33,20 +17,44 @@ namespace Kanoo.Models {
         public int Id { get; set; } = 0;
 
         [Required]
-        public AirportCodes From { get; set; } = AirportCodes.YYZ;
+        [Display(Name = "Arrival Airport Id")]
+        public int ArrivalAirportId { get; set; } = 0;
 
         [Required]
-        public AirportCodes To { get; set; } = AirportCodes.DFW;
+        [Display(Name = "Departure Airport Id")]
+        public int DepartureAirportId { get; set; } = 0;
 
         [Required]
-        public DateTime StartDate { get; set; } = DateTime.Now;
+        public string From { get; set; } = "YYZ";
 
         [Required]
-        public DateTime EndDate { get; set; } = DateTime.Now;
+        public string To { get; set; } = "DFW";
+
+        [Required]
+        public DateTime Departure { get; set; } = DateTime.Now.Date;
+        
+        [Required]
+        public DateTime Arrival { get; set; } = DateTime.Now.Date;
+
+
+        [Required]
+        public int NumOfAdults { get; set; } = 1;
+
+        [Required]
+        public int NumOfSeniors { get; set; } = 0;
+
+        [Required]
+        public ServiceClass ServiceClass { get; set; } = ServiceClass.ECONOMY;
 
         [Required]
         [Range(0.01, 999999.99)]
         public decimal Price { get; set; } = 0.01M;
+
+        [ForeignKey("ArrivalAirportId")]
+        public virtual Airport? ArrivalAirport { get; set; }
+        
+        [ForeignKey("DepartureAirportId")]
+        public virtual Airport? DepartureAirport { get; set; }
 
         public virtual ICollection<FlightAndStay>? FlightAndStays { get; set; } = new List<FlightAndStay>();
     }
