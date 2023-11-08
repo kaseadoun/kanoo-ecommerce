@@ -57,7 +57,7 @@ namespace Kanoo.Models
             catch (NullReferenceException e) 
             {
                 Console.WriteLine(e.Message);
-                return new List<Flight>();
+                return totalEntries;
             }
         }
 
@@ -91,7 +91,7 @@ namespace Kanoo.Models
             catch (NullReferenceException e) 
             {
                 Console.WriteLine(e.Message);
-                return new List<Destination>();
+                return totalEntries;
             }
         }
         
@@ -143,7 +143,7 @@ namespace Kanoo.Models
             catch (NullReferenceException e) 
             {
                 Console.WriteLine(e.Message);
-                return new List<Stay>();
+                return totalEntries;
             }
         }
         
@@ -176,8 +176,8 @@ namespace Kanoo.Models
                         n.NumOfDrivers = car.NumOfDrivers;
 
                         // Get the cost in local currency
-                        var localCost = (decimal)node!["search_results"][i]["pricing_info"]["price"];
-                        var localCurrency = node!["search_results"][i]["pricing_info"]["base_currency"].ToString();
+                        var localCost = (decimal)node!["search_results"][i]["pricing_info"]["drive_away_price"];
+                        var localCurrency = node!["search_results"][i]["pricing_info"]["currency"].ToString();
 
                         // Convert local currency into CAD
                         if (localCurrency != "CAD")
@@ -199,7 +199,7 @@ namespace Kanoo.Models
             catch (NullReferenceException e) 
             {
                 Console.WriteLine(e.Message);
-                return new List<Car>();
+                return totalEntries;
             }
         }
 

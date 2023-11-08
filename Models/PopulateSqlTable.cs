@@ -162,7 +162,7 @@ namespace Kanoo.Models
             car.RegionId = region.Id;
 
             // Get the latitude and longitude of the location to search for nearby rentals
-            /*var latitude = region.Latitude;
+            var latitude = region.Latitude;
             var longitude = region.Longitude;
 
             var builder = new ConfigurationBuilder()
@@ -197,20 +197,8 @@ namespace Kanoo.Models
                      _context.Cars.Add(entry);
                 }
                 _context.SaveChanges();
-            }  */
-            StreamReader reader = new StreamReader("test.json");
-            string json = reader.ReadToEnd();
-        
-            // Pass the JSON as a string to JsonToAirport() to get the translated Airport objects
-            var totalEntries = JsonToObject.JsonToCar(json, car);
+            }  
 
-            // Add each new object to the database
-            foreach (var entry in totalEntries) {
-                    _context.Cars.Add(entry);
-            }
-            /* 
-             Innermost exception 	 MySql.Data.MySqlClient.MySqlException : Cannot add or update a child row: a foreign key constraint fails (`kanoo`.`cars`, CONSTRAINT `FK_Cars_Destinations_RegionId` FOREIGN KEY (`RegionId`) REFERENCES `destinations` (`Id`) ON DELETE CASCADE)
-            */
             _context.SaveChanges();
         }
 
