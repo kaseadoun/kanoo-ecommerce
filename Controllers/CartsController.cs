@@ -28,13 +28,11 @@ namespace Kanoo.Controllers
                 return NotFound();
             }
 
-            // again, we need to change product to the equivalent to our project
             if (cart.CartItems.Count > 0)
             {
                 foreach (var cartItem in cart.CartItems)
                 {
                     var flight = await _context.Flights
-                    .Include(product => product.Department)
                     .FirstOrDefaultAsync(product => product.Id == cartItem.ProductId);
 
                     if (flight != null)
@@ -43,7 +41,7 @@ namespace Kanoo.Controllers
                     }
 
                     var car = await _context.Cars
-                    .Include(product => product.Department)
+                    // .Include(product => product.TypeOfCar)
                     .FirstOrDefaultAsync(product => product.Id == cartItem.ProductId);
 
                     if (car != null)
@@ -52,7 +50,7 @@ namespace Kanoo.Controllers
                     }
 
                     var stays = await _context.Stays
-                   .Include(product => product.Department)
+                   //    .Include(product => product.Adults)
                    .FirstOrDefaultAsync(product => product.Id == cartItem.ProductId);
 
                     if (stays != null)
@@ -60,13 +58,13 @@ namespace Kanoo.Controllers
                         cartItem.Stay = stays;
                     }
 
-                    var flightAndHotel = await _context.FlightAndHotels
-                   .Include(product => product.Department)
+                    var flightAndHotel = await _context.FlightAndStays
+                   //    .Include(product => product.From)
                    .FirstOrDefaultAsync(product => product.Id == cartItem.ProductId);
 
                     if (flightAndHotel != null)
                     {
-                        cartItem.FlightAndHotel = flightAndHotel;
+                        cartItem.FlightAndStay = flightAndHotel;
                     }
                 }
             }
@@ -75,7 +73,7 @@ namespace Kanoo.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddToCart(int productId, int quantity)
+        public async Task<IActionResult> AddToCart(int productId, int quantity, ProductType productType)
         {
             var cart = GetCart();
 
@@ -83,8 +81,8 @@ namespace Kanoo.Controllers
             {
                 return NotFound();
             }
-
-            var cartItem = cart.CartItems.Find(cartItem => cartItem.ProductId == productId);
+            // add product type here to query
+            var cartItem = cart.CartItems.Find(ci => ci.ProductId == productId && ci.ProductType == productType);
 
             // Add Flight
             if (cartItem != null && cartItem.Flight != null)
@@ -93,19 +91,37 @@ namespace Kanoo.Controllers
             }
             else
             {
-                var product = await _context.Flights
-                    .FirstOrDefaultAsync(p => p.Id == productId);
-
-                if (product == null)
+                switch (productType)
                 {
-                    return NotFound();
-                }
+                    case ProductType.Flight:
+                        var flight = await _context.Flights.FirstOrDefaultAsync(p => p.Id == productId);
+                        if (flight == null) return NotFound();
+                        cartItem = new CartItem { ProductId = productId, Quantity = quantity, Flight = flight, ProductType = ProductType.Flight };
+                        break;
 
-                cartItem = new CartItem { ProductId = productId, Quantity = quantity, Flight = product };
+                    case ProductType.Car:
+                        var car = await _context.Cars.FirstOrDefaultAsync(p => p.Id == productId);
+                        if (car == null) return NotFound();
+                        cartItem = new CartItem { ProductId = productId, Quantity = quantity, Car = car, ProductType = ProductType.Car };
+                        break;
+
+                    case ProductType.Stay:
+                        var stay = await _context.Stays.FirstOrDefaultAsync(p => p.Id == productId);
+                        if (stay == null) return NotFound();
+                        cartItem = new CartItem { ProductId = productId, Quantity = quantity, Stay = stay, ProductType = ProductType.Stay };
+                        break;
+
+                    case ProductType.FlightAndStay:
+                        var flightAndStay = await _context.FlightAndStays.FirstOrDefaultAsync(p => p.Id == productId);
+                        if (flightAndStay == null) return NotFound();
+                        cartItem = new CartItem { ProductId = productId, Quantity = quantity, FlightAndStay = flightAndStay, ProductType = ProductType.FlightAndStay };
+                        break;
+
+                    default:
+                        return BadRequest("Invalid product type.");
+                }
                 cart.CartItems.Add(cartItem);
             }
-
-
             SaveCart(cart);
 
             return RedirectToAction("Index");
