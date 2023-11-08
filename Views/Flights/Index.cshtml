@@ -9,64 +9,6 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-@* <table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.From)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.To)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StartDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EndDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.From)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.To)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StartDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EndDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table> *@
 
-<div class="card-container">
-    @foreach (var item in Model) {
-        <div class="card">
-            <h4>Destination</h4>
-            <p>@Html.DisplayFor(modelItem => item.From) -> @Html.DisplayFor(modelItem => item.To)</p>
-            <h5>Leave</h5>
-            <p>@Html.DisplayFor(modelItem => item.Arrival)</p>
-            <h5>Return</h5>
-            <p>@Html.DisplayFor(modelItem => item.Departure)</p>
-        </div>
-    }
-</div>
+@* link to where the partial is passing data TO the partial *@
+<partial name="~/Views/Shared/Products/FlightsTablePartial.cshtml" model="Model" />

@@ -1,0 +1,75 @@
+@model IEnumerable<Kanoo.Models.Stay>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DestinationName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rooms)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adults)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Children)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PricePerDay)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DestinationName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rooms)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adults)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Children)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PricePerDay)
+                </td>
+                <td>
+                    <form asp-controller="Carts" asp-action="AddToCart">
+                        <input type="hidden" name="productId" value="@item?.Id" />
+                        <input type="hidden" name="quantity" value="1" />
+                        <input type="hidden" name="productType" value="@ProductType.Stay" />
+                        <input type="submit" value="Quick Add to Cart" class="btn btn-success" />
+                    </form>
+
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <a asp-controller="Products" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                        <span>&nbsp;|&nbsp;</span>
+                        <a asp-controller="Products" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                        <span>&nbsp;|&nbsp;</span>
+                        <a asp-controller="Products" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
