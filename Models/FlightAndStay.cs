@@ -5,9 +5,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Kanoo.Models 
+namespace Kanoo.Models
 {
-    public class FlightAndStay 
+    public class FlightAndStay
     {
         [Key]
         public int Id { get; set; }

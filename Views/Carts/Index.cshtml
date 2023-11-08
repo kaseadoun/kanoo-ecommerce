@@ -1,0 +1,152 @@
+@model Kanoo.Models.Cart
+
+@{
+    ViewData["Title"] = "My Cart";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@if (Model.CartItems != null)
+{
+    <h5>Flight</h5>
+    <table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>From</th>
+            <th>To</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cartItem in Model.CartItems)
+            {
+                if (cartItem.ProductType == ProductType.Flight && cartItem.Flight != null)
+                {
+                    <tr>
+                        <td>@cartItem.Flight.From</td>
+                        <td>@cartItem.Flight.To</td>
+                        <td>@cartItem.Flight.StartDate</td>
+                        <td>@cartItem.Flight.EndDate</td>
+                        <td>@cartItem.Flight.Price</td>
+                    </tr>
+                }
+
+            }
+        </tbody>
+        <tfoot>
+            <th>Total</th>
+            <td colspan="5">
+                @* @(Model.CartItems.Sum(cartItem => (double)(cartItem.Quantity * cartItem.Product.MSRP))) *@
+            </td>
+        </tfoot>
+    </table>
+
+    <h5>Car</h5>
+    <table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Destination</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Type of Car</th>
+            <th>Price Per Day</th>
+            <th>Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cartItem in Model.CartItems)
+            {
+                if (cartItem.ProductType == ProductType.Car && cartItem.Car != null)
+                {
+                    <tr>
+                        <td>@cartItem.Car.DestinationName</td>
+                        <td>@cartItem.Car.StartDate</td>
+                        <td>@cartItem.Car.EndDate</td>
+                        <td>@cartItem.Car.TypeOfCar</td>
+                        <td>@cartItem.Car.PricePerDay</td>
+                    </tr>
+                }
+            }
+        </tbody>
+        <tfoot>
+            <th>Total</th>
+            <td colspan="5">
+                @* @(Model.CartItems.Sum(cartItem => (double)(cartItem.Quantity * cartItem.Product.MSRP))) *@
+            </td>
+        </tfoot>
+    </table>
+
+    <h5>Stay</h5>
+    <table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Destination</th>
+            <th>Arrival</th>
+            <th>Departure</th>
+            <th>Room</th>
+            <th>Adults</th>
+            <th>Children</th>
+            <th>Price Per Day</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cartItem in Model.CartItems)
+            {
+                if (cartItem.ProductType == ProductType.Stay && cartItem.Stay != null)
+                {
+                    <tr>
+                        <td>@cartItem.Stay.DestinationName</td>
+                        <td>@cartItem.Stay.StartDate</td>
+                        <td>@cartItem.Stay.EndDate</td>
+                        <td>@cartItem.Stay.Rooms</td>
+                        <td>@cartItem.Stay.Adults</td>
+                        <td>@cartItem.Stay.Children</td>
+                        <td>@cartItem.Stay.PricePerDay</td>
+                    </tr>
+                }
+            }
+        </tbody>
+        <tfoot>
+            <th>Total</th>
+            <td colspan="6">
+                @* @(Model.CartItems.Sum(cartItem => (double)(cartItem.Quantity * cartItem.Product.MSRP))) *@
+            </td>
+        </tfoot>
+    </table>
+
+    <h5>Flight and Stay</h5>
+    <table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>From</th>
+            <th>To</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cartItem in Model.CartItems)
+            {
+                if (cartItem.ProductType == ProductType.FlightAndStay && cartItem.FlightAndStay != null)
+                {
+                    <tr>
+                        <td>@cartItem.FlightAndStay.From</td>
+                        <td>@cartItem.FlightAndStay.To</td>
+                        <td>@cartItem.FlightAndStay.StartDate.ToString("dd/MM/yyyy")</td>
+                        <td>@cartItem.FlightAndStay.EndDate.ToString("dd/MM/yyyy")</td>
+                        @* <td>@(cartItem.Quantity * cartItem.FlightAndStay.Price)</td> *@
+                    </tr>
+                }
+            }
+        </tbody>
+        <tfoot>
+            <th>Total</th>
+            <td colspan="4">
+                @* @(Model.CartItems.Sum(cartItem => (double)(cartItem.Quantity * cartItem.Product.MSRP))) *@
+            </td>
+        </tfoot>
+    </table>
+}
