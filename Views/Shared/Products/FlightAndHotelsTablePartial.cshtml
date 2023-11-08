@@ -1,0 +1,58 @@
+@model IEnumerable<Kanoo.Models.FlightAndStay>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.From)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.To)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndDate)
+            </th>>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.From)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.To)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+
+                <td>
+                    <form asp-controller="Carts" asp-action="AddToCart">
+                        <input type="hidden" name="productId" value="@item?.Id" />
+                        <input type="hidden" name="quantity" value="1" />
+                        <input type="hidden" name="productType" value="@ProductType.FlightAndStay" />
+                        <input type="submit" value="Quick Add to Cart" class="btn btn-success" />
+                    </form>
+
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <a asp-controller="Products" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                        <span>&nbsp;|&nbsp;</span>
+                        <a asp-controller="Products" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                        <span>&nbsp;|&nbsp;</span>
+                        <a asp-controller="Products" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
