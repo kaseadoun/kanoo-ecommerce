@@ -13,10 +13,7 @@ namespace Kanoo.Models
     public class Destination
     {
         [Key]
-        public int Key { get; set; } = 0;
-
-        [Required]
-        public string RegionId { get; set; } = "0";
+        public int Id { get; set; } = 0;
 
         [Required, StringLength(100)]
         public string City { get; set; } = "Toronto";

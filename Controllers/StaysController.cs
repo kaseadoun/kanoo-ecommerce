@@ -47,7 +47,7 @@ namespace Kanoo.Controllers
         // GET: Stays/Create
         public IActionResult Create()
         {
-
+            ViewData["RegionId"] = new SelectList(_context.Destinations, "Id", "Id");
             return View();
         }
 
@@ -56,15 +56,16 @@ namespace Kanoo.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,DestinationName,StartDate,EndDate,Rooms,Adults,Children,PricePerDay")] Stay stay)
+        public async Task<IActionResult> Create([Bind("Id,DestinationName,RegionId,StartDate,EndDate,Rooms,Adults,Children,PricePerDay")] Stay stay)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(stay);
+                PopulateSqlTable.PopulateStayTable(_context, stay);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
 
+            ViewData["RegionId"] = new SelectList(_context.Destinations, "Id", "Id");
             return View(stay);
         }
 

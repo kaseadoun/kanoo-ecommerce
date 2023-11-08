@@ -12,12 +12,10 @@ namespace Kanoo.Controllers
     public class DestinationsController : Controller
     {
         private readonly ApplicationDbContext _context;
-        private readonly HttpClient _httpClient;
 
         public DestinationsController(ApplicationDbContext context)
         {
             _context = context;
-            _httpClient = new HttpClient();
         }
 
         // GET: Destinations
@@ -37,7 +35,7 @@ namespace Kanoo.Controllers
             }
 
             var destination = await _context.Destinations
-                .FirstOrDefaultAsync(m => m.Key == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (destination == null)
             {
                 return NotFound();
@@ -61,7 +59,7 @@ namespace Kanoo.Controllers
         {
             if (ModelState.IsValid)
             {
-                PopulateSqlTable.PopulateDestinationTable(_context, _httpClient, destination);
+                PopulateSqlTable.PopulateDestinationTable(_context, destination);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
@@ -89,9 +87,9 @@ namespace Kanoo.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Key,City,Region,Country")] Destination destination)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,City,Region,Country")] Destination destination)
         {
-            if (id != destination.Key)
+            if (id != destination.Id)
             {
                 return NotFound();
             }
@@ -105,7 +103,7 @@ namespace Kanoo.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!DestinationExists(destination.Key))
+                    if (!DestinationExists(destination.Id))
                     {
                         return NotFound();
                     }
@@ -128,7 +126,7 @@ namespace Kanoo.Controllers
             }
 
             var destination = await _context.Destinations
-                .FirstOrDefaultAsync(m => m.Key == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (destination == null)
             {
                 return NotFound();
@@ -158,7 +156,7 @@ namespace Kanoo.Controllers
 
         private bool DestinationExists(int id)
         {
-          return (_context.Destinations?.Any(e => e.Key == id)).GetValueOrDefault();
+          return (_context.Destinations?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

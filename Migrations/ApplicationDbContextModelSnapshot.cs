@@ -74,7 +74,7 @@ namespace Kanoo.Migrations
 
             modelBuilder.Entity("Kanoo.Models.Destination", b =>
                 {
-                    b.Property<int>("Key")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -94,10 +94,7 @@ namespace Kanoo.Migrations
                     b.Property<double>("Longitude")
                         .HasColumnType("double");
 
-                    b.Property<int>("RegionId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Key");
+                    b.HasKey("Id");
 
                     b.ToTable("Destinations");
                 });
@@ -229,6 +226,9 @@ namespace Kanoo.Migrations
                     b.Property<decimal>("PricePerDay")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<int>("RegionId")
+                        .HasColumnType("int");
+
                     b.Property<int>("Rooms")
                         .HasColumnType("int");
 
@@ -236,6 +236,8 @@ namespace Kanoo.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("RegionId");
 
                     b.ToTable("Stays");
                 });
@@ -284,6 +286,17 @@ namespace Kanoo.Migrations
                     b.Navigation("FlightDepartment");
 
                     b.Navigation("StayDepartment");
+                });
+
+            modelBuilder.Entity("Kanoo.Models.Stay", b =>
+                {
+                    b.HasOne("Kanoo.Models.Destination", "Region")
+                        .WithMany()
+                        .HasForeignKey("RegionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Region");
                 });
 
             modelBuilder.Entity("Kanoo.Models.Flight", b =>

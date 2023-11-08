@@ -77,7 +77,7 @@ namespace Kanoo.Models
                     {
                         Destination n = new Destination();
                         
-                        n.RegionId = node!["data"][i]["gaiaId"].ToString();
+                        n.Id = Convert.ToInt32(node!["data"][i]["gaiaId"].ToString());
                         n.Country = node!["data"][i]["hierarchyInfo"]["country"]["name"].ToString();
                         n.City = node!["data"][i]["regionNames"]["shortName"].ToString();
                         n.Latitude = Convert.ToDouble(node!["data"][i]["coordinates"]["lat"].ToString());
@@ -94,6 +94,7 @@ namespace Kanoo.Models
                 return new List<Destination>();
             }
         }
+        
         public static List<Stay> JsonToStay(string json, ApplicationDbContext _context, Stay stay)
         {
             JsonNode node = JsonNode.Parse(json)!;
@@ -102,25 +103,40 @@ namespace Kanoo.Models
 
             try
             {
-                int totalNodes = node!["data"]["flights"].AsArray().Count();
+                int totalNodes = node!["properties"].AsArray().Count();
+
+                // If there is more than 5 entries returned, only evaluate the first 5.=
+                totalNodes = (totalNodes > 5) ? 5 : totalNodes;
                 
                 for (var i = 0; i < totalNodes; i++)
                 {
                     Stay n = new Stay();
 
-                    var ArriveCode = _context.Airports
-                        .FirstOrDefault(entity => entity.IataCode == node!["data"]["flights"][i]["segments"][0]["legs"][0]["originStationCode"].ToString());
-                    var DepartCode = _context.Airports
-                        .FirstOrDefault(entity => entity.IataCode == node!["data"]["flights"][i]["segments"][0]["legs"][0]["destinationStationCode"].ToString());
+                    n.DestinationName = node!["properties"][i]["neighborhood"]["name"].ToString();
+                    n.StartDate = stay.StartDate;
+                    n.EndDate = stay.EndDate;
+                    n.Rooms = stay.Rooms;
+                    n.Adults = stay.Adults;
 
-                    // n.From = ArriveCode.IataCode.ToString();
-                    // n.To = DepartCode.IataCode.ToString();
-                    // n.Departure = (DateTime)node!["data"]["flights"][i]["segments"][0]["legs"][0]["departureDateTime"];
-                    // // n.Return = (DateTime)node!["data"]["flights"][i]["segments"][0]["legs"][0]["arrivalDateTime"];
-                    // n.ServiceClass = flight.ServiceClass;
-                    // n.Price = (decimal)node!["data"]["flights"][i]["purchaseLinks"][0]["totalPrice"];
-                    // n.ArrivalAirportId = ArriveCode.Id;
-                    // n.DepartureAirportId = DepartCode.Id;
+                    // Get the cost in local currency
+                    var localCost = (decimal)node!["properties"][i]["price"]["lead"]["amount"];
+                    var localCurrency = node!["properties"][i]["price"]["lead"]["currencyInfo"]["code"].ToString();
+                    
+                    // Convert local currency into CAD
+                    if (localCurrency != "CAD")
+                    {
+                        n.PricePerDay = CurrencyConverter.ConvertToCAD(localCurrency, localCost);
+                    }
+                    else
+                    {
+                        n.PricePerDay = localCost;
+                    }
+
+                    // Establish relationship with the Destinations table
+                    var region = _context.Destinations
+                        .FirstOrDefault(entity => entity.Id == stay.RegionId);
+                    n.RegionId = region.Id;
+
                     totalEntries.Add(n);
                 }
                 // Return all of the JSON data as a list of objects

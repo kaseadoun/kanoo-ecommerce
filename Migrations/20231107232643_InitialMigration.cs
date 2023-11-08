@@ -53,9 +53,8 @@ namespace Kanoo.Migrations
                 name: "Destinations",
                 columns: table => new
                 {
-                    Key = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    RegionId = table.Column<int>(type: "int", nullable: false),
                     City = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
                     Country = table.Column<string>(type: "varchar(80)", maxLength: 80, nullable: false),
                     Latitude = table.Column<double>(type: "double", nullable: false),
@@ -63,7 +62,7 @@ namespace Kanoo.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Destinations", x => x.Key);
+                    table.PrimaryKey("PK_Destinations", x => x.Id);
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
@@ -79,26 +78,6 @@ namespace Kanoo.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Discounts", x => x.Id);
-                })
-                .Annotation("MySQL:Charset", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "Stays",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    DestinationName = table.Column<string>(type: "longtext", nullable: false),
-                    StartDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    EndDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    Rooms = table.Column<int>(type: "int", nullable: false),
-                    Adults = table.Column<int>(type: "int", nullable: false),
-                    Children = table.Column<int>(type: "int", nullable: false),
-                    PricePerDay = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Stays", x => x.Id);
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
@@ -132,6 +111,33 @@ namespace Kanoo.Migrations
                         name: "FK_Flights_Airports_DepartureAirportId",
                         column: x => x.DepartureAirportId,
                         principalTable: "Airports",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySQL:Charset", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Stays",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    DestinationName = table.Column<string>(type: "longtext", nullable: false),
+                    RegionId = table.Column<int>(type: "int", nullable: false),
+                    StartDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    EndDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    Rooms = table.Column<int>(type: "int", nullable: false),
+                    Adults = table.Column<int>(type: "int", nullable: false),
+                    Children = table.Column<int>(type: "int", nullable: false),
+                    PricePerDay = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Stays", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Stays_Destinations_RegionId",
+                        column: x => x.RegionId,
+                        principalTable: "Destinations",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 })
@@ -199,6 +205,11 @@ namespace Kanoo.Migrations
                 name: "IX_Flights_DepartureAirportId",
                 table: "Flights",
                 column: "DepartureAirportId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Stays_RegionId",
+                table: "Stays",
+                column: "RegionId");
         }
 
         /// <inheritdoc />
@@ -206,9 +217,6 @@ namespace Kanoo.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Cars");
-
-            migrationBuilder.DropTable(
-                name: "Destinations");
 
             migrationBuilder.DropTable(
                 name: "FlightAndStays");
@@ -224,6 +232,9 @@ namespace Kanoo.Migrations
 
             migrationBuilder.DropTable(
                 name: "Airports");
+
+            migrationBuilder.DropTable(
+                name: "Destinations");
         }
     }
 }

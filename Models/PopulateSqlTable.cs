@@ -1,3 +1,4 @@
+using System.Net;
 using System.Net.Http.Headers;
 
 namespace Kanoo.Models
@@ -11,6 +12,8 @@ namespace Kanoo.Models
     /// </summary>
     public class PopulateSqlTable
     {
+        static readonly HttpClient _httpClient = new HttpClient();
+
         /*
            !IMPORTANT:
                - We want to limit the amount of times we call an API due to the Freemium limitations on most common APIs
@@ -18,12 +21,11 @@ namespace Kanoo.Models
                - Automatically execute these methods in the Create() method of applicable controllers
                - This will fill our DB with data every time we click "Create New"
        */
-        private PopulateSqlTable() { }
 
         /// <summary>
         /// Data pulled from: https://rapidapi.com/DataCrawler/api/tripadvisor16
         /// </summary>
-        public static void PopulateFlightTable(ApplicationDbContext _context, HttpClient _httpClient, Flight flight)
+        public static void PopulateFlightTable(ApplicationDbContext _context, Flight flight)
         {
             // Create a secure ConfigurationBuilder() to read the API key and host from a hidden JSON
             // instead of hard-coding the values in the method
@@ -71,7 +73,7 @@ namespace Kanoo.Models
         /// Data pulled from: https://rapidapi.com/tipsters/api/hotels-com-provider
         /// <para>"GET/Regions Search"</para>
         /// </summary>
-        public static void PopulateDestinationTable(ApplicationDbContext _context, HttpClient _httpClient, Destination destination)
+        public static void PopulateDestinationTable(ApplicationDbContext _context, Destination destination)
         {
              var builder = new ConfigurationBuilder()
                                 .SetBasePath(Directory.GetCurrentDirectory())
@@ -108,27 +110,27 @@ namespace Kanoo.Models
             } 
         }
 
-        public static void PopulateStayTable(ApplicationDbContext _context, HttpClient _httpClient, Stay stay)
+        /// <summary>
+        /// Data pulled from: https://rapidapi.com/tipsters/api/hotels-com-provider
+        /// <para>"GET/Hotels Search"</para>
+        /// </summary>
+        public static void PopulateStayTable(ApplicationDbContext _context, Stay stay)
         {
-            // Create a secure ConfigurationBuilder() to read the API key and host from a hidden JSON
-            // instead of hard-coding the values in the method
-             var builder = new ConfigurationBuilder()
-                                .SetBasePath(Directory.GetCurrentDirectory())
-                                .AddJsonFile("appsettings.Development.json");
+            var builder = new ConfigurationBuilder()
+                            .SetBasePath(Directory.GetCurrentDirectory())
+                            .AddJsonFile("appsettings.Development.json");
 
             var config = builder.Build();
             var key = config["Api:X-RapidAPI-Key"];
             var host = config["Api:X-RapidAPI-Stay-Host"];
 
-            // Create the request using the API URL and our hidden credentials
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
                 // Send a request to the API from the inputted form data
-                /* RequestUri = new Uri(String
-                    .Format("https://tripadvisor16.p.rapidapi.com/api/v1/stays/searchStays?sourceAirportCode={0}&destinationAirportCode={1}&date={2}&itineraryType=ONE_WAY&sortOrder=PRICE&numAdults={3}&numSeniors={4}&classOfService={5}&pageNumber=1&currencyCode=CAD", 
-                        stay.From, stay.To, DateOnly.FromDateTime(stay.Departure), stay.NumOfAdults, 
-                        stay.NumOfSeniors, stay.ServiceClass)), */
+                RequestUri = new Uri(String
+                    .Format("https://hotels-com-provider.p.rapidapi.com/v2/hotels/search?checkout_date={0}&domain=GB&adults_number={1}&sort_order=RECOMMENDED&checkin_date={2}&locale=en_GB&region_id={3}&available_filter=SHOW_AVAILABLE_ONLY&guest_rating_min=8&payment_type=PAY_LATER%2CFREE_CANCELLATION&amenities=WIFI%2CPARKING&price_max=500&page_number=1&meal_plan=FREE_BREAKFAST&star_rating_ids=3%2C4%2C5&price_min=10&lodging_type=HOTEL%2CHOSTEL%2CAPART_HOTEL&children_ages={4}", 
+                            DateOnly.FromDateTime(stay.EndDate), stay.Adults, DateOnly.FromDateTime(stay.StartDate), stay.RegionId, stay.Children)),
                 Headers =
                 {
                     { "X-RapidAPI-Key", key },
@@ -140,11 +142,8 @@ namespace Kanoo.Models
 
             if (responseMessage.IsSuccessStatusCode)
             {
-                // GET the API JSON result and pass it as a string to JsonToStay()
-                // JsonToStay() will extract all of the data from the JSON and convert it into a Stay object
                 var totalEntries = JsonToObject.JsonToStay(responseMessage.Content.ReadAsStringAsync().Result, _context, stay);
 
-                // Add each new object to the database
                 foreach (var entry in totalEntries) {
                      _context.Stays.Add(entry);
                 }

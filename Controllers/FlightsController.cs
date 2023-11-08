@@ -8,12 +8,10 @@ namespace Kanoo.Controllers
     public class FlightsController : Controller
     {
         private readonly ApplicationDbContext _context;
-        private readonly HttpClient _httpClient;
 
         public FlightsController(ApplicationDbContext context)
         {
             _context = context;
-            _httpClient = new HttpClient();
         }
 
         // GET: Flights
@@ -59,7 +57,7 @@ namespace Kanoo.Controllers
             {
                 // Make a new object with the parameters in Bind() from the form data, and send the object with those
                 // parameters to PopulateFlightTable() to call the API
-                PopulateSqlTable.PopulateFlightTable(_context, _httpClient, flight);
+                PopulateSqlTable.PopulateFlightTable(_context, flight);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
