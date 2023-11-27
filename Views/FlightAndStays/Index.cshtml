@@ -8,6 +8,9 @@
 <p>WIP</p>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    @if (User.IsInRole("Admin"))
+    {
+        <a asp-action="Create">Create New</a>
+    }
 </p>
 <partial name="~/Views/Shared/Products/FlightAndHotelsTablePartial.cshtml"></partial>
