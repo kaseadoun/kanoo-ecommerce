@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Kanoo.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Kanoo.Controllers
 {
@@ -45,6 +46,7 @@ namespace Kanoo.Controllers
         }
 
         // GET: Cars/Create
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             ViewData["RegionId"] = new SelectList(_context.Destinations, "Id", "Id");
@@ -56,6 +58,7 @@ namespace Kanoo.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create([Bind("Id,DestinationName,RegionId,CompanyName,StartDate,EndDate,TypeOfCar,NumOfDrivers,PricePerDay")] Car car)
         {
             if (ModelState.IsValid)
@@ -70,6 +73,7 @@ namespace Kanoo.Controllers
         }
 
         // GET: Cars/Edit/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Cars == null)
@@ -91,6 +95,7 @@ namespace Kanoo.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,DestinationName,StartDate,EndDate,TypeOfCar,NumOfDrivers,PricePerDay")] Car car)
         {
             if (id != car.Id)
@@ -123,6 +128,7 @@ namespace Kanoo.Controllers
         }
 
         // GET: Cars/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Cars == null)
@@ -143,6 +149,7 @@ namespace Kanoo.Controllers
         // POST: Cars/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Cars == null)

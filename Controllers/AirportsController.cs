@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Kanoo.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Kanoo.Controllers
 {
@@ -45,6 +46,7 @@ namespace Kanoo.Controllers
         }
 
         // GET: Airports/Create
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             PopulateSqlTable.PopulateAirportTable(_context);
@@ -52,6 +54,7 @@ namespace Kanoo.Controllers
         }
 
         // GET: Airports/Edit/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Airports == null)
@@ -72,6 +75,7 @@ namespace Kanoo.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,IataCode,AirportName")] Airport airport)
         {
             if (id != airport.Id)
@@ -103,6 +107,7 @@ namespace Kanoo.Controllers
         }
 
         // GET: Airports/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Airports == null)
@@ -123,6 +128,7 @@ namespace Kanoo.Controllers
         // POST: Airports/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Airports == null)

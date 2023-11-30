@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Kanoo.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Kanoo.Controllers
 {
@@ -41,6 +42,7 @@ namespace Kanoo.Controllers
         }
 
         // GET: Flights/Create
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             ViewData["From"] = new SelectList(_context.Airports, "IataCode", "IataCode");
@@ -51,6 +53,7 @@ namespace Kanoo.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create([Bind("From,To,Arrival,Departure,NumOfAdults,NumOfSeniors,ServiceClass")] Flight flight)
         {
             if (ModelState.IsValid)
@@ -71,6 +74,7 @@ namespace Kanoo.Controllers
         }
         
         // GET: Flights/Edit/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Flights == null)
@@ -92,6 +96,7 @@ namespace Kanoo.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,From,To,StartDate,EndDate,Price")] Flight flight)
         {
             if (id != flight.Id)
@@ -124,6 +129,7 @@ namespace Kanoo.Controllers
         }
 
         // GET: Flights/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Flights == null)
@@ -144,6 +150,7 @@ namespace Kanoo.Controllers
         // POST: Flights/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Flights == null)
