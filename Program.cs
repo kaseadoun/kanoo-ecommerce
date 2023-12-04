@@ -1,5 +1,6 @@
 using Kanoo.Data;
 using Kanoo.Models;
+using Kanoo.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -34,6 +35,9 @@ builder.Services.AddDefaultIdentity<IdentityUser>()
 // Program.cs
 // Registering the DbInitializer seeder
 builder.Services.AddTransient<DbInitializer>();
+
+// Inject CartService in our application
+builder.Services.AddScoped<CartService>();
 
 var app = builder.Build();
 

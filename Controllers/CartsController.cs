@@ -6,22 +6,23 @@ using Kanoo.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Microsoft.EntityFrameworkCore;
+using Kanoo.Services;
 
 namespace Kanoo.Controllers
 {
     public class CartsController : Controller
     {
-        private readonly string _cartSessionKey;
+        private readonly CartService _cartService;
         private readonly ApplicationDbContext _context;
-        public CartsController(ApplicationDbContext context)
+        public CartsController(ApplicationDbContext context, CartService cartService)
         {
-            _cartSessionKey = "Cart";
             _context = context;
+            _cartService = cartService;
         }
 
         public async Task<IActionResult> Index()
         {
-            var cart = GetCart();
+            var cart = _cartService.GetCart();
 
             if (cart == null)
             {
@@ -72,7 +73,7 @@ namespace Kanoo.Controllers
         [HttpPost]
         public async Task<IActionResult> AddToCart(int productId, int quantity, ProductType productType)
         {
-            var cart = GetCart();
+            var cart = _cartService.GetCart();
 
             if (cart == null)
             {
@@ -92,6 +93,7 @@ namespace Kanoo.Controllers
                 {
                     case ProductType.Flight:
                         var flight = await _context.Flights.FirstOrDefaultAsync(p => p.Id == productId);
+
                         if (flight == null) return NotFound();
                         cartItem = new CartItem { ProductId = productId, Quantity = quantity, Flight = flight, ProductType = ProductType.Flight };
                         break;
@@ -121,23 +123,31 @@ namespace Kanoo.Controllers
             }
 
 
-            SaveCart(cart);
+            _cartService.SaveCart(cart);
 
             return RedirectToAction("Index");
         }
 
-        private Cart? GetCart()
+        [HttpPost]
+        public IActionResult RemoveFromCart(int productId)
         {
-            var cartJson = HttpContext.Session.GetString(_cartSessionKey);
+            var cart = _cartService.GetCart();
 
-            return cartJson == null ? new Cart() : JsonConvert.DeserializeObject<Cart>(cartJson);
-        }
+            if (cart == null)
+            {
+                return NotFound();
+            }
 
-        private void SaveCart(Cart cart)
-        {
-            var cartJson = JsonConvert.SerializeObject(cart);
+            var cartItem = cart.CartItems.Find(cartItem => cartItem.ProductId == productId);
 
-            HttpContext.Session.SetString(_cartSessionKey, cartJson);
+            if (cartItem != null)
+            {
+                cart.CartItems.Remove(cartItem);
+
+                _cartService.SaveCart(cart);
+            }
+
+            return RedirectToAction("Index");
         }
     }
 }

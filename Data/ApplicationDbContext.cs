@@ -24,6 +24,8 @@ namespace Kanoo.Models
         public DbSet<Airport> Airports { get; set; }
         public DbSet<Destination> Destinations { get; set; }
         public DbSet<Discount> Discounts { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
     }
 
 }

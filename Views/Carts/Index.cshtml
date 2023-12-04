@@ -159,4 +159,11 @@
 
     <h5>Total:</h5>
     <p>@Html.Raw(flightTotal + carTotal + stayTotal)</p>
+
+    @if (Model.CartItems.Count > 0)
+    {
+        <a class="btn btn-success" asp-controller="Orders" asp-action="Checkout">
+            Checkout
+        </a>
+    }
 }
