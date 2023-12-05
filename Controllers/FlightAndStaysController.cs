@@ -52,8 +52,8 @@ namespace Kanoo.Controllers
         public IActionResult Create()
         {
             ViewData["DiscountId"] = new SelectList(_context.Discounts, "Id", "Description");
-            ViewData["FlightId"] = new SelectList(_context.Flights, "Id", "Id");
-            ViewData["StayId"] = new SelectList(_context.Stays, "Id", "Id");
+            ViewData["FlightId"] = new SelectList(_context.Flights, "DestinationName", "DestinationName");
+            ViewData["StayId"] = new SelectList(_context.Stays, "DestinationName", "DestinationName");
 
             var stayRegionIds = _context.Stays.Select(s => s.RegionId).Distinct();
             ViewData["To"] = new SelectList(_context.Destinations.Where(d => stayRegionIds.Contains(d.Id)), "Id", "City");

@@ -36,7 +36,7 @@ namespace Kanoo.Models
                 Method = HttpMethod.Get,
                 // Send a request to the API from the inputted form data
                 RequestUri = new Uri(String
-                    .Format("https://tripadvisor16.p.rapidapi.com/api/v1/flights/searchFlights?sourceAirportCode={0}&destinationAirportCode={1}&date={2}&itineraryType=ONE_WAY&sortOrder=PRICE&numAdults={3}&numSeniors={4}&classOfService={5}&pageNumber=1&currencyCode=CAD", 
+                    .Format("https://tripadvisor16.p.rapidapi.com/api/v1/flights/searchFlights?sourceAirportCode={0}&destinationAirportCode={1}&date={2}&itineraryType=ONE_WAY&sortOrder=ML_BEST_VALUE&numAdults={3}&numSeniors={4}&classOfService={5}&pageNumber=1&currencyCode=CAD", 
                             flight.From, flight.To, DateOnly.FromDateTime(flight.Departure), flight.NumOfAdults, 
                             flight.NumOfSeniors, flight.ServiceClass)),
                 Headers =

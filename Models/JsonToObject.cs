@@ -49,10 +49,28 @@ namespace Kanoo.Models
                     n.Departure = (DateTime)node!["data"]["flights"][i]["segments"][0]["legs"][0]["departureDateTime"];
                     // n.Return = (DateTime)node!["data"]["flights"][i]["segments"][0]["legs"][0]["arrivalDateTime"];
                     n.ServiceClass = flight.ServiceClass;
-                    n.Price = (decimal)node!["data"]["flights"][i]["purchaseLinks"][0]["totalPrice"];
                     n.ArrivalAirportId = ArriveCode.Id;
                     n.DepartureAirportId = DepartCode.Id;
-                    totalEntries.Add(n);
+
+                    // Get the cost in local currency
+                    var localCost = (decimal)node!["data"]["flights"][i]["purchaseLinks"][0]["totalPrice"];
+                    var localCurrency = node!["data"]["flights"][i]["purchaseLinks"][0]["currency"].ToString();
+                    
+                    // Convert local currency into CAD
+                    if (localCurrency != "CAD")
+                    {
+                        n.Price = CurrencyConverter.ConvertToCAD(localCurrency, localCost);
+                    }
+                    else
+                    {
+                        n.Price = localCost;
+                    }
+
+                    // Only add to the DB if it is a valid flight that can be purchased
+                    if (n.Price > 0)
+                    {
+                        totalEntries.Add(n);
+                    }
                 }
                 // Return all of the JSON data as a list of objects
                 return totalEntries;

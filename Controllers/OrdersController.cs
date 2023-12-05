@@ -71,7 +71,7 @@ namespace Kanoo.Controllers
                         break;
 
                     case ProductType.FlightAndStay:
-                        orderItem.Price = cartItem.Quantity * (cartItem.Flight.Price + cartItem.Stay.PricePerDay);
+                        orderItem.Price = cartItem.Quantity * cartItem.FlightAndStay.Price;
 
                         // Include the DiscountDepartment to fetch the discount
                         var flightAndStay = await _context.FlightAndStays
