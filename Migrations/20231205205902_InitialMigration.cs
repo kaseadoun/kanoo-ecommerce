@@ -22,7 +22,8 @@ namespace Kanoo.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     IataCode = table.Column<string>(type: "varchar(5)", maxLength: 5, nullable: false),
-                    AirportName = table.Column<string>(type: "varchar(250)", maxLength: 250, nullable: false)
+                    AirportName = table.Column<string>(type: "varchar(250)", maxLength: 250, nullable: false),
+                    DestinationName = table.Column<string>(type: "varchar(250)", maxLength: 250, nullable: false)
                 },
                 constraints: table =>
                 {

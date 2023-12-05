@@ -18,9 +18,12 @@ namespace Kanoo.Models
         public int Id { get; set; } = 0;
 
         [Required, StringLength(5)]
-        public string IataCode { get; set; }
+        public string IataCode { get; set; } = String.Empty;
 
         [Required, StringLength(250)]
-        public string AirportName { get; set; }
+        public string AirportName { get; set; } = String.Empty;
+
+        [Required, StringLength(250)]
+        public string DestinationName { get; set; } = String.Empty;
     }
 }

@@ -242,11 +242,12 @@ namespace Kanoo.Models
                     {
                         n.IataCode = node!["airports"][i]["airportIata"].ToString();
                         n.AirportName = node!["airports"][i]["airportName"].ToString();
+                        n.DestinationName = node!["airports"][i]["city"].ToString();
                         totalEntries.Add(n);
                     }
                 }
                 
-                // If the JSON object does not have the property, catch the error and make the property null
+                // If the JSON object does not have the property, catch the error and do not add the entry
                 catch (NullReferenceException e) 
                 {
                     Console.WriteLine(e.Message);

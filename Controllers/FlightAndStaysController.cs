@@ -55,6 +55,17 @@ namespace Kanoo.Controllers
             ViewData["FlightId"] = new SelectList(_context.Flights, "DestinationName", "DestinationName");
             ViewData["StayId"] = new SelectList(_context.Stays, "DestinationName", "DestinationName");
 
+            // Grab the destination name of the Flights from its parent table, Airports (ArrivalAirpost)
+            var destinationCityNames = _context.Flights.Select(s => s.ArrivalAirport.DestinationName).Distinct();
+
+            /* 
+                TODO : add logic to return all rows from Flights and Stays where
+                _context.Flights.Select(s => s.ArrivalAirport.DestinationName)
+                ==
+                _context.Stays.Select(s => s.DestinationName
+
+                From there, create a new FlightAndStay with properties from the matching Flights and Stays
+            */
             var stayRegionIds = _context.Stays.Select(s => s.RegionId).Distinct();
             ViewData["To"] = new SelectList(_context.Destinations.Where(d => stayRegionIds.Contains(d.Id)), "Id", "City");
 
@@ -78,6 +89,7 @@ namespace Kanoo.Controllers
             ViewData["DiscountId"] = new SelectList(_context.Discounts, "Id", "Description", flightAndStay.DiscountId);
             ViewData["FlightId"] = new SelectList(_context.Flights, "Id", "Id", flightAndStay.FlightId);
             ViewData["StayId"] = new SelectList(_context.Stays, "Id", "Id", flightAndStay.StayId);
+            
             var stayRegionIds = _context.Stays.Select(s => s.RegionId).Distinct();
             ViewData["To"] = new SelectList(_context.Destinations.Where(d => stayRegionIds.Contains(d.Id)), "Id", "City");
             return View(flightAndStay);

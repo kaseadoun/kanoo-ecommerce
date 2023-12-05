@@ -30,6 +30,11 @@ namespace Kanoo.Migrations
                         .HasMaxLength(250)
                         .HasColumnType("varchar(250)");
 
+                    b.Property<string>("DestinationName")
+                        .IsRequired()
+                        .HasMaxLength(250)
+                        .HasColumnType("varchar(250)");
+
                     b.Property<string>("IataCode")
                         .IsRequired()
                         .HasMaxLength(5)

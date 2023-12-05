@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Kanoo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231205200303_InitialMigration")]
+    [Migration("20231205205902_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -29,6 +29,11 @@ namespace Kanoo.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("AirportName")
+                        .IsRequired()
+                        .HasMaxLength(250)
+                        .HasColumnType("varchar(250)");
+
+                    b.Property<string>("DestinationName")
                         .IsRequired()
                         .HasMaxLength(250)
                         .HasColumnType("varchar(250)");
