@@ -55,6 +55,9 @@ namespace Kanoo.Controllers
             ViewData["FlightId"] = new SelectList(_context.Flights, "Id", "Id");
             ViewData["StayId"] = new SelectList(_context.Stays, "Id", "Id");
 
+            var stayRegionIds = _context.Stays.Select(s => s.RegionId).Distinct();
+            ViewData["To"] = new SelectList(_context.Destinations.Where(d => stayRegionIds.Contains(d.Id)), "Id", "City");
+
             return View();
         }
 
@@ -75,6 +78,8 @@ namespace Kanoo.Controllers
             ViewData["DiscountId"] = new SelectList(_context.Discounts, "Id", "Description", flightAndStay.DiscountId);
             ViewData["FlightId"] = new SelectList(_context.Flights, "Id", "Id", flightAndStay.FlightId);
             ViewData["StayId"] = new SelectList(_context.Stays, "Id", "Id", flightAndStay.StayId);
+            var stayRegionIds = _context.Stays.Select(s => s.RegionId).Distinct();
+            ViewData["To"] = new SelectList(_context.Destinations.Where(d => stayRegionIds.Contains(d.Id)), "Id", "City");
             return View(flightAndStay);
         }
 
@@ -95,6 +100,9 @@ namespace Kanoo.Controllers
             ViewData["DiscountId"] = new SelectList(_context.Discounts, "Id", "Description", flightAndStay.DiscountId);
             ViewData["FlightId"] = new SelectList(_context.Flights, "Id", "Id", flightAndStay.FlightId);
             ViewData["StayId"] = new SelectList(_context.Stays, "Id", "Id", flightAndStay.StayId);
+
+            var stayRegionIds = _context.Stays.Select(s => s.RegionId).Distinct();
+            ViewData["To"] = new SelectList(_context.Destinations.Where(d => stayRegionIds.Contains(d.Id)), "Id", "City");
             return View(flightAndStay);
         }
 
@@ -134,6 +142,8 @@ namespace Kanoo.Controllers
             ViewData["DiscountId"] = new SelectList(_context.Discounts, "Id", "Description", flightAndStay.DiscountId);
             ViewData["FlightId"] = new SelectList(_context.Flights, "Id", "Id", flightAndStay.FlightId);
             ViewData["StayId"] = new SelectList(_context.Stays, "Id", "Id", flightAndStay.StayId);
+            var stayRegionIds = _context.Stays.Select(s => s.RegionId).Distinct();
+            ViewData["To"] = new SelectList(_context.Destinations.Where(d => stayRegionIds.Contains(d.Id)), "Id", "City");
             return View(flightAndStay);
         }
 
@@ -174,14 +184,14 @@ namespace Kanoo.Controllers
             {
                 _context.FlightAndStays.Remove(flightAndStay);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool FlightAndStayExists(int id)
         {
-          return (_context.FlightAndStays?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.FlightAndStays?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
