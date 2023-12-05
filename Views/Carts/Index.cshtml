@@ -135,6 +135,7 @@
         </tr>
     </thead>
     <tbody>
+        @{decimal flightAndStayTotal = 0;}
         @foreach (var cartItem in Model.CartItems)
             {
                 if (cartItem.ProductType == ProductType.FlightAndStay && cartItem.FlightAndStay != null)
@@ -144,8 +145,9 @@
                         <td>@cartItem.FlightAndStay.To</td>
                         <td>@cartItem.FlightAndStay.StartDate.ToString("dd/MM/yyyy")</td>
                         <td>@cartItem.FlightAndStay.EndDate.ToString("dd/MM/yyyy")</td>
-                        @* <td>@(cartItem.Quantity * cartItem.FlightAndStay.Price)</td> *@
+                        @* <td>@cartItem.FlightAndStay.TotalPrice</td> *@
                     </tr>
+                    @* flightAndStayTotal += cartItem.FlightAndStay.TotalPrice; *@
                 }
             }
         </tbody>
