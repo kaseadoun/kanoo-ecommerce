@@ -174,14 +174,25 @@ footer {
 }
 
 /* PARENT and CHILD SERVICES VIEWS */
-.card-container {
+.product-card-container {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1em;
 }
 
-.card {
-  border: none;
+.product-card {
+  display: flex;
+  flex-wrap: wrap;
   background-color: var(--secondary-bg-colour);
-  padding: 10px;
+  padding: 1em;
+  gap: 1em;
+  box-sizing: border-box;
+}
+
+.product-card-info {
+  width: 70%;
+}
+
+.product-card-details {
+  width: 25%;
 }

@@ -1,16 +1,21 @@
 @model IEnumerable<Kanoo.Models.Flight>
 
-<div class="card-container">
-    @foreach (var item in Model) {
-        <div class="card">
-            <h4>Destination</h4>
-            <p>@Html.DisplayFor(modelItem => item.From) -> @Html.DisplayFor(modelItem => item.To)</p>
-            <h4>Departure/Arrival</h4>
-            <p>@Html.DisplayFor(modelItem => item.Departure) -> @Html.DisplayFor(modelItem => item.Arrival)</p>
-            <h5>Class</h5>
-            <p>@Html.DisplayFor(modelItem => item.ServiceClass)</p>
-            <h5>Price</h5>
-            <p>@Html.DisplayFor(modelItem => item.Price)</p>
+<div class="product-card-container ">
+    @foreach (var item in Model)
+    {
+        <div class="product-card">
+            <div class="product-card-info">
+                <h4>Destination</h4>
+                <p>@Html.DisplayFor(modelItem => item.From) -> @Html.DisplayFor(modelItem => item.To)</p>
+                <h4>Departure/Arrival</h4>
+                <p>@Html.DisplayFor(modelItem => item.Departure) -> @Html.DisplayFor(modelItem => item.Arrival)</p>
+            </div>
+            <div class="product-card-details">
+                <h5>Class</h5>
+                <p>@Html.DisplayFor(modelItem => item.ServiceClass)</p>
+                <h5>Price</h5>
+                <p>@Html.DisplayFor(modelItem => item.Price)</p>
+            </div>
 
             <form asp-controller="Carts" asp-action="AddToCart">
                 <input type="hidden" name="productId" value="@item?.Id" />
@@ -21,11 +26,13 @@
 
             @if (User.IsInRole("Admin"))
             {
-                <a asp-controller="Products" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                <span>&nbsp;|&nbsp;</span>
-                <a asp-controller="Products" asp-action="Details" asp-route-id="@item.Id">Details</a>
-                <span>&nbsp;|&nbsp;</span>
-                <a asp-controller="Products" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <div class="admin-tools">
+                    <a asp-controller="Products" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    <span>&nbsp;|&nbsp;</span>
+                    <a asp-controller="Products" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    <span>&nbsp;|&nbsp;</span>
+                    <a asp-controller="Products" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </div>
             }
         </div>
     }
