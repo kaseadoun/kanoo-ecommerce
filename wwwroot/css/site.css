@@ -168,6 +168,13 @@ footer {
   width: 100%;
 }
 
+#catBoxIdentifiers {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 1em;
+}
+
 .chatbox-inputs {
   margin-bottom: 10px;
   width: 80%;

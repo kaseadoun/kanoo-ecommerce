@@ -27,11 +27,16 @@
     <div class="chatBox">
         <form id="chatBoxForm" asp-controller="Home" asp-action="send">
             <h4>Send a message and we'll reply asap!</h4>
-            <label for="name">Name:</label>
-            <input class="chatbox-inputs" type="text" name="name" placeholder="Full Name">
 
-            <label for="name">Email:</label>
-            <input class="chatbox-inputs" type="text" name="email" placeholder="Email">
+            <div id="catBoxIdentifiers">
+                <label for="name">Name:
+                    <input class="chatbox-inputs" type="text" name="name" placeholder="Full Name">
+                </label>
+
+                <label for="name">Email:
+                    <input class="chatbox-inputs" type="text" name="email" placeholder="Email">
+                </label>
+            </div>
 
             <label for="textarea">Message</label>
             <textarea class="chatbox-inputs" placeholder="Type Your Message Here" name="message"></textarea>
