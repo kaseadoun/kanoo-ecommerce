@@ -30,55 +30,65 @@ namespace Kanoo.Controllers
 
             var cart = _cartService.GetCart();
 
-            if (cart == null) {
+            if (cart == null)
+            {
                 return NotFound();
             }
 
             var order = await _context.Orders
                 .FirstOrDefaultAsync(o => o.Id == cart.OrderId);
 
-            order ??= new Order {
+            order ??= new Order
+            {
                 UserId = userId
             };
 
             var orderItems = new List<OrderItem>();
 
-            foreach(var cartItem in cart.CartItems)
+            foreach (var cartItem in cart.CartItems)
             {
-                var orderItem = new OrderItem {
+                var orderItem = new OrderItem
+                {
                     OrderId = order.Id,
                     Service = cartItem.ProductType.ToString(),
                     Quantity = cartItem.Quantity,
-                    Price = order.Total
                 };
 
                 orderItems.Add(orderItem);
+
+                switch (cartItem.ProductType)
+                {
+                    case ProductType.Flight:
+                        orderItem.Price = cartItem.Quantity * cartItem.Flight.Price;
+                        break;
+
+                    case ProductType.Car:
+                        orderItem.Price = cartItem.Quantity * cartItem.Car.PricePerDay;
+                        break;
+
+                    case ProductType.Stay:
+                        orderItem.Price = cartItem.Quantity * cartItem.Stay.PricePerDay;
+                        break;
+
+                    case ProductType.FlightAndStay:
+                        orderItem.Price = cartItem.Quantity * (cartItem.Flight.Price + cartItem.Stay.PricePerDay);
+
+                        // Include the DiscountDepartment to fetch the discount
+                        var flightAndStay = await _context.FlightAndStays
+                            .Include(fas => fas.DiscountDepartment)
+                            .FirstOrDefaultAsync(fas => fas.Id == cartItem.FlightAndStay.Id);
+
+                        if (flightAndStay?.DiscountDepartment != null)
+                        {
+                            double discountAmount = (double)orderItem.Price * flightAndStay.DiscountDepartment.DiscountAmount;
+                            orderItem.Price -= (decimal)discountAmount;
+                        }
+                        break;
+                }
+                order.Total += orderItem.Price;
             }
 
             order.OrderItems = orderItems;
-
-            foreach (var item in order.OrderItems)
-            {
-                switch (item.Service)
-                {
-                    case "Flight":
-                        order.Total = cart.CartItems.Sum(cartItem => (decimal)(cartItem.Quantity * cartItem.Flight.Price)); 
-                        break;
-
-                    case "Car":
-                        order.Total = cart.CartItems.Sum(cartItem => (decimal)(cartItem.Quantity * cartItem.Car.PricePerDay)); 
-                        break;
-
-                    case "Stay":
-                        order.Total = cart.CartItems.Sum(cartItem => (decimal)(cartItem.Quantity * cartItem.Stay.PricePerDay)); 
-                        break;
-
-                    // case "FlightAndStay":
-                    //     order.Total = cart.CartItems.Sum(cartItem => (decimal)(cartItem.Quantity * cartItem.FlightAndStay.P)); 
-                    //     break;
-                }
-            }
-            // order.Total = cart.CartItems.Sum(cartItem => (decimal)(cartItem.Quantity * cartItem.Car.PricePerDay)); 
 
             return View("Details", order);
         }
