@@ -203,3 +203,47 @@ footer {
 .product-card-details {
   width: 25%;
 }
+
+.cart-container {
+  background-color: var(--secondary-bg-colour);
+  padding: 1em;
+  margin: 1em 0;
+  gap: 1em;
+}
+
+.cart-item-details {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: 1fr;
+}
+
+.cart-container > h5 {
+  font-size: 2rem;
+  padding: 0.5em 0;
+  color: var(--main-complimentary-colour);
+  grid-row: 1;
+}
+
+.car,
+.flightandstay {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.stay {
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.cart-item-details > h6 {
+  border-bottom: 1px var(--third-bg-colour) solid;
+  font-size: 1.5rem;
+}
+
+.cart-item-details > h6:last-child,
+.cart-item-details > p:last-child {
+  grid-column: 1/-1;
+  font-size: 1.5rem;
+}
+
+.cart-container:last-of-type p:last-child {
+  font-size: 3rem;
+}
