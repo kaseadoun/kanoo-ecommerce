@@ -36,6 +36,10 @@ namespace Kanoo.Models
         [Required]
         public DateTime EndDate { get; set; } = DateTime.Now;
 
+        [Required]
+        [Range(0.01, 999999.99)]
+        public decimal Price { get; set; } = 0.01M;
+
         [ForeignKey("FlightId")]
         public virtual Flight? FlightDepartment { get; set; }
 

@@ -1,0 +1,72 @@
+@model Kanoo.Models.Order
+
+@{
+    ViewData["Title"] = "Order Details";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Total)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Total)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PaymentReceived)
+        </dt>
+        <dd class="col-sm-10">
+            <span>@(Model.PaymentReceived ? "Yes" : "No")</span>
+        </dd>
+    </dl>
+
+    @if (Model.OrderItems != null)
+    {
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var orderItem in Model.OrderItems)
+                {
+                    <tr>
+                        <td>@orderItem.Service</td>
+                        <td>@orderItem.Quantity</td>
+                        <td>@orderItem.Price</td>
+                        <td>
+                            @((decimal)(orderItem.Quantity * orderItem.Price))
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td>Total</td>
+                    <td colspan="3">@(Model.OrderItems.Sum(orderItem => (decimal)(orderItem.Quantity * orderItem.Price)))
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    }
+</div>
+
+<div>
+    @if (!Model.PaymentReceived)
+    {
+        <form>
+            <button class="btn btn-success">Proceed to Payment</button>
+        </form>
+    }
+
+    <a asp-action="Index">Back to List</a>

@@ -8,155 +8,126 @@
 
 @if (Model.CartItems != null)
 {
-    <h5>Flight</h5>
-    <table class="table table-striped table-bordered">
-    <thead>
-        <tr>
-            <th>From</th>
-            <th>To</th>
-            <th>Departure</th>
-            <th>Arrival</th>
-            <th>Class</th>
-            <th>Price</th>
-        </tr>
-    </thead>
-    <tbody>
-        @{decimal flightTotal = 0;}
-        @foreach (var cartItem in Model.CartItems)
+    <div class="cart-container">
+        <h5>Flight</h5>
+        <div class="cart-item-details flight">
+            <h6>From</h6>
+            <h6>To</h6>
+            <h6>Departure</h6>
+            <h6>Arrival</h6>
+            <h6>Class</h6>
+            <h6>Price</h6>
+            @{decimal flightTotal = 0;}
+            @foreach (var cartItem in Model.CartItems)
             {
                 if (cartItem.ProductType == ProductType.Flight && cartItem.Flight != null)
                 {
-                    <tr>
-                        <td>@cartItem.Flight.From</td>
-                        <td>@cartItem.Flight.To</td>
-                        <td>@cartItem.Flight.Departure</td>
-                        <td>@cartItem.Flight.Arrival</td>
-                        <td>@cartItem.Flight.ServiceClass</td>
-                        <td>@cartItem.Flight.Price</td>
-                    </tr>
+                    <p>@cartItem.Flight.From</p>
+                    <p>@cartItem.Flight.To</p>
+                    <p>@cartItem.Flight.Departure</p>
+                    <p>@cartItem.Flight.Arrival</p>
+                    <p>@cartItem.Flight.ServiceClass</p>
+                    <p>$@cartItem.Flight.Price</p>
                     flightTotal += cartItem.Flight.Price;
                 }
 
             }
-        </tbody>
-        <tfoot>
-            <th>Total</th>
-            <td colspan="5">
-                @Html.Raw(flightTotal)
-            </td>
-        </tfoot>
-    </table>
+            <h6>Total</h6>
+            <p>$@Html.Raw(flightTotal)</p>
+        </div>
+    </div>
 
-    <h5>Car</h5>
-    <table class="table table-striped table-bordered">
-    <thead>
-        <tr>
-            <th>Destination</th>
-            <th>From</th>
-            <th>To</th>
-            <th>Type of Car</th>
-            <th>Price Per Day</th>
-        </tr>
-    </thead>
-    <tbody>
-        @{decimal carTotal = 0;}
-        @foreach (var cartItem in Model.CartItems)
+    <div class="cart-container">
+        <h5>Car Rental</h5>
+        <div class="cart-item-details car">
+            <h6>Destination</h6>
+            <h6>From</h6>
+            <h6>To</h6>
+            <h6>Type of Car</h6>
+            <h6>Price Per Day</h6>
+            @{decimal carTotal = 0;}
+            @foreach (var cartItem in Model.CartItems)
             {
                 if (cartItem.ProductType == ProductType.Car && cartItem.Car != null)
                 {
-                    <tr>
-                        <td>@cartItem.Car.DestinationName</td>
-                        <td>@cartItem.Car.StartDate</td>
-                        <td>@cartItem.Car.EndDate</td>
-                        <td>@cartItem.Car.TypeOfCar</td>
-                        <td>@cartItem.Car.PricePerDay</td>
-                    </tr>
+                    <p>@cartItem.Car.DestinationName</p>
+                    <p>@cartItem.Car.StartDate</p>
+                    <p>@cartItem.Car.EndDate</p>
+                    <p>@cartItem.Car.TypeOfCar</p>
+                    <p>$@cartItem.Car.PricePerDay</p>
                     carTotal += cartItem.Car.PricePerDay;
                 }
             }
-        </tbody>
-        <tfoot>
-            <th>Total</th>
-            <td colspan="5">
-                @Html.Raw(carTotal)
-            </td>
-        </tfoot>
-    </table>
+            <h6>Total</h6>
+            <p>$@Html.Raw(carTotal)</p>
+        </div>
+    </div>
 
-    <h5>Stay</h5>
-    <table class="table table-striped table-bordered">
-    <thead>
-        <tr>
-            <th>Destination</th>
-            <th>Arrival</th>
-            <th>Departure</th>
-            <th>Room</th>
-            <th>Adults</th>
-            <th>Children</th>
-            <th>Price Per Day</th>
-        </tr>
-    </thead>
-    <tbody>
-        @{decimal stayTotal = 0;}
-        @foreach (var cartItem in Model.CartItems)
+    <div class="cart-container">
+        <h5>Overnight Stay</h5>
+        <div class="cart-item-details stay">
+            <h6>Destination</h6>
+            <h6>Checkin</h6>
+            <h6>Checkout</h6>
+            <h6>Rooms</h6>
+            <h6>Adults</h6>
+            <h6>Children</h6>
+            <h6>Price Per Day</h6>
+            @{decimal stayTotal = 0;}
+            @foreach (var cartItem in Model.CartItems)
             {
                 if (cartItem.ProductType == ProductType.Stay && cartItem.Stay != null)
                 {
-                    <tr>
-                        <td>@cartItem.Stay.DestinationName</td>
-                        <td>@cartItem.Stay.StartDate</td>
-                        <td>@cartItem.Stay.EndDate</td>
-                        <td>@cartItem.Stay.Rooms</td>
-                        <td>@cartItem.Stay.Adults</td>
-                        <td>@cartItem.Stay.Children</td>
-                        <td>@cartItem.Stay.PricePerDay</td>
-                    </tr>
+                    <p>@cartItem.Stay.DestinationName</p>
+                    <p>@cartItem.Stay.StartDate</p>
+                    <p>@cartItem.Stay.EndDate</p>
+                    <p>@cartItem.Stay.Rooms</p>
+                    <p>@cartItem.Stay.Adults</p>
+                    <p>@cartItem.Stay.Children</p>
+                    <p>$@cartItem.Stay.PricePerDay</p>
                     stayTotal += cartItem.Stay.PricePerDay;
                 }
             }
-        </tbody>
-        <tfoot>
-            <th>Total</th>
-            <td colspan="6">
-                @Html.Raw(stayTotal)
-            </td>
-        </tfoot>
-    </table>
+            <h6>Total</h6>
+            <p>$@Html.Raw(stayTotal)</p>
+        </div>
+    </div>
 
-    <h5>Flight and Stay</h5>
-    <table class="table table-striped table-bordered">
-    <thead>
-        <tr>
-            <th>From</th>
-            <th>To</th>
-            <th>Start Date</th>
-            <th>End Date</th>
-            <th>Subtotal</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var cartItem in Model.CartItems)
+    <div class="cart-container">
+        <h5>Flight and Stay Bundle</h5>
+        <div class="cart-item-details flightandstay">
+            <h6>From</h6>
+            <h6>To</h6>
+            <h6>Start Date</h6>
+            <h6>End Date</h6>
+            <h6>Subtotal</h6>
+            @{decimal flightAndStayTotal = 0;}
+            @foreach (var cartItem in Model.CartItems)
             {
                 if (cartItem.ProductType == ProductType.FlightAndStay && cartItem.FlightAndStay != null)
                 {
-                    <tr>
-                        <td>@cartItem.FlightAndStay.From</td>
-                        <td>@cartItem.FlightAndStay.To</td>
-                        <td>@cartItem.FlightAndStay.StartDate.ToString("dd/MM/yyyy")</td>
-                        <td>@cartItem.FlightAndStay.EndDate.ToString("dd/MM/yyyy")</td>
-                        @* <td>@(cartItem.Quantity * cartItem.FlightAndStay.Price)</td> *@
-                    </tr>
+                    <p>@cartItem.FlightAndStay.From</p>
+                    <p>@cartItem.FlightAndStay.To</p>
+                    <p>@cartItem.FlightAndStay.StartDate.ToString("dd/MM/yyyy")</p>
+                    <p>@cartItem.FlightAndStay.EndDate.ToString("dd/MM/yyyy")</p>
+                    <p>$@cartItem.FlightAndStay.Price</p> 
+                    flightAndStayTotal += cartItem.FlightAndStay.Price;
                 }
             }
-        </tbody>
-        <tfoot>
-            <th>Total</th>
-            <td colspan="4">
-                @* @(Model.CartItems.Sum(cartItem => (double)(cartItem.Quantity * cartItem.Product.MSRP))) *@
-            </td>
-        </tfoot>
-    </table>
+            <h6>Total</h6>
+            <p>$@Html.Raw(flightAndStayTotal)</p>
+        </div>
+    </div>
 
-    <h5>Total:</h5>
-    <p>@Html.Raw(flightTotal + carTotal + stayTotal)</p>
+    <div class="cart-container">
+        <h5>Total:</h5>
+        <p>$@Html.Raw(flightTotal + carTotal + stayTotal + flightAndStayTotal)</p>
+    </div>
+
+    @if (Model.CartItems.Count > 0)
+    {
+        <a class="btn btn-success" asp-controller="Orders" asp-action="Checkout">
+            Checkout
+        </a>
+    }
 }

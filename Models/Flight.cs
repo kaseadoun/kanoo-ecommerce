@@ -36,7 +36,6 @@ namespace Kanoo.Models {
         [Required]
         public DateTime Arrival { get; set; } = DateTime.Now.Date;
 
-
         [Required]
         public int NumOfAdults { get; set; } = 1;
 
@@ -52,6 +51,7 @@ namespace Kanoo.Models {
 
         [ForeignKey("ArrivalAirportId")]
         public virtual Airport? ArrivalAirport { get; set; }
+        
         
         [ForeignKey("DepartureAirportId")]
         public virtual Airport? DepartureAirport { get; set; }

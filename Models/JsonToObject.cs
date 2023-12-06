@@ -40,19 +40,36 @@ namespace Kanoo.Models
                     Flight n = new Flight();
 
                     var ArriveCode = _context.Airports
-                        .FirstOrDefault(entity => entity.IataCode == node!["data"]["flights"][i]["segments"][0]["legs"][0]["originStationCode"].ToString());
-                    var DepartCode = _context.Airports
                         .FirstOrDefault(entity => entity.IataCode == node!["data"]["flights"][i]["segments"][0]["legs"][0]["destinationStationCode"].ToString());
+                    var DepartCode = _context.Airports
+                        .FirstOrDefault(entity => entity.IataCode == node!["data"]["flights"][i]["segments"][0]["legs"][0]["originStationCode"].ToString());
 
                     n.From = ArriveCode.IataCode.ToString();
                     n.To = DepartCode.IataCode.ToString();
                     n.Departure = (DateTime)node!["data"]["flights"][i]["segments"][0]["legs"][0]["departureDateTime"];
-                    // n.Return = (DateTime)node!["data"]["flights"][i]["segments"][0]["legs"][0]["arrivalDateTime"];
                     n.ServiceClass = flight.ServiceClass;
-                    n.Price = (decimal)node!["data"]["flights"][i]["purchaseLinks"][0]["totalPrice"];
                     n.ArrivalAirportId = ArriveCode.Id;
                     n.DepartureAirportId = DepartCode.Id;
-                    totalEntries.Add(n);
+
+                    // Get the cost in local currency
+                    var localCost = (decimal)node!["data"]["flights"][i]["purchaseLinks"][0]["totalPrice"];
+                    var localCurrency = node!["data"]["flights"][i]["purchaseLinks"][0]["currency"].ToString();
+                    
+                    // Convert local currency into CAD
+                    if (localCurrency != "CAD")
+                    {
+                        n.Price = CurrencyConverter.ConvertToCAD(localCurrency, localCost);
+                    }
+                    else
+                    {
+                        n.Price = localCost;
+                    }
+
+                    // Only add to the DB if it is a valid flight that can be purchased
+                    if (n.Price > 0)
+                    {
+                        totalEntries.Add(n);
+                    }
                 }
                 // Return all of the JSON data as a list of objects
                 return totalEntries;
@@ -224,11 +241,12 @@ namespace Kanoo.Models
                     {
                         n.IataCode = node!["airports"][i]["airportIata"].ToString();
                         n.AirportName = node!["airports"][i]["airportName"].ToString();
+                        n.DestinationName = node!["airports"][i]["city"].ToString();
                         totalEntries.Add(n);
                     }
                 }
                 
-                // If the JSON object does not have the property, catch the error and make the property null
+                // If the JSON object does not have the property, catch the error and do not add the entry
                 catch (NullReferenceException e) 
                 {
                     Console.WriteLine(e.Message);
