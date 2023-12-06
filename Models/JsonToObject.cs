@@ -40,14 +40,13 @@ namespace Kanoo.Models
                     Flight n = new Flight();
 
                     var ArriveCode = _context.Airports
-                        .FirstOrDefault(entity => entity.IataCode == node!["data"]["flights"][i]["segments"][0]["legs"][0]["originStationCode"].ToString());
-                    var DepartCode = _context.Airports
                         .FirstOrDefault(entity => entity.IataCode == node!["data"]["flights"][i]["segments"][0]["legs"][0]["destinationStationCode"].ToString());
+                    var DepartCode = _context.Airports
+                        .FirstOrDefault(entity => entity.IataCode == node!["data"]["flights"][i]["segments"][0]["legs"][0]["originStationCode"].ToString());
 
                     n.From = ArriveCode.IataCode.ToString();
                     n.To = DepartCode.IataCode.ToString();
                     n.Departure = (DateTime)node!["data"]["flights"][i]["segments"][0]["legs"][0]["departureDateTime"];
-                    // n.Return = (DateTime)node!["data"]["flights"][i]["segments"][0]["legs"][0]["arrivalDateTime"];
                     n.ServiceClass = flight.ServiceClass;
                     n.ArrivalAirportId = ArriveCode.Id;
                     n.DepartureAirportId = DepartCode.Id;

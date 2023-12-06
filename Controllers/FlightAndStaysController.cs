@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Kanoo.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.CodeAnalysis;
 
 namespace Kanoo.Controllers
 {
@@ -55,17 +56,6 @@ namespace Kanoo.Controllers
             ViewData["FlightId"] = new SelectList(_context.Flights, "DestinationName", "DestinationName");
             ViewData["StayId"] = new SelectList(_context.Stays, "DestinationName", "DestinationName");
 
-            // Grab the destination name of the Flights from its parent table, Airports (ArrivalAirpost)
-            var destinationCityNames = _context.Flights.Select(s => s.ArrivalAirport.DestinationName).Distinct();
-
-            /* 
-                TODO : add logic to return all rows from Flights and Stays where
-                _context.Flights.Select(s => s.ArrivalAirport.DestinationName)
-                ==
-                _context.Stays.Select(s => s.DestinationName
-
-                From there, create a new FlightAndStay with properties from the matching Flights and Stays
-            */
             var stayRegionIds = _context.Stays.Select(s => s.RegionId).Distinct();
             ViewData["To"] = new SelectList(_context.Destinations.Where(d => stayRegionIds.Contains(d.Id)), "Id", "City");
 
@@ -82,16 +72,47 @@ namespace Kanoo.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(flightAndStay);
+                var discount = _context.Discounts.Where(d => flightAndStay.DiscountId == d.Id).Select(d => d.DiscountAmount).ToArray();
+
+                var join = _context.Stays.Join(
+                    _context.Flights,
+                    stayDestination => stayDestination.DestinationName,
+                    flightDestionation => flightDestionation.ArrivalAirport.DestinationName,
+                    (s, f) => new
+                    {
+                        FlightId = f.Id,
+                        StayId = s.Id,
+                        DiscountId = flightAndStay.DiscountId,
+                        From = f.From,
+                        To = f.To,
+                        StartDate = s.StartDate,
+                        EndDate = s.EndDate,
+                        Price = (s.PricePerDay + f.Price) - ((s.PricePerDay + f.Price) * (decimal)discount[0])
+                    }
+                ).ToArray();
+
+                for (var i = 0; i < join.Length; i++)
+                {
+                    FlightAndStay newBundle = new FlightAndStay
+                    {
+                        FlightId = join[i].FlightId,
+                        StayId = join[i].StayId,
+                        DiscountId = join[i].DiscountId,
+                        From = join[i].From,
+                        To = join[i].To,
+                        StartDate = join[i].StartDate,
+                        EndDate = join[i].EndDate,
+                        Price = join[i].Price
+                    };
+
+                    _context.Add(newBundle);
+                }
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DiscountId"] = new SelectList(_context.Discounts, "Id", "Description", flightAndStay.DiscountId);
-            ViewData["FlightId"] = new SelectList(_context.Flights, "Id", "Id", flightAndStay.FlightId);
-            ViewData["StayId"] = new SelectList(_context.Stays, "Id", "Id", flightAndStay.StayId);
-            
             var stayRegionIds = _context.Stays.Select(s => s.RegionId).Distinct();
             ViewData["To"] = new SelectList(_context.Destinations.Where(d => stayRegionIds.Contains(d.Id)), "Id", "City");
+            
             return View(flightAndStay);
         }
 
