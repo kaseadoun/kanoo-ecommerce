@@ -26,5 +26,10 @@ namespace Kanoo.Services
 
             return cartJson == null ? new Cart() : JsonConvert.DeserializeObject<Cart>(cartJson);
         }
+
+        public void DestroyCart()
+        {
+            _httpContextAccessor.HttpContext.Session.Remove(_cartSessionKey);
+        }
     }
 }
