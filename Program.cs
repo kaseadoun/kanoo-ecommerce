@@ -39,6 +39,9 @@ builder.Services.AddTransient<DbInitializer>();
 // Inject CartService in our application
 builder.Services.AddScoped<CartService>();
 
+// Takes our appsettings file and injects it into all of our files, so long as it is instantiated in the constructor
+builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
+
 var app = builder.Build();
 
 app.UseSession();
