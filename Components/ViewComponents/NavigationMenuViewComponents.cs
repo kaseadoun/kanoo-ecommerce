@@ -12,7 +12,8 @@ namespace Kanoo.Components.ViewComponents
             new MenuItem { Controller = "Home", Action = "Index", Label = "Home"},
             new MenuItem { Controller = "Home", Action = "Privacy", Label = "Privacy"},
             new MenuItem { Controller = "Home", Action = "Brief", Label = "Brief"},
-            new MenuItem { Controller = "Carts", Action = "Index", Label = "View My Cart" }
+            new MenuItem { Controller = "Carts", Action = "Index", Label = "View My Cart" },
+            new MenuItem { Controller = "Orders", Action = "Index", Label = "View My Orders"}
         };
 
             return View(menuItems);
