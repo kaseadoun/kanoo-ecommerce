@@ -23,9 +23,39 @@ namespace Kanoo.Controllers
             _configuration = configuration;
         }
 
+        [Authorize()]
         public async Task<IActionResult> Index()
         {
-            return View();
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            Console.WriteLine(userId);
+
+            if (userId == null) return NotFound();
+
+            var orders = await _context.Orders
+                .Include(o => o.OrderItems)
+                .Include(order => order.User)
+                // .Where(o => o.UserId == userId)
+                .Where(o => o.PaymentReceived == true)
+                .OrderByDescending(o => o.Id)
+                .ToListAsync();
+
+            return View(orders);
+        }
+
+        [Authorize()]
+        public async Task<IActionResult> Details(int? id)
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (userId == null) return NotFound();
+
+            var order = await _context.Orders
+                .Include(o => o.OrderItems)
+                .Include(order => order.User)
+                .FirstOrDefaultAsync(o => o.Id == id);
+
+            return View(order);
         }
 
         [Authorize()]
@@ -41,6 +71,9 @@ namespace Kanoo.Controllers
             }
 
             var order = await _context.Orders
+                .Include(o => o.OrderItems)
+                .Include(o => o.User)
+                .Where(o => o.UserId == userId)
                 .FirstOrDefaultAsync(o => o.Id == cart.OrderId);
 
             order ??= new Order
@@ -106,7 +139,7 @@ namespace Kanoo.Controllers
 
             var cart = _cartService.GetCart();
 
-            if (cart == null) return NotFound();
+            if (userId == null || cart == null) return NotFound();
 
             decimal total = 0;
             var test = cart.CartItems.Sum(cartItem =>
@@ -135,7 +168,7 @@ namespace Kanoo.Controllers
             var order = new Order
             {
                 UserId = userId,
-                Total = total,
+                Total = total * 100,
                 OrderItems = new List<OrderItem>()
             };
 
@@ -189,10 +222,34 @@ namespace Kanoo.Controllers
 
             if (userId == null || cart == null) return NotFound();
 
+            decimal total = 0;
+            var test = cart.CartItems.Sum(cartItem =>
+                {
+                    switch (cartItem.ProductType)
+                    {
+                        case ProductType.Flight:
+                            total += cartItem.Quantity * cartItem.Flight.Price;
+                            break;
+
+                        case ProductType.Car:
+                            total += cartItem.Quantity * cartItem.Car.PricePerDay;
+                            break;
+
+                        case ProductType.Stay:
+                            total += cartItem.Quantity * cartItem.Stay.PricePerDay;
+                            break;
+
+                        case ProductType.FlightAndStay:
+                            total += cartItem.Quantity * cartItem.FlightAndStay.Price;
+                            break;
+                    };
+                    return total;
+                });
+
             var order = new Order
             {
                 UserId = userId,
-                Total = cart.CartItems.Sum(cartItem => (decimal)(cartItem.Quantity * cartItem.Product.MSRP)),
+                Total = total,
                 OrderItems = new List<OrderItem>(),
                 PaymentReceived = true
             };
@@ -211,36 +268,6 @@ namespace Kanoo.Controllers
 
             foreach (var cartItem in cart.CartItems)
             {
-                switch (cartItem.ProductType)
-                    {
-                        case ProductType.Flight:
-                            price = cartItem.Quantity * cartItem.Flight.Price;
-                            break;
-
-                        case ProductType.Car:
-                            price = cartItem.Quantity * cartItem.Car.PricePerDay;
-                            break;
-
-                        case ProductType.Stay:
-                            price = cartItem.Quantity * cartItem.Stay.PricePerDay;
-                            break;
-
-                        case ProductType.FlightAndStay:
-                            price = cartItem.Quantity * cartItem.FlightAndStay.Price;
-
-                            // Include the DiscountDepartment to fetch the discount
-                            var flightAndStay = await _context.FlightAndStays
-                                .Include(fas => fas.DiscountDepartment)
-                                .FirstOrDefaultAsync(fas => fas.Id == cartItem.FlightAndStay.Id);
-
-                            if (flightAndStay?.DiscountDepartment != null)
-                            {
-                                double discountAmount = (double)price * flightAndStay.DiscountDepartment.DiscountAmount;
-                                price -= (decimal)discountAmount;
-                            }
-                            break;
-                    }
-
                 order.OrderItems.Add(new OrderItem
                 {
                     OrderId = order.Id,
