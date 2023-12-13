@@ -254,20 +254,29 @@ namespace Kanoo.Controllers
                 PaymentReceived = true
             };
 
-            // foreach (var cartItem in cart.CartItems)
-            // {
-            //     order.OrderItems.Add(new OrderItem
-            //     {
-            //         OrderId = order.Id,
-            //         ProductName = cartItem.Product.Name,
-            //         Quantity = cartItem.Quantity,
-            //         Price = cartItem.Product.MSRP
-            //     });
-            // }
-            decimal price = 0;
-
             foreach (var cartItem in cart.CartItems)
             {
+                decimal price = 0;
+
+                switch (cartItem.ProductType)
+                    {
+                        case ProductType.Flight:
+                            price += cartItem.Quantity * cartItem.Flight.Price;
+                            break;
+
+                        case ProductType.Car:
+                            price += cartItem.Quantity * cartItem.Car.PricePerDay;
+                            break;
+
+                        case ProductType.Stay:
+                            price += cartItem.Quantity * cartItem.Stay.PricePerDay;
+                            break;
+
+                        case ProductType.FlightAndStay:
+                            price += cartItem.Quantity * cartItem.FlightAndStay.Price;
+                            break;
+                    };
+
                 order.OrderItems.Add(new OrderItem
                 {
                     OrderId = order.Id,
